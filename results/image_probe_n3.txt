@@ -1,0 +1,24 @@
+== hybrid detect:
+629:                "Auto-detected hybrid FP8+NVFP4 checkpoint "
+== nextn deferred (expect 0; P8 out of scope):
+0
+== qkv sizes:
+156:def _get_ckpt_qkv_shard_sizes(config, layer_name, ckpt_tp):
+157-    m = re.search(r"layers\.(\d+)\.", layer_name)
+158-    if m is None:
+159-        return None
+== mha pool:
+1225:        mha_pool_class = (
+== fp8 kv method:
+464:            return Fp8KVCacheMethod(self)
+3174:class Fp8KVCacheMethod(BaseKVCacheMethod):
+== uint8 view:
+2565:            (layer.w13_weight.data.view(torch.int8), w13_sf),
+2566:            (layer.w2_weight.data.view(torch.int8), w2_sf),
+== fa4 gate:
+478:            # due to TMA descriptor initialization issues on SM100 GPUs. The
+479:            # current FlashInfer SM100 CUTLASS FMHA dispatch only instantiates
+== ours:
+0
+a3dd3c7e9d59345c1e435cf43bf569ed1e5dd0ce75a588881283399de8e79656  /sgl-workspace/sglang/python/sglang/srt/models/mimo_v2.py
+74a0e0cd63a8690b42374a0f8d23659064465e8619dc71a33616ee7d27efe834  /sgl-workspace/sglang/python/sglang/srt/models/mimo_v2_nextn.py
