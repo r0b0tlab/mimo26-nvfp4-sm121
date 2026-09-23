@@ -1,0 +1,4 @@
+Multiple distributions found for package modelopt. Picked distribution: nvidia-modelopt
+index keys=145273 files=66 expert_linears=36096 incomplete=0 input_scales=36096 kv_scale_entries=96
+sampled=24 elements=201326592 mismatches=0
+VERIFY OK
