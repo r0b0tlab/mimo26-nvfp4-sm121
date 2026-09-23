@@ -35,17 +35,18 @@ esac
 
 COMMON=(--model-path "$MODEL" --served-model-name mimo26
         --tp-size 2 --ep-size 2 --dist-init-addr "$N3IP:20000"
-        --host 0.0.0.0 --port 30000 --mem-fraction-static 0.82
+        --host 0.0.0.0 --port 30000 --mem-fraction-static 0.90
         --trust-remote-code --cuda-graph-max-bs-decode 8 --cuda-graph-max-bs-prefill 8)
 
-rank_args() {  # rank_args <node-rank> <tp-rank> -> prints docker argv
+rank_args() {  # rank_args <node-rank> <tp-rank> -> prints docker argv on ONE line
   local nr="$1" tr="$2"
-  printf '%s\n' docker run --rm --name "mimo26-r$tr" --ipc host --network host --gpus all \
+  printf '%s ' docker run --rm --name "mimo26-r$tr" --ipc host --network host --gpus all \
     -v "$HOME/models:$HOME/models:ro" -v "$C:$C" \
     -e NCCL_IB_HCA='=rocep1s0f0:1,roceP2p1s0f0:1' -e NCCL_IB_GID_INDEX=3 \
     -e NCCL_SOCKET_IFNAME=enP7s7 -e GLOO_SOCKET_IFNAME=enP7s7 \
     "$IMG" python3 -m sglang.launch_server "${COMMON[@]}" "${KV_FLAGS[@]}" "${SPEC_FLAGS[@]}" \
     --nnodes 2 --node-rank "$nr"
+  echo
 }
 
 RANK1=$(rank_args 1 1)
@@ -70,8 +71,10 @@ fi
 # (torchcodec preflight runs on both nodes from the orchestrator before the
 # lane starts — see scripts/40_preflight_env.sh; kept out of this script to
 # avoid nested-quoting issues in the rank-1 ssh line.)
+printf '%s' "$RANK1" | base64 -w0 > /tmp/mimo26_r1_cmd.b64
+scp -q -o StrictHostKeyChecking=yes /tmp/mimo26_r1_cmd.b64 "r0b0tdgx@$N4IP:/tmp/"
 ssh -n -o StrictHostKeyChecking=yes "r0b0tdgx@$N4IP" \
-  "tmux new -d -s mimo26-r1 'mkdir -p $C/logs/serve && $RANK1 > $C/logs/serve/r1.$TAG.log 2>&1'"
+  "base64 -d /tmp/mimo26_r1_cmd.b64 > /tmp/mimo26_r1_cmd.sh && chmod +x /tmp/mimo26_r1_cmd.sh && tmux new -d -s mimo26-r1 'mkdir -p $C/logs/serve && bash /tmp/mimo26_r1_cmd.sh > $C/logs/serve/r1.$TAG.log 2>&1'"
 # rank 0 on node 3 (this node), foreground inside the caller's tmux:
 $RANK0 > "$C/logs/serve/r0.$TAG.log" 2>&1 &
 R0PID=$!
