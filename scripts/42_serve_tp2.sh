@@ -8,7 +8,7 @@
 set -euo pipefail
 C="$HOME/projects/mimo26-nvfp4-sm121"
 TAG="${TAG:?TAG}"; MODEL="${MODEL:?MODEL}"; SPEC="${SPEC:-none}"; KV="${KV:-default}"
-IMG="${IMG:-lmsysorg/sglang:nightly-dev-cu13-20260922-582389ce}"
+IMG="${IMG:-r0b0tlab/sglang-mimo26-env:20260922-582389ce}"
 N3IP="192.168.68.78"; N4IP="192.168.68.56"
 mkdir -p "$C/logs/serve"
 
@@ -36,7 +36,7 @@ esac
 COMMON=(--model-path "$MODEL" --served-model-name mimo26
         --tp-size 2 --ep-size 2 --dist-init-addr "$N3IP:20000"
         --host 0.0.0.0 --port 30000 --mem-fraction-static 0.82
-        --trust-remote-code --cuda-graph-max-bs 8)
+        --trust-remote-code --cuda-graph-max-bs-decode 8 --cuda-graph-max-bs-prefill 8)
 
 rank_args() {  # rank_args <node-rank> <tp-rank> -> prints docker argv
   local nr="$1" tr="$2"
@@ -45,11 +45,20 @@ rank_args() {  # rank_args <node-rank> <tp-rank> -> prints docker argv
     -e NCCL_IB_HCA='=rocep1s0f0:1,roceP2p1s0f0:1' -e NCCL_IB_GID_INDEX=3 \
     -e NCCL_SOCKET_IFNAME=enP7s7 -e GLOO_SOCKET_IFNAME=enP7s7 \
     "$IMG" python3 -m sglang.launch_server "${COMMON[@]}" "${KV_FLAGS[@]}" "${SPEC_FLAGS[@]}" \
-    --nnodes 2 --node-rank "$nr" --tp-rank "$tr"
+    --nnodes 2 --node-rank "$nr"
 }
 
 RANK1=$(rank_args 1 1)
 RANK0=$(rank_args 0 0)
+
+# The nightly image lacks torchcodec, so the MiMo-V2 mm processor import is
+# swallowed and MiMoV2ForCausalLM never registers a processor (boot dies with
+# "No processor registered"). Install it before launch (pip caches on first
+# node only, near-instant afterwards).
+ensure_torchcodec() {
+  docker run --rm --entrypoint bash "$IMG" -c \
+    'python3 -c "import torchcodec" 2>/dev/null || pip install -q torchcodec'
+}
 
 if [ "${DRYRUN:-0}" = "1" ]; then
   echo "rank1: $RANK1"
@@ -58,6 +67,9 @@ if [ "${DRYRUN:-0}" = "1" ]; then
 fi
 
 # rank 1 on node 4 first (it connects back to init on node 3):
+# (torchcodec preflight runs on both nodes from the orchestrator before the
+# lane starts — see scripts/40_preflight_env.sh; kept out of this script to
+# avoid nested-quoting issues in the rank-1 ssh line.)
 ssh -n -o StrictHostKeyChecking=yes "r0b0tdgx@$N4IP" \
   "tmux new -d -s mimo26-r1 'mkdir -p $C/logs/serve && $RANK1 > $C/logs/serve/r1.$TAG.log 2>&1'"
 # rank 0 on node 3 (this node), foreground inside the caller's tmux:
