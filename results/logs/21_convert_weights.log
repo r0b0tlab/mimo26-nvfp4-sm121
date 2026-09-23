@@ -1,0 +1,7 @@
+[start] 2026-09-22T19:24:26Z dst=/home/r0b0tdgx/models/r0b0tlab/MiMo-V2.6-Flash-RL-NVFP4
+[workers] rc=0 2026-09-22T19:48:20Z
+19:45:49 [19/21] model_pp0_ep5_shard0.safetensors: 188 experts in 69.3s (lossless 2809135104/2809135104 blocks; verify mismatches 0/956301312)
+19:46:39 [20/21] model_pp0_ep62_shard0.safetensors: 188 experts in 49.8s (lossless 2956984320/2956984320 blocks; verify mismatches 0/1006632960)
+19:47:45 [21/21] model_pp0_ep7_shard0.safetensors: 188 experts in 66.5s (lossless 3104833536/3104833536 blocks; verify mismatches 0/1056964608)
+19:48:33 WEIGHTS DONE {"src": "/home/r0b0tdgx/models/XiaomiMiMo/MiMo-V2.6-Flash-RL", "dst": "/home/r0b0tdgx/models/r0b0tlab/MiMo-V2.6-Flash-RL-NVFP4", "modelopt": "0.47.0rc1.dev99+g7159c01d9", "blocks": 9462349824, "lossless_blocks": 9462349824, "non_exact_blocks": 0, "verify": {"experts": 128, "mismatch_elems": 0, "checked_elems": 3221225472}, "runs": [{"file": "main1790106513.json", "n_shards": 0, "wall_s": 0.1}, {"file": "worker0of3.json", "n_shards": 22, "wall_s": 1389.5}, {"file": "worker1of3.json", "n_shards": 22, "wall_s": 1410.0}, {"file": "worker2of3.json", "n_shards": 21, "wall_s": 1388.0}], "quantized_linears": 36096, "config_dropped": {"store_dtype": "mxfp4", "mxfp4_block_size": 32}, "aux_linked": 23, "finalize_wall_s": 0.7}
+[done] 2026-09-22T19:48:35Z

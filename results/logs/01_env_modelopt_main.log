@@ -1,0 +1,12 @@
+[start] 2026-09-22T17:53:57Z
+modelopt main at execute: 7159c01d9d909ca2431db6332363f07b2137ac09
+Cloning into '/home/r0b0tdgx/src/Model-Optimizer-main'...
+From https://github.com/NVIDIA/Model-Optimizer
+ * branch                main       -> FETCH_HEAD
+checked out 7159c01d9d909ca2431db6332363f07b2137ac09 2026-09-22T08:24:27+00:00 [chore]: weekly bump of uv.lock on main (2026-09-21) (#2490)
+python 3.12.3
+torch 2.11.0+cu130 cuda 13.0 gpu NVIDIA GB10 (12, 1)
+transformers 5.14.1 modelopt 0.47.0rc1.dev99+g7159c01d9 accelerate 1.15.0 datasets 5.0.1 safetensors 0.8.0
+headroom calibrator + mxfp4 cast helpers import OK
+[done] 2026-09-22T18:04:53Z
+EXIT=0

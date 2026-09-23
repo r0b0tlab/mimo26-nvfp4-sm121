@@ -1,0 +1,42 @@
+{
+  "src": "/home/r0b0tdgx/models/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+  "dst": "/home/r0b0tdgx/models/r0b0tlab/MiMo-V2.6-Flash-RL-NVFP4",
+  "modelopt": "0.47.0rc1.dev99+g7159c01d9",
+  "blocks": 9462349824,
+  "lossless_blocks": 9462349824,
+  "non_exact_blocks": 0,
+  "verify": {
+    "experts": 128,
+    "mismatch_elems": 0,
+    "checked_elems": 3221225472
+  },
+  "runs": [
+    {
+      "file": "main1790106513.json",
+      "n_shards": 0,
+      "wall_s": 0.1
+    },
+    {
+      "file": "worker0of3.json",
+      "n_shards": 22,
+      "wall_s": 1389.5
+    },
+    {
+      "file": "worker1of3.json",
+      "n_shards": 22,
+      "wall_s": 1410.0
+    },
+    {
+      "file": "worker2of3.json",
+      "n_shards": 21,
+      "wall_s": 1388.0
+    }
+  ],
+  "quantized_linears": 36096,
+  "config_dropped": {
+    "store_dtype": "mxfp4",
+    "mxfp4_block_size": 32
+  },
+  "aux_linked": 23,
+  "finalize_wall_s": 0.7
+}

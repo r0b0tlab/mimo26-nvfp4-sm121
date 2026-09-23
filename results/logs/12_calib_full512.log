@@ -1,0 +1,94 @@
+  warnings.warn(
+Loading dataset with config={'path': 'abisee/cnn_dailymail', 'name': '3.0.0'} and splits=['train'] data_files_tmpl=None
+Loading dataset with config={'path': 'nvidia/Nemotron-Post-Training-Dataset-v2'} and splits=['stem', 'chat', 'math', 'code'] data_files_tmpl=None
+19:25:43 calib rows=512 seq=512 tokens=262144 dataset=cnn_nemotron_v2_mix qkv_layout=tp4_interleaved
+19:25:54 layer  0 GA  MLP load=0.9s total=9.0s rms=0.028 K=5.66 V=0.0913
+19:26:41 layer  1 SWA MoE load=21.6s total=46.3s rms=0.029 hit=256/256 w13[u_hr=1.04e+03 peer_hr=1.78e+03 max=15.8 | relmse union=3.73e-03 peer_=3.66e-03 max=3.73e-03 unit_=3.46e-03] w2[u_hr=3.71 peer_hr=85.7 max=18.4 | relmse union=4.13e-03 peer_=3.22e-03 max=3.18e-03 unit_=1.89e-02] K=9.25 V=3.16
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+19:27:32 layer  2 SWA MoE load=21.8s total=49.6s rms=0.033 hit=256/256 w13[u_hr=1.78e+03 peer_hr=2.74e+03 max=16.5 | relmse union=3.59e-03 peer_=3.76e-03 max=3.76e-03 unit_=3.78e-03] w2[u_hr=1.18 peer_hr=147 max=23.4 | relmse union=7.32e-02 peer_=3.17e-03 max=3.15e-03 unit_=7.69e-03] K=17.1 V=6.09
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+19:28:16 layer  3 SWA MoE load=16.7s total=42.3s rms=0.037 hit=256/256 w13[u_hr=3.06e+03 peer_hr=3.8e+03 max=72 | relmse union=2.25e-03 peer_=2.11e-03 max=2.13e-03 unit_=2.25e-03] w2[u_hr=1.18 peer_hr=21 max=25.4 | relmse union=9.40e-02 peer_=1.01e-03 max=1.01e-03 unit_=4.08e-03] K=19 V=4.03
+  return func(*args, **kwargs)
+  return func(*args, **kwargs)
+19:28:54 layer  4 SWA MoE load=11.4s total=36.8s rms=0.043 hit=256/256 w13[u_hr=2.21e+03 peer_hr=2.74e+03 max=120 | relmse union=2.33e-03 peer_=2.24e-03 max=2.33e-03 unit_=2.28e-03] w2[u_hr=870 peer_hr=3.31e+04 max=1.07e+03 | relmse union=3.13e-03 peer_=1.02e-03 max=1.03e-03 unit_=9.85e-04] K=17.8 V=5.56
+19:29:36 layer  5 GA  MoE load=12.2s total=39.5s rms=0.044 hit=256/256 w13[u_hr=2.21e+03 peer_hr=2.46e+03 max=137 | relmse union=3.02e-03 peer_=2.95e-03 max=3.04e-03 unit_=2.99e-03] w2[u_hr=46.7 peer_hr=8.1e+03 max=500 | relmse union=5.11e-01 peer_=1.49e-03 max=1.44e-03 unit_=1.44e-03] K=8.38 V=0.173
+19:30:20 layer  6 SWA MoE load=17.7s total=42.1s rms=0.045 hit=256/256 w13[u_hr=1.04e+03 peer_hr=1.29e+03 max=193 | relmse union=2.18e-03 peer_=2.23e-03 max=2.15e-03 unit_=2.23e-03] w2[u_hr=191 peer_hr=3.31e+04 max=760 | relmse union=4.00e-02 peer_=4.27e-03 max=4.27e-03 unit_=4.25e-03] K=14.9 V=4.91
+19:31:00 layer  7 SWA MoE load=10.6s total=37.8s rms=0.048 hit=253/256 w13[u_hr=5.25e+03 peer_hr=6.53e+03 max=114 | relmse union=4.56e-03 peer_=4.51e-03 max=4.50e-03 unit_=4.56e-03] w2[u_hr=80.3 peer_hr=3.41e+03 max=516 | relmse union=7.08e-02 peer_=1.67e-03 max=1.62e-03 unit_=1.62e-03] K=16.9 V=6.84
+19:31:48 layer  8 SWA MoE load=15.6s total=46.6s rms=0.054 hit=256/256 w13[u_hr=5.86e+03 peer_hr=8.1e+03 max=95 | relmse union=2.75e-03 peer_=2.79e-03 max=2.78e-03 unit_=2.70e-03] w2[u_hr=27.2 peer_hr=3.06e+03 max=314 | relmse union=1.15e-01 peer_=4.08e-03 max=4.08e-03 unit_=4.08e-03] K=16 V=3.47
+19:32:28 layer  9 SWA MoE load=12.6s total=37.9s rms=0.071 hit=256/256 w13[u_hr=4.72e+03 peer_hr=8.1e+03 max=38 | relmse union=5.33e-03 peer_=5.26e-03 max=5.35e-03 unit_=5.40e-03] w2[u_hr=62 peer_hr=1.29e+03 max=56 | relmse union=6.92e-03 peer_=6.94e-03 max=6.93e-03 unit_=6.96e-03] K=16.4 V=2.59
+19:33:05 layer 10 SWA MoE load=9.3s total=34.3s rms=0.100 hit=256/256 w13[u_hr=3.06e+03 peer_hr=5.86e+03 max=11.2 | relmse union=8.45e-03 peer_=8.44e-03 max=8.45e-03 unit_=8.44e-03] w2[u_hr=132 peer_hr=671 max=52 | relmse union=6.72e-03 peer_=6.73e-03 max=6.70e-03 unit_=6.83e-03] K=17.6 V=3.72
+19:33:45 layer 11 GA  MoE load=14.0s total=38.3s rms=0.102 hit=256/256 w13[u_hr=3.06e+03 peer_hr=5.86e+03 max=8.62 | relmse union=8.91e-03 peer_=8.90e-03 max=8.90e-03 unit_=8.91e-03] w2[u_hr=253 peer_hr=748 max=47.5 | relmse union=6.76e-03 peer_=6.77e-03 max=6.80e-03 unit_=6.88e-03] K=12.2 V=1.27
+19:34:21 layer 12 SWA MoE load=9.8s total=33.8s rms=0.118 hit=256/256 w13[u_hr=3.41e+03 peer_hr=5.86e+03 max=9.69 | relmse union=8.97e-03 peer_=8.96e-03 max=8.97e-03 unit_=8.98e-03] w2[u_hr=314 peer_hr=834 max=41.8 | relmse union=7.59e-03 peer_=7.58e-03 max=7.59e-03 unit_=7.67e-03] K=21.5 V=3.38
+19:35:01 layer 13 SWA MoE load=13.4s total=38.4s rms=0.136 hit=256/256 w13[u_hr=3.8e+03 peer_hr=5.86e+03 max=9.38 | relmse union=9.00e-03 peer_=8.99e-03 max=9.00e-03 unit_=9.01e-03] w2[u_hr=391 peer_hr=1.04e+03 max=36.5 | relmse union=7.47e-03 peer_=7.48e-03 max=7.48e-03 unit_=7.57e-03] K=16.4 V=2.66
+19:35:39 layer 14 SWA MoE load=11.2s total=36.0s rms=0.154 hit=256/256 w13[u_hr=3.8e+03 peer_hr=5.25e+03 max=10.2 | relmse union=9.02e-03 peer_=9.03e-03 max=9.02e-03 unit_=9.03e-03] w2[u_hr=391 peer_hr=1.15e+03 max=38.2 | relmse union=7.73e-03 peer_=7.73e-03 max=7.74e-03 unit_=7.80e-03] K=19.2 V=2.89
+19:36:18 layer 15 SWA MoE load=11.5s total=36.2s rms=0.166 hit=256/256 w13[u_hr=4.23e+03 peer_hr=5.25e+03 max=12.5 | relmse union=9.02e-03 peer_=9.03e-03 max=9.02e-03 unit_=9.03e-03] w2[u_hr=485 peer_hr=1.04e+03 max=42.2 | relmse union=7.89e-03 peer_=7.88e-03 max=7.89e-03 unit_=7.94e-03] K=18 V=2.56
+19:36:56 layer 16 SWA MoE load=12.7s total=36.2s rms=1.783 hit=256/256 w13[u_hr=4.23e+03 peer_hr=5.25e+03 max=21.9 | relmse union=9.01e-03 peer_=9.01e-03 max=9.01e-03 unit_=9.01e-03] w2[u_hr=540 peer_hr=1.04e+03 max=241 | relmse union=2.15e-03 peer_=2.08e-03 max=2.05e-03 unit_=2.09e-03] K=18.6 V=2.44
+19:37:36 layer 17 GA  MoE load=14.3s total=38.2s rms=1.787 hit=256/256 w13[u_hr=4.72e+03 peer_hr=6.53e+03 max=20 | relmse union=8.93e-03 peer_=8.93e-03 max=8.93e-03 unit_=8.94e-03] w2[u_hr=671 peer_hr=1.43e+03 max=46 | relmse union=7.92e-03 peer_=7.89e-03 max=7.89e-03 unit_=7.92e-03] K=13.1 V=1.9
+19:38:11 layer 18 SWA MoE load=9.1s total=32.7s rms=1.788 hit=256/256 w13[u_hr=4.72e+03 peer_hr=6.53e+03 max=20.1 | relmse union=8.95e-03 peer_=8.95e-03 max=8.95e-03 unit_=8.96e-03] w2[u_hr=748 peer_hr=1.29e+03 max=47.2 | relmse union=7.93e-03 peer_=7.93e-03 max=7.93e-03 unit_=7.95e-03] K=18.9 V=3.25
+19:38:53 layer 19 SWA MoE load=15.5s total=40.2s rms=1.790 hit=256/256 w13[u_hr=5.25e+03 peer_hr=7.27e+03 max=15.2 | relmse union=8.98e-03 peer_=8.97e-03 max=8.96e-03 unit_=8.98e-03] w2[u_hr=929 peer_hr=1.6e+03 max=47.5 | relmse union=7.97e-03 peer_=7.96e-03 max=7.96e-03 unit_=7.97e-03] K=16.4 V=3.38
+19:39:30 layer 20 SWA MoE load=9.9s total=34.2s rms=1.791 hit=256/256 w13[u_hr=5.86e+03 peer_hr=7.27e+03 max=20.9 | relmse union=8.93e-03 peer_=8.93e-03 max=8.94e-03 unit_=8.94e-03] w2[u_hr=1.04e+03 peer_hr=1.6e+03 max=45.2 | relmse union=7.95e-03 peer_=7.96e-03 max=7.97e-03 unit_=7.97e-03] K=18.9 V=3.11
+19:40:10 layer 21 SWA MoE load=13.1s total=38.1s rms=1.791 hit=256/256 w13[u_hr=6.53e+03 peer_hr=8.1e+03 max=20.2 | relmse union=8.94e-03 peer_=8.93e-03 max=8.93e-03 unit_=8.94e-03] w2[u_hr=1.29e+03 peer_hr=1.78e+03 max=48.8 | relmse union=7.98e-03 peer_=7.99e-03 max=7.98e-03 unit_=7.99e-03] K=20.8 V=3.58
+19:40:46 layer 22 SWA MoE load=9.3s total=33.2s rms=1.806 hit=256/256 w13[u_hr=7.27e+03 peer_hr=9.03e+03 max=21.1 | relmse union=8.92e-03 peer_=8.91e-03 max=8.92e-03 unit_=8.92e-03] w2[u_hr=1.6e+03 peer_hr=2.21e+03 max=52.8 | relmse union=7.77e-03 peer_=7.80e-03 max=7.75e-03 unit_=7.79e-03] K=21 V=3.67
+19:41:31 layer 23 GA  MoE load=15.5s total=42.3s rms=1.807 hit=256/256 w13[u_hr=8.1e+03 peer_hr=1.01e+04 max=21.1 | relmse union=8.90e-03 peer_=8.90e-03 max=8.90e-03 unit_=8.90e-03] w2[u_hr=2.21e+03 peer_hr=2.74e+03 max=63 | relmse union=7.98e-03 peer_=7.98e-03 max=7.98e-03 unit_=7.99e-03] K=15.2 V=3.73
+19:42:22 layer 24 SWA MoE load=19.4s total=47.8s rms=1.810 hit=256/256 w13[u_hr=9.03e+03 peer_hr=1.12e+04 max=22 | relmse union=8.91e-03 peer_=8.92e-03 max=8.91e-03 unit_=8.91e-03] w2[u_hr=2.46e+03 peer_hr=3.06e+03 max=63.5 | relmse union=8.03e-03 peer_=8.02e-03 max=8.02e-03 unit_=8.03e-03] K=18.2 V=3.95
+19:43:05 layer 25 SWA MoE load=15.8s total=40.9s rms=1.813 hit=256/256 w13[u_hr=9.03e+03 peer_hr=1.01e+04 max=20.9 | relmse union=8.90e-03 peer_=8.91e-03 max=8.90e-03 unit_=8.91e-03] w2[u_hr=2.46e+03 peer_hr=3.41e+03 max=60 | relmse union=8.05e-03 peer_=8.04e-03 max=8.04e-03 unit_=8.05e-03] K=20 V=3.78
+19:43:47 layer 26 SWA MoE load=11.6s total=39.0s rms=1.819 hit=256/256 w13[u_hr=9.03e+03 peer_hr=1.12e+04 max=21 | relmse union=8.91e-03 peer_=8.91e-03 max=8.91e-03 unit_=8.91e-03] w2[u_hr=2.74e+03 peer_hr=3.8e+03 max=58 | relmse union=8.08e-03 peer_=8.08e-03 max=8.07e-03 unit_=8.08e-03] K=20.2 V=4.03
+19:44:31 layer 27 SWA MoE load=17.7s total=41.1s rms=1.823 hit=256/256 w13[u_hr=1.01e+04 peer_hr=1.12e+04 max=21.5 | relmse union=8.90e-03 peer_=8.90e-03 max=8.89e-03 unit_=8.90e-03] w2[u_hr=2.74e+03 peer_hr=3.8e+03 max=59 | relmse union=8.06e-03 peer_=8.05e-03 max=8.04e-03 unit_=8.06e-03] K=17.2 V=4.53
+19:45:14 layer 28 SWA MoE load=15.1s total=40.4s rms=1.837 hit=255/256 w13[u_hr=1.01e+04 peer_hr=1.12e+04 max=21.1 | relmse union=8.87e-03 peer_=8.88e-03 max=8.88e-03 unit_=8.88e-03] w2[u_hr=2.74e+03 peer_hr=4.23e+03 max=41.5 | relmse union=8.12e-03 peer_=8.11e-03 max=8.11e-03 unit_=8.12e-03] K=17.6 V=4.25
+19:45:59 layer 29 GA  MoE load=16.1s total=42.4s rms=1.838 hit=256/256 w13[u_hr=1.12e+04 peer_hr=1.12e+04 max=23.9 | relmse union=8.90e-03 peer_=8.90e-03 max=8.90e-03 unit_=8.91e-03] w2[u_hr=3.41e+03 peer_hr=4.23e+03 max=79 | relmse union=8.02e-03 peer_=8.01e-03 max=8.03e-03 unit_=8.03e-03] K=15.9 V=9.56
+19:46:39 layer 30 SWA MoE load=10.5s total=36.4s rms=1.842 hit=256/256 w13[u_hr=1.12e+04 peer_hr=1.25e+04 max=24.8 | relmse union=8.91e-03 peer_=8.89e-03 max=8.90e-03 unit_=8.91e-03] w2[u_hr=3.41e+03 peer_hr=4.72e+03 max=80 | relmse union=7.99e-03 peer_=7.99e-03 max=7.98e-03 unit_=8.00e-03] K=21.2 V=5.38
+19:47:21 layer 31 SWA MoE load=15.9s total=40.2s rms=1.854 hit=256/256 w13[u_hr=1.12e+04 peer_hr=1.25e+04 max=24.4 | relmse union=8.91e-03 peer_=8.89e-03 max=8.89e-03 unit_=8.91e-03] w2[u_hr=3.8e+03 peer_hr=5.25e+03 max=110 | relmse union=7.88e-03 peer_=7.88e-03 max=7.87e-03 unit_=7.88e-03] K=19.8 V=5.31
+19:47:59 layer 32 SWA MoE load=11.4s total=33.6s rms=1.866 hit=256/256 w13[u_hr=1.25e+04 peer_hr=1.39e+04 max=25.9 | relmse union=8.90e-03 peer_=8.91e-03 max=8.91e-03 unit_=8.93e-03] w2[u_hr=3.8e+03 peer_hr=5.86e+03 max=99.5 | relmse union=7.91e-03 peer_=7.90e-03 max=7.90e-03 unit_=7.91e-03] K=21 V=5.41
+19:48:34 layer 33 SWA MoE load=16.1s total=32.6s rms=1.883 hit=256/256 w13[u_hr=1.25e+04 peer_hr=1.39e+04 max=27 | relmse union=8.90e-03 peer_=8.90e-03 max=8.90e-03 unit_=8.92e-03] w2[u_hr=4.23e+03 peer_hr=6.53e+03 max=134 | relmse union=7.88e-03 peer_=7.89e-03 max=7.88e-03 unit_=7.89e-03] K=20.2 V=6.72
+19:49:00 layer 34 SWA MoE load=7.6s total=24.2s rms=1.931 hit=256/256 w13[u_hr=1.25e+04 peer_hr=1.39e+04 max=25.5 | relmse union=8.90e-03 peer_=8.90e-03 max=8.90e-03 unit_=8.92e-03] w2[u_hr=4.23e+03 peer_hr=5.86e+03 max=96.5 | relmse union=7.86e-03 peer_=7.85e-03 max=7.87e-03 unit_=7.87e-03] K=19.4 V=5.97
+19:49:26 layer 35 GA  MoE load=7.7s total=23.7s rms=1.947 hit=256/256 w13[u_hr=1.39e+04 peer_hr=1.55e+04 max=29.1 | relmse union=8.88e-03 peer_=8.88e-03 max=8.88e-03 unit_=8.90e-03] w2[u_hr=4.72e+03 peer_hr=9.03e+03 max=158 | relmse union=7.68e-03 peer_=7.69e-03 max=7.69e-03 unit_=7.69e-03] K=20 V=6.69
+19:49:53 layer 36 SWA MoE load=7.9s total=24.4s rms=1.997 hit=256/256 w13[u_hr=1.55e+04 peer_hr=1.73e+04 max=31.9 | relmse union=8.89e-03 peer_=8.89e-03 max=8.88e-03 unit_=8.91e-03] w2[u_hr=5.25e+03 peer_hr=9.03e+03 max=160 | relmse union=7.68e-03 peer_=7.68e-03 max=7.67e-03 unit_=7.69e-03] K=21.6 V=8.62
+19:50:22 layer 37 SWA MoE load=10.4s total=26.9s rms=2.048 hit=256/256 w13[u_hr=1.55e+04 peer_hr=1.73e+04 max=35 | relmse union=8.89e-03 peer_=8.89e-03 max=8.91e-03 unit_=8.90e-03] w2[u_hr=5.25e+03 peer_hr=9.03e+03 max=186 | relmse union=7.56e-03 peer_=7.56e-03 max=7.56e-03 unit_=7.56e-03] K=25.4 V=9.5
+19:50:49 layer 38 SWA MoE load=8.9s total=25.7s rms=2.147 hit=256/256 w13[u_hr=1.73e+04 peer_hr=1.93e+04 max=36.8 | relmse union=8.89e-03 peer_=8.89e-03 max=8.89e-03 unit_=8.89e-03] w2[u_hr=5.86e+03 peer_hr=1.12e+04 max=212 | relmse union=7.35e-03 peer_=7.36e-03 max=7.36e-03 unit_=7.36e-03] K=20.9 V=7.97
+19:51:29 layer 39 SWA MoE load=20.8s total=37.2s rms=2.266 hit=256/256 w13[u_hr=1.93e+04 peer_hr=2.15e+04 max=37.2 | relmse union=8.88e-03 peer_=8.89e-03 max=8.88e-03 unit_=8.88e-03] w2[u_hr=5.86e+03 peer_hr=1.25e+04 max=262 | relmse union=7.25e-03 peer_=7.25e-03 max=7.26e-03 unit_=7.26e-03] K=24.5 V=8.88
+19:51:55 layer 40 SWA MoE load=7.5s total=24.3s rms=2.519 hit=256/256 w13[u_hr=1.93e+04 peer_hr=2.15e+04 max=41.8 | relmse union=8.86e-03 peer_=8.87e-03 max=8.85e-03 unit_=8.86e-03] w2[u_hr=5.86e+03 peer_hr=1.25e+04 max=312 | relmse union=7.07e-03 peer_=7.07e-03 max=7.08e-03 unit_=7.09e-03] K=20.4 V=9.12
+19:52:31 layer 41 GA  MoE load=17.5s total=33.5s rms=1.901 hit=256/256 w13[u_hr=2.15e+04 peer_hr=2.39e+04 max=42.2 | relmse union=8.89e-03 peer_=8.87e-03 max=8.88e-03 unit_=8.88e-03] w2[u_hr=6.53e+03 peer_hr=1.73e+04 max=372 | relmse union=6.69e-03 peer_=6.69e-03 max=6.70e-03 unit_=6.70e-03] K=17.6 V=14.9
+19:52:59 layer 42 SWA MoE load=8.9s total=25.6s rms=2.128 hit=256/256 w13[u_hr=2.39e+04 peer_hr=2.67e+04 max=48.8 | relmse union=8.91e-03 peer_=8.90e-03 max=8.91e-03 unit_=8.93e-03] w2[u_hr=5.25e+03 peer_hr=1.12e+04 max=676 | relmse union=6.28e-03 peer_=6.28e-03 max=6.29e-03 unit_=6.29e-03] K=28.8 V=13.7
+19:53:41 layer 43 SWA MoE load=22.5s total=39.1s rms=2.406 hit=256/256 w13[u_hr=2.67e+04 peer_hr=2.97e+04 max=49 | relmse union=8.91e-03 peer_=8.92e-03 max=8.94e-03 unit_=8.93e-03] w2[u_hr=4.72e+03 peer_hr=1.39e+04 max=384 | relmse union=6.00e-03 peer_=6.00e-03 max=5.99e-03 unit_=6.01e-03] K=33.8 V=26
+19:54:07 layer 44 SWA MoE load=7.8s total=24.5s rms=2.719 hit=256/256 w13[u_hr=2.97e+04 peer_hr=3.31e+04 max=50.5 | relmse union=8.92e-03 peer_=8.90e-03 max=8.92e-03 unit_=8.93e-03] w2[u_hr=4.23e+03 peer_hr=1.25e+04 max=852 | relmse union=5.58e-03 peer_=5.57e-03 max=5.58e-03 unit_=5.59e-03] K=33.8 V=13.6
+19:54:46 layer 45 SWA MoE load=19.5s total=35.8s rms=3.104 hit=256/256 w13[u_hr=2.97e+04 peer_hr=3.31e+04 max=47.5 | relmse union=8.92e-03 peer_=8.90e-03 max=8.93e-03 unit_=8.93e-03] w2[u_hr=4.23e+03 peer_hr=1.55e+04 max=628 | relmse union=5.80e-03 peer_=5.80e-03 max=5.81e-03 unit_=5.80e-03] K=21 V=17.1
+19:55:16 layer 46 SWA MoE load=10.9s total=27.5s rms=4.093 hit=256/256 w13[u_hr=2.97e+04 peer_hr=3.31e+04 max=43.2 | relmse union=8.93e-03 peer_=8.91e-03 max=8.93e-03 unit_=8.94e-03] w2[u_hr=5.25e+03 peer_hr=3.31e+04 max=4.32e+03 | relmse union=5.57e-03 peer_=5.59e-03 max=5.56e-03 unit_=5.57e-03] K=20.6 V=21.1
+19:55:57 layer 47 GA  MoE load=22.8s total=38.4s rms=14.897 hit=256/256 w13[u_hr=2.67e+04 peer_hr=3.31e+04 max=64 | relmse union=8.88e-03 peer_=8.88e-03 max=8.88e-03 unit_=8.90e-03] w2[u_hr=1.73e+04 peer_hr=1.68e+05 max=9.16e+04 | relmse union=3.87e-02 peer_=8.20e-03 max=8.35e-03 unit_=5.04e-01] K=18.9 V=32.8
+19:56:09 end-to-end next-token NLL=1.5317 ppl=4.626 over 261632 tokens
+19:56:11 done wall=1844.5s amax entries=36180
+EXIT=0
