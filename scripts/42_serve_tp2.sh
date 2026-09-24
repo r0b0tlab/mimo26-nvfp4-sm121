@@ -8,6 +8,7 @@
 set -euo pipefail
 C="$HOME/projects/mimo26-nvfp4-sm121"
 TAG="${TAG:?TAG}"; MODEL="${MODEL:?MODEL}"; SPEC="${SPEC:-none}"; KV="${KV:-default}"
+MOE_RUNNER="${MOE_RUNNER:-auto}"
 IMG="${IMG:-r0b0tlab/sglang-mimo26-env:20260922-582389ce}"
 N3IP="192.168.68.78"; N4IP="192.168.68.56"
 mkdir -p "$C/logs/serve"
@@ -36,6 +37,7 @@ esac
 COMMON=(--model-path "$MODEL" --served-model-name mimo26
         --tp-size 2 --ep-size 2 --dist-init-addr "$N3IP:20000"
         --host 0.0.0.0 --port 30000 --mem-fraction-static 0.90
+        --moe-runner-backend "$MOE_RUNNER"
         --trust-remote-code --cuda-graph-max-bs-decode 8 --cuda-graph-max-bs-prefill 8)
 
 rank_args() {  # rank_args <node-rank> <tp-rank> -> prints docker argv on ONE line
