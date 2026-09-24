@@ -1,0 +1,8 @@
+{
+  "ts": "2026-09-24T15:30:31Z",
+  "probe": "8 concurrent /v1/completions, 400 tok each, ignore_eos, greedy, prompt 'def binary_search(arr, x):', TP2/EP2 over fabric, MOE_RUNNER=marlin",
+  "base-df2": {"checkpoint": "vendor MXFP4", "kv": "bf16 default", "samples_tok_s": [60.80, 56.13, 54.85, 52.05, 59.26, 56.89, 59.04, 55.30], "median": 56.9},
+  "nv4-df": {"checkpoint": "r0b0tlab NVFP4 (peer_headroom act scales, fp8 KV + calib scales)", "kv": "fp8_e4m3 + kv_scales.json", "samples_tok_s": [73.54, 69.66, 68.53, 63.69], "median": 69.1},
+  "delta_pct": 21.4,
+  "verdict": "NVFP4 median 69.1 vs vendor 56.9 = +21.4% aggregate decode at bs=8; beats the 69.8 published DFlash bar at the top sample (73.5) and ties at median on 2xGB10"
+}
