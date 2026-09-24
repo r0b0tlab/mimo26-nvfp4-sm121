@@ -1,0 +1,7 @@
+[
+ {
+  "tag": "base-df",
+  "gsm8k_acc": 0.97,
+  "gsm8k_mode": "no_think"
+ }
+]

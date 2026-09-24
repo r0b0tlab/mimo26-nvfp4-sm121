@@ -1,0 +1,19 @@
+[
+ {
+  "tag": "nv4-df",
+  "nll": 1.3386662911240153
+ },
+ {
+  "tag": "nv4-df",
+  "gsm8k_acc": 0.35
+ },
+ {
+  "tag": "nv4-df",
+  "gsm8k_acc": 0.36
+ },
+ {
+  "tag": "nv4-df",
+  "gsm8k_acc": 0.965,
+  "gsm8k_mode": "no_think"
+ }
+]
