@@ -1,0 +1,9 @@
+{
+  "tag": "base-df",
+  "ts": "2026-09-24T14:30:52Z",
+  "lane": {"MODEL": "SRC vendor mxfp4", "SPEC": "dflash block=2", "KV": "default", "MOE_RUNNER": "marlin", "mem_fraction": 0.90},
+  "steady_decode_tok_s": [17.86, 18.33, 17.31, 17.51, 18.52, 17.11, 16.98, 18.04],
+  "steady_decode_median": 17.6,
+  "chat_smoke": "coherent python (LRU impl), 600 tok in 39.0s wall incl prefill",
+  "notes": "dflash verify graph captured (2 tok/req); accept-length not logged by this build; bar 69.8 tok/s (c1 code) not yet reproduced with block=2 - suspect bar used larger block or bs>1 decode"
+}
