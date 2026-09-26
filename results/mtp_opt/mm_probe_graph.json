@@ -1,0 +1,41 @@
+{
+  "image": {
+    "text": "The word is green, the circle is red, and the square is blue.",
+    "usage": {
+      "prompt_tokens": 253,
+      "total_tokens": 270,
+      "completion_tokens": 17,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "image_tokens": 220
+      },
+      "reasoning_tokens": 0
+    }
+  },
+  "audio": {
+    "text": "The access code is blue heron forty two.",
+    "usage": {
+      "prompt_tokens": 39,
+      "total_tokens": 50,
+      "completion_tokens": 11,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "audio_tokens": 21
+      },
+      "reasoning_tokens": 0
+    }
+  },
+  "video": {
+    "text": "The circle at the end is blue, and the word on screen is \"RIGHT\".",
+    "usage": {
+      "prompt_tokens": 301,
+      "total_tokens": 319,
+      "completion_tokens": 18,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "video_tokens": 240
+      },
+      "reasoning_tokens": 0
+    }
+  }
+}
