@@ -15,14 +15,14 @@ and beat the vendor MXFP4 checkpoint on both quality parity and throughput.
 | Base model | XiaomiMiMo/MiMo-V2.6-Flash-RL @ `5711b268` (MIT), 90 files / 177.8 GB |
 | Quantization | NVIDIA ModelOpt main @ `7159c01d` (venv `modelopt-main`, node gn100-2eea) |
 | Serving engine | SGLang nightly-dev-cu13 `20260922-582389ce` (0.0.0.dev1+g582389cec, torch 2.13.0+cu130, flashinfer 0.6.18) |
-| Runtime image | `docker.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce` = base + `torchcodec` (env-only, zero source patches) |
-| Hardware | 2× NVIDIA DGX Spark GB10 (gn100-2eea 192.168.68.78 rank0, spark-4af5 192.168.68.56 rank1), RoCE fabric 192.168.100.3/.4 |
+| Runtime image | `ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-marlin-skip` @ `sha256:42737e9dfd3731072c8fd3d65d479ba03381e0e0cb5e171cbab632a8bddeb507`. Parent `20260922-582389ce` is torchcodec only. |
+| Hardware | 2× NVIDIA DGX Spark GB10, TP=2, RoCE |
 | Upstream refs | mo-main `7159c01d9d909ca2431db6332363f07b2137ac09`, sglang-main `8ab21c8a942b014b2c8b56223f83de1ba75b1f8f` |
 
 ## Artifacts
 
 1. **Model**: `r0b0tlab/MiMo-V2.6-Flash-RL-NVFP4` (HF) — 66-file checkpoint + hf_quant_config + kv_scales.json + model card. 175 GB.
-2. **Runtime container**: `docker.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce` — arm64, 33.1 GB.
+2. **Runtime container**: `ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-marlin-skip` — arm64. Digest `sha256:42737e9dfd3731072c8fd3d65d479ba03381e0e0cb5e171cbab632a8bddeb507`. Still private.
 3. **Code + evidence**: `github.com/r0b0tlab/mimo26-nvfp4-sm121` — all scripts, eval JSON, logs.
 
 ## Result summary

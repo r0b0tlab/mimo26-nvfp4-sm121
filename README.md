@@ -6,7 +6,7 @@ NVFP4 weight quantization of [XiaomiMiMo/MiMo-V2.6-Flash-RL](https://huggingface
 
 - Full evidence ledger: [LEDGER.md](LEDGER.md)
 - Quantized model: https://huggingface.co/r0b0tlab/MiMo-V2.6-Flash-RL-NVFP4
-- Runtime container: `ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce` (arm64; base sglang nightly + torchcodec, zero source patches)
+- Runtime container: `ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-marlin-skip` (digest `sha256:42737e9dfd3731072c8fd3d65d479ba03381e0e0cb5e171cbab632a8bddeb507`). Parent tag `20260922-582389ce` is torchcodec only.
 
 ## Repo map
 
@@ -24,9 +24,9 @@ NVFP4 weight quantization of [XiaomiMiMo/MiMo-V2.6-Flash-RL](https://huggingface
 
 ```bash
 export TAG=nv4-df MODEL=~/models/r0b0tlab/MiMo-V2.6-Flash-RL-NVFP4 SPEC=dflash KV=fp8scales MOE_RUNNER=marlin
-docker pull ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce
+docker pull ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-marlin-skip
 bash scripts/40_preflight_env.sh && bash scripts/42_serve_tp2.sh
-curl -s http://192.168.68.78:30000/v1/chat/completions -H 'Content-Type: application/json' \
+curl -s http://127.0.0.1:30000/v1/chat/completions -H 'Content-Type: application/json' \
   -d '{"model":"mimo26","messages":[{"role":"user","content":"hello"}]}'
 ```
 

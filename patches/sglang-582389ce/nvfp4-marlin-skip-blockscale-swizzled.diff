@@ -1,0 +1,27 @@
+--- a/python/sglang/srt/layers/quantization/modelopt_quant.py
++++ b/python/sglang/srt/layers/quantization/modelopt_quant.py
+@@ -2441,10 +2441,15 @@
+ 
+         # TRTLLM replaces blockscale_swizzled with an alias to weight_scale
+         # during process_weights_after_loading, so skip the expensive
+-        # swizzle+allocate here to avoid GPU memory fragmentation
++        # swizzle+allocate here to avoid GPU memory fragmentation.
++        # Marlin (W4A16 fallback) never reads *_blockscale_swizzled either: it
++        # repacks w13/w2_weight_scale in prepare_moe_nvfp4_layer_for_marlin.
++        # Allocating them anyway costs 1/16 byte per expert weight element
++        # (~9 GiB/rank on a 309B-A15B MoE at EP2) that the KV pool never gets.
+         if (
+             self.enable_flashinfer_trtllm_moe
+             or get_moe_runner_backend().is_flashinfer_megamoe()
++            or get_moe_runner_backend().is_marlin()
+         ):
+             layer.w13_blockscale_swizzled = None
+         else:
+@@ -2468,6 +2473,7 @@
+         if (
+             self.enable_flashinfer_trtllm_moe
+             or get_moe_runner_backend().is_flashinfer_megamoe()
++            or get_moe_runner_backend().is_marlin()
+         ):
+             layer.w2_blockscale_swizzled = None
+         else:

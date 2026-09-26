@@ -59,9 +59,9 @@ GSM8K harness: chat endpoint, `enable_thinking: false`, temperature 0, 512 max t
 1. **Calibration**: 512×512 rows from internal corpus (NLL 1.5317 post-cal). Per-layer activation-scale policy `peer_headroom` selected by runtime-style QDQ scoring (`nvfp4_act_relmse`); gate: chosen ≤1.10× best candidate per layer (worst observed 1.056).
 2. **Conversion**: MXFP4 routed experts → NVFP4 (E2M1/block-16, FP8 block scales), adapted from ModelOpt DeepSeek example APIs. Output verified bit-exact where expected: 0 non-exact blocks among 9.46B/9.46B compared.
 3. **KV scales**: per-layer min/max calibration → `kv_cache.scaling_factor[tp_rank][layer_idx]`; both ranks identical by construction.
-4. **Serving**: SGLang nightly `582389ce` + `torchcodec`, `--tp-size 2 --ep-size 2 --moe-runner-backend marlin --mem-fraction-static 0.90`, DFlash block 8. The measured FINAL3-500k profile also sets `--context-length 524288`, `--tool-call-parser mimo`, SWA ratio 0.02, and skips Marlin on the swizzled blockscale tensors (`patches/sglang-582389ce/nvfp4-marlin-skip-blockscale-swizzled.diff`).
+4. **Serving**: SGLang nightly `582389ce` + `torchcodec`, `--tp-size 2 --ep-size 2 --moe-runner-backend marlin --mem-fraction-static 0.90`, DFlash block 8. The measured FINAL3-500k profile also sets `--context-length 524288`, `--tool-call-parser mimo`, and SWA ratio 0.02. It skips allocating unused NVFP4 `*_blockscale_swizzled` tensors on the Marlin path.
 
-Runtime container: `docker.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce` (base `lmsysorg/sglang:nightly-dev-cu130-20260922-582389ce` + `torchcodec`; arm64).
+Runtime container that matches that serve: `ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-marlin-skip` (digest `sha256:42737e9dfd3731072c8fd3d65d479ba03381e0e0cb5e171cbab632a8bddeb507`). It is the 2026-09-24 env image plus that one-file skip. The parent tag `20260922-582389ce` is torchcodec only and does not contain the skip. The package is still private. It is not on Docker Hub.
 
 Campaign scripts, evidence, and logs: https://github.com/r0b0tlab/mimo26-nvfp4-sm121
 
