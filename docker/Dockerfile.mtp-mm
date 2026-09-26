@@ -1,0 +1,4 @@
+FROM r0b0tlab/sglang-mimo26-env:20260922-582389ce-marlin-skip
+COPY patches/sglang-582389ce/mimo_v2.py /sgl-workspace/sglang/python/sglang/srt/models/mimo_v2.py
+COPY patches/sglang-582389ce/mimo_v2_nextn.py /sgl-workspace/sglang/python/sglang/srt/models/mimo_v2_nextn.py
+COPY patches/sglang-582389ce/triton_backend.py /sgl-workspace/sglang/python/sglang/srt/layers/attention/triton_backend.py
