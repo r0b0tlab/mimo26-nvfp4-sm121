@@ -89,11 +89,34 @@ Disclosures:
 - The package lane summary had pointed all three AST categories at the parallel_multiple file and reported micro 0.195. The numbers above are the official score-file headers from the same run.
 - Q200v2 text-180 was kept from the earlier FINAL3 serve, not remeasured here. Auto-graded 151/160 (GSM8K 78/80, HumanEval 38/40, IFEval 35/40). The 20 hard_reasoning rows were answered and left ungraded. Not a core-subset quality claim.
 
+## Systems, MTP-500k-mm, 2026-09-27
+
+Think-off. Advertised context 524288. EAGLE, 3 steps, 4 draft tokens, top-k 1, draft window 4096, `--mem-fraction-static 0.90`. Multimodal pins: mimo reasoning parser, mimo tool parser, Triton vision attention, torchvision. Draft-extend CUDA graphs on. One full systems profile. Not a core-subset quality claim.
+
+| Lane | Result |
+|---|---|
+| Canary | 5/5 |
+| BFCL-MT | 117/200 (0.585) |
+| BFCL-AST multiple | 70/200 |
+| BFCL-AST parallel | 103/200 |
+| BFCL-AST parallel_multiple | 42/200 |
+| BFCL-AST micro | 215/600 (0.358) |
+| Latency, mean | TTFT 276.5 ms, ITL 139.6 ms, end-to-end 4.12 s |
+| Concurrency, aggregate tok/s | 26.7 / 43.5 / 66.6 / 93.2 at 1, 2, 4, 6 |
+| Throughput | decode median 17.31 tok/s; prefill median 17,941 tok/s at 22,771 prompt tokens |
+| NIAH | 3/3 exact at 131008, 262016, and 471628 |
+
+A separate 1024-token harness on the same boot, not the systems c1 number above, measured decode 24.1 / 23.6 / 15.6 tok/s on short code, medium code, and prose.
+
+The measured process used the parent image with the loader and draft-extend window-index files bind-mounted. Tag `ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-mtp-mm` (`sha256:84857252a1a9b4196702154ae38eb3cfafdf4cd832795eba18ac2772f8a83f1e`) copies those same three files and was not the process that served this suite. The tag is still private. Q200 was not remeasured on this serve.
+
+Ledger: https://github.com/r0b0tlab/r0b0bench/blob/b35bb28ca058e74eca5642a732c0d791481a7f36/results/entries/mimo26-nvfp4-mtp-500k-mm-systems-20260927.json
+
 ## Known limits
 
 - NVFP4 **KV cache** is not supported by SGLang `582389ce` for this model's hybrid-SWA pool (`torch.zeros(Float4_e2m1fn_x2)` → NotImplemented); FP8 KV + calibrated scales ships instead. Evidence in the campaign repo (`results/nvfp4_kv_verdict.md`).
 - `moe_runner=auto` selects triton on this build, which cannot consume MiMo's packed MXFP4 experts; `marlin` is required (and is the native SM121 path).
-- The published FINAL3-500k serve advertises `max_model_len` 524288, not the base model's 1,048,576. NIAH above is at 25/50/90 of that advertised length.
+- The published FINAL3-500k and MTP-500k-mm serves both advertise `max_model_len` 524288, not the base model's 1,048,576. NIAH above is at 25/50/90 of that advertised length.
 
 ## License
 

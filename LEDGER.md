@@ -15,14 +15,14 @@ and beat the vendor MXFP4 checkpoint on both quality parity and throughput.
 | Base model | XiaomiMiMo/MiMo-V2.6-Flash-RL @ `5711b268` (MIT), 90 files / 177.8 GB |
 | Quantization | NVIDIA ModelOpt main @ `7159c01d` (venv `modelopt-main`, node gn100-2eea) |
 | Serving engine | SGLang nightly-dev-cu13 `20260922-582389ce` (0.0.0.dev1+g582389cec, torch 2.13.0+cu130, flashinfer 0.6.18) |
-| Runtime image | `ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-marlin-skip` @ `sha256:42737e9dfd3731072c8fd3d65d479ba03381e0e0cb5e171cbab632a8bddeb507`. Parent `20260922-582389ce` is torchcodec only. |
+| Runtime image | MTP tag `ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-mtp-mm` @ `sha256:84857252a1a9b4196702154ae38eb3cfafdf4cd832795eba18ac2772f8a83f1e`, still private. Parent of that tag is `20260922-582389ce-marlin-skip` @ `sha256:42737e9dfd3731072c8fd3d65d479ba03381e0e0cb5e171cbab632a8bddeb507`. The MTP systems suite ran on the parent plus bind-mounted loader and window-index files, not inside the baked tag. |
 | Hardware | 2× NVIDIA DGX Spark GB10, TP=2, RoCE |
 | Upstream refs | mo-main `7159c01d9d909ca2431db6332363f07b2137ac09`, sglang-main `8ab21c8a942b014b2c8b56223f83de1ba75b1f8f` |
 
 ## Artifacts
 
 1. **Model**: `r0b0tlab/MiMo-V2.6-Flash-RL-NVFP4` (HF) — 66-file checkpoint + hf_quant_config + kv_scales.json + model card. 175 GB.
-2. **Runtime container**: `ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-marlin-skip` — arm64. Digest `sha256:42737e9dfd3731072c8fd3d65d479ba03381e0e0cb5e171cbab632a8bddeb507`. Still private.
+2. **Runtime container**: `ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-marlin-skip` — arm64. Digest `sha256:42737e9dfd3731072c8fd3d65d479ba03381e0e0cb5e171cbab632a8bddeb507`. Still private. The MTP tag is `20260922-582389ce-mtp-mm` @ `sha256:84857252a1a9b4196702154ae38eb3cfafdf4cd832795eba18ac2772f8a83f1e`, also private. The MTP systems suite was measured on the parent plus bind mounts, not inside that tag.
 3. **Code + evidence**: `github.com/r0b0tlab/mimo26-nvfp4-sm121` — all scripts, eval JSON, logs.
 
 ## Result summary
@@ -101,6 +101,4 @@ NVFP4 lane (suspects: marlin repack buffers, DFlash verify graphs). **Open item*
 ## Open items
 
 1. NVFP4-lane pre-KV memory overhead (13.7 GB) — root-cause and reclaim before long-context cert.
-2. Long-context NIAH (300K target, then 512K) on nv4-df.
-3. Vision `image_url` smoke on the published image.
-4. Container visibility: pushed private; owner flips to public.
+2. Container visibility: the MTP tag and the marlin-skip parent are pushed private. The owner flips visibility. Do not treat a 401 anonymous pull as a failed push.

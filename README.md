@@ -30,7 +30,9 @@ curl -s http://127.0.0.1:30000/v1/chat/completions -H 'Content-Type: application
   -d '{"model":"mimo26","messages":[{"role":"user","content":"hello"}]}'
 ```
 
-Flags: `SPEC=eagle` is hard-rejected (DFlash is the only speculative lane). `KV=fp8scales` loads `kv_scales.json`.
+Flags: the measured systems lane for this card is EAGLE MTP, 3 steps and 4 draft tokens. The earlier DFlash block-8 row is a different serve. `KV=fp8scales` loads `kv_scales.json`.
+
+Systems row, think-off, advertised context 524288: https://github.com/r0b0tlab/r0b0bench/blob/b35bb28ca058e74eca5642a732c0d791481a7f36/results/entries/mimo26-nvfp4-mtp-500k-mm-systems-20260927.json
 
 ## License
 
