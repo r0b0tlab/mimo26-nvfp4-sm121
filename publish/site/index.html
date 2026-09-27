@@ -304,6 +304,7 @@ footer {
       <a href="#engine">Engine</a>
       <a href="#compare">Parity</a>
       <a href="#systems">Systems</a>
+      <a href="#media">Media</a>
       <a href="#quality">Quality</a>
       <a href="#niah">Retrieval</a>
     </nav>
@@ -601,6 +602,41 @@ footer {
           </tbody>
         </table>
       </div>
+    </div>
+  </section>
+
+  <section id="media">
+    <div class="wrap">
+      <h2>Multimodal probes</h2>
+      <p class="section-lead">Functional probes on the graph-on MTP boot, think-off. Not a benchmark score. The vision tower is still BF16. Encoders ran: the requests carried modality tokens that a text-only prompt does not.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Probe</th><th>Result</th><th>Tokens</th><th>What was checked</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Probe">Image</td>
+              <td data-label="Result" class="num">colors matched</td>
+              <td data-label="Tokens">220 image</td>
+              <td class="prose" data-label="What was checked">640 by 360 white canvas: green word SEVEN, red circle on the left, blue square on the right. Answer: the word is green, the circle is red, and the square is blue. It did not name SEVEN. 253 prompt tokens, 17 completion tokens.</td>
+            </tr>
+            <tr>
+              <td data-label="Probe">Audio</td>
+              <td data-label="Result" class="num">line matched</td>
+              <td data-label="Tokens">21 audio</td>
+              <td class="prose" data-label="What was checked">3.26 second clip. Spoken line: The access code is blue heron forty two. The answer repeated that line. 39 prompt tokens, 11 completion tokens.</td>
+            </tr>
+            <tr>
+              <td data-label="Probe">Video</td>
+              <td data-label="Result" class="num">ending matched</td>
+              <td data-label="Tokens">240 video</td>
+              <td class="prose" data-label="What was checked">2.25 seconds, 12 frames. A circle moves right and changes from red to blue. The on-screen word changes from LEFT to RIGHT. Answer: the circle at the end is blue, and the word on screen is RIGHT. 301 prompt tokens, 18 completion tokens.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="method"><strong>Method.</strong> Same MTP process as the systems run. Triton vision attention, torchvision, multimodal enabled, reasoning tokens 0. Controlled media, not a scored suite.</p>
     </div>
   </section>
 
