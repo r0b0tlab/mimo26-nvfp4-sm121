@@ -98,6 +98,24 @@ NVFP4 lane (suspects: marlin repack buffers, DFlash verify graphs). **Open item*
 - Quantization implemented from NVIDIA ModelOpt + SGLang public APIs (cited by SHA + file/line).
 - No third-party quantization code, configs, or patches used (MiaAI-Lab explicitly not referenced).
 
+## Q200v2 on the pre-cut FINAL3 serve
+
+Not the MTP systems row, and not a core-subset quality claim. Think-off, workers 1, max tokens 8192. 180/180 stopped. Longest completion 5844.
+
+| Family | Score |
+|---|---|
+| GSM8K | 78/80 |
+| HumanEval | 38/40 |
+| IFEval | 35/40 |
+| hard reasoning | 17/20 |
+| Total | 168/180 |
+
+The three hard-reasoning failures are hard-04 (answered 19208/715; the 4x4 Hilbert determinant is 1/6048000), hard-12 (claimed the cycle statement is true; an infinite 2-regular graph is a counterexample), and hard-16 (did not give the uniform-lift height 1/(2π)).
+
+The serial quality run produced 51,977 completion tokens in 2,254.2 seconds, 23.06 client tok/s including prefill. A separate 1024-token harness on that same boot, truncated at the token cap, measured concurrency-1 aggregate 27.25 and 26.02 tok/s and concurrency-2 aggregate 32.39 and 34.08 tok/s. That harness is not the quality-run rate.
+
+Memory on that boot: weights 84.436 GB, KV cache 6.575 GB, startup available 9.166 GB, full-token pool 1,044,581, SWA pool 20,891. Graph reservations were target-verify 1.495 GB and draft-decode 0.134 GB. Prefill, decode, and draft-extend graphs were 0. KV is the calibrated FP8 pool. Host available at admission was 4.84 GiB and 8.71 GiB, above a 4 GiB floor.
+
 ## Open items
 
 1. NVFP4-lane pre-KV memory overhead (13.7 GB) — root-cause and reclaim before long-context cert.

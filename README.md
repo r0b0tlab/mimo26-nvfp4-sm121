@@ -34,6 +34,8 @@ Flags: the measured systems lane for this card is EAGLE MTP, 3 steps and 4 draft
 
 Systems row, think-off, advertised context 524288: https://github.com/r0b0tlab/r0b0bench/blob/b35bb28ca058e74eca5642a732c0d791481a7f36/results/entries/mimo26-nvfp4-mtp-500k-mm-systems-20260927.json
 
+Q200v2 on the earlier FINAL3 serve, not that systems row: 168/180. GSM8K 78/80, HumanEval 38/40, IFEval 35/40, hard reasoning 17/20. Serial client rate 23.06 tok/s. Full-token pool 1,044,581. Details are on the model card.
+
 ## License
 
 Base model MIT (© XiaomiMiMo). Quantization scripts and this repo MIT (© r0b0tlab).

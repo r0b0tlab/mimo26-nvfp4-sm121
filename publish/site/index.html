@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MiMo-V2.6-Flash-RL NVFP4 — r0b0tlab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@360;440;520&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@560;680&display=swap" rel="stylesheet">
+<style>
+:root {
+  --canvas: #050510;
+  --surface: #0a0a1a;
+  --surface-2: #0f0f24;
+  --border: #1a1a35;
+  --green: #00ff88;
+  --magenta: #ff00e5;
+  --cyan: #00e5ff;
+  --amber: #ffb800;
+  --ink: #f0f0f5;
+  --muted: #7a7a9a;
+  --dim: #4a4a6a;
+  --pad: clamp(18px, 3vw, 40px);
+  --measure: 72rem;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 360;
+  font-size: 16.5px;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+a { color: var(--cyan); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--ink); }
+.wrap { width: min(var(--measure), calc(100% - 2 * var(--pad))); margin: 0 auto; }
+.nav {
+  position: sticky; top: 0; z-index: 4;
+  background: rgba(5, 5, 16, 0.92);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: none;
+}
+.nav-inner {
+  width: min(var(--measure), calc(100% - 2 * var(--pad)));
+  margin: 0 auto;
+  min-height: 56px;
+  display: flex; align-items: center; gap: 22px;
+}
+.mark {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 680;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  text-decoration: none;
+  flex: 0 0 auto;
+}
+.mark span { color: var(--green); }
+.nav-links {
+  display: flex; gap: 4px; flex-wrap: wrap;
+  margin-left: auto; justify-content: flex-end;
+}
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  padding: 14px 10px;
+  min-height: 44px;
+  display: inline-flex; align-items: center;
+  white-space: nowrap;
+}
+.nav-links a:hover, .nav-links a:focus-visible { color: var(--ink); }
+.hero {
+  position: relative;
+  padding: 72px 0 28px;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute; inset: -20% auto auto -10%;
+  width: 46rem; height: 28rem;
+  background: radial-gradient(closest-side, rgba(0, 255, 136, 0.08), transparent 70%);
+  pointer-events: none;
+}
+.kicker {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin: 0 0 14px;
+}
+h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 680;
+  letter-spacing: -0.045em;
+  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  line-height: 0.96;
+  margin: 0 0 18px;
+  max-width: 16ch;
+}
+.lede { max-width: 46rem; color: var(--muted); margin: 0 0 28px; font-size: 1.05rem; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 18px;
+  align-items: stretch;
+}
+.hero-grid > .panel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.hero-grid .method { margin-top: auto; }
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--green);
+  padding: 22px 22px 18px;
+}
+.panel.magenta { border-top-color: var(--magenta); }
+.panel.cyan { border-top-color: var(--cyan); }
+.panel.amber { border-top-color: var(--amber); }
+.label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+.big {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 560;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--green);
+  margin: 0;
+}
+.big .unit { color: var(--muted); font-size: 0.42em; letter-spacing: 0; margin-left: 6px; }
+.vs { color: var(--dim); font-size: 0.9rem; margin: 10px 0 0; font-family: "JetBrains Mono", monospace; }
+.method {
+  margin: 14px 0 0;
+  color: var(--dim);
+  font-size: 12.5px;
+  line-height: 1.45;
+  max-width: 68ch;
+}
+.method strong { color: var(--muted); font-weight: 520; }
+section { padding: 42px 0 8px; }
+h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 680;
+  letter-spacing: -0.03em;
+  font-size: clamp(1.6rem, 3vw, 2.15rem);
+  margin: 0 0 8px;
+}
+.section-lead { color: var(--muted); max-width: 62ch; margin: 0 0 22px; }
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 680;
+  margin: 0 0 10px;
+}
+ul.clean { margin: 0; padding: 0; list-style: none; }
+ul.clean li {
+  padding: 9px 0;
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 9.5rem 1fr;
+  gap: 12px;
+  align-items: baseline;
+}
+ul.clean li span:first-child {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: var(--cyan);
+}
+code, .mono { font-family: "JetBrains Mono", monospace; font-size: 0.92em; }
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); background: var(--surface); }
+table { width: 100%; border-collapse: collapse; min-width: 640px; }
+th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid rgba(26, 26, 53, 0.8); vertical-align: top; }
+th {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+}
+td { font-family: "JetBrains Mono", monospace; font-size: 13px; }
+td.prose { font-family: Inter, sans-serif; font-size: 14.5px; color: var(--ink); }
+tr:last-child td { border-bottom: 0; }
+tbody tr:hover { background: rgba(255, 255, 255, 0.02); }
+.num { color: var(--green); }
+.stack { display: grid; gap: 14px; }
+.metric-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.metric {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--cyan);
+  padding: 16px 14px 14px;
+  min-width: 0;
+}
+.metric .v {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.55rem;
+  color: var(--cyan);
+  letter-spacing: -0.03em;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.metric.speed { border-top-color: var(--green); }
+.metric.speed .v { color: var(--green); }
+.metric.spec { border-top-color: var(--magenta); }
+.metric.spec .v { color: var(--magenta); }
+.metric.limit { border-top-color: var(--amber); }
+.metric.limit .v { color: var(--amber); }
+.digest {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12.5px;
+  color: var(--cyan);
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+footer {
+  margin-top: 56px;
+  border-top: 1px solid var(--border);
+  padding: 22px 0 72px;
+  color: var(--dim);
+  font-size: 13px;
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+}
+.watermark {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: var(--ink);
+  opacity: 0.6;
+}
+@media (max-width: 900px) {
+  .hero-grid, .split, .metric-row { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 680px) {
+  .hero { padding-top: 36px; }
+  .hero-grid, .split, .metric-row { grid-template-columns: 1fr; }
+  ul.clean li { grid-template-columns: 1fr; gap: 2px; }
+  table { min-width: 0; }
+  thead { display: none; }
+  table, tbody, tr, td { display: block; width: 100%; }
+  tr { border-bottom: 1px solid var(--border); padding: 8px 0; }
+  td { border: 0; padding: 4px 14px; }
+  td::before {
+    content: attr(data-label);
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="mark" href="#top">r0b0t<span>lab</span></a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#quant">Quantization</a>
+      <a href="#engine">Engine</a>
+      <a href="#compare">Parity</a>
+      <a href="#systems">Systems</a>
+      <a href="#quality">Quality</a>
+      <a href="#niah">Retrieval</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <header class="hero">
+    <div class="wrap">
+      <p class="kicker">SM121 · 2× GB10 · TP=2 · DFlash</p>
+      <h1>MiMo-V2.6 Flash RL, NVFP4.</h1>
+      <p class="lede">Independent NVFP4 conversion of XiaomiMiMo/MiMo-V2.6-Flash-RL, served on SGLang with a one-file Marlin skip, then measured with the same harness on both the vendor MXFP4 control and this checkpoint.</p>
+      <div class="hero-grid">
+        <article class="panel">
+          <p class="label">Decode, 8-wide, median</p>
+          <p class="big">69.1<span class="unit">tok/s</span></p>
+          <p class="vs">vendor MXFP4 median 56.9 tok/s · +21%</p>
+          <p class="method"><strong>Method.</strong> Eight concurrent 600-token probes, steady-state decode, identical prompt sets, both lanes freshly booted. Same flags: TP=2, EP=2, Marlin, mem-fraction 0.90, CUDA-graph max batch 8, DFlash. Ours 63.7–73.5, median 69.1. Vendor 52.0–60.8, median 56.9. Aggregate throughput, not single-stream decode.</p>
+        </article>
+        <article class="panel cyan">
+          <p class="label">NLL, 32,768 tokens</p>
+          <p class="big" style="color:var(--cyan)">0.0027<span class="unit">Δ</span></p>
+          <p class="vs">1.3387 vs vendor 1.3360 · gate 0.05</p>
+          <p class="method"><strong>Method.</strong> Teacher-forced negative log likelihood on calibration rows. Completions endpoint, echo on, one logprob, null BOS logprob dropped, mean over the token logprobs. 32,768 tokens. Lower is closer to the data. The gate is an absolute delta under 0.05.</p>
+        </article>
+      </div>
+    </div>
+  </header>
+
+  <section id="quant">
+    <div class="wrap">
+      <h2>Quantization</h2>
+      <p class="section-lead">Weights converted from the vendor MXFP4 checkpoint with NVIDIA ModelOpt public APIs. No third-party quantization code or configs.</p>
+      <div class="split">
+        <article class="panel cyan">
+          <h3>What was quantized</h3>
+          <ul class="clean">
+            <li><span>Base</span><span>XiaomiMiMo/MiMo-V2.6-Flash-RL @ 5711b268, MIT. 90 files, 177.8 GB.</span></li>
+            <li><span>Tool</span><span>ModelOpt main @ 7159c01d. Full SHA 7159c01d9d909ca2431db6332363f07b2137ac09.</span></li>
+            <li><span>Experts</span><span>Routed MoE experts converted MXFP4 to NVFP4, E2M1, block size 16, FP8 block scales.</span></li>
+            <li><span>Linears</span><span>Attention and dense linears NVFP4 where a per-tensor FP8 scale helped, BF16 otherwise.</span></li>
+            <li><span>Activations</span><span>Per-tensor scales. Policy peer_headroom, chosen by runtime-style QDQ scoring (nvfp4_act_relmse).</span></li>
+            <li><span>KV</span><span>FP8 e4m3 with calibrated per-layer scales. Both TP ranks carry the same scale vector.</span></li>
+            <li><span>Left BF16</span><span>555 auxiliary tensors: audio tokenizer, vision tower, nextn. Draft DFlash weights unchanged.</span></li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h3>How the scales were chosen</h3>
+          <ul class="clean">
+            <li><span>Calibration</span><span>512 by 512 rows from an internal corpus. Post-calibration NLL 1.5317.</span></li>
+            <li><span>Gate</span><span>Each layer’s chosen scale must be at most 1.10× the best candidate on that layer. Worst observed ratio 1.056.</span></li>
+            <li><span>Export</span><span>MXFP4 routed experts rewritten to NVFP4. 0 non-exact blocks among 9.46 billion compared. Input scales live in their own shard so the activation policy can be rewritten without touching the 175 GB weight tree.</span></li>
+            <li><span>Integrity</span><span>24 shards, 36,096 quantized linears, 0 mismatches. Fabric mirror of 66 files, hashes matched.</span></li>
+            <li><span>Published</span><span>r0b0tlab/MiMo-V2.6-Flash-RL-NVFP4. Checkpoint, hf_quant_config.json, kv_scales.json, model card.</span></li>
+          </ul>
+          <p class="method"><strong>Method.</strong> QDQ scoring compares candidate activation scales on the runtime quantize-dequantize path, not on a proxy MSE of the weights alone. The conversion check is a block-level exactness count against the expected NVFP4 packing, then a separate shard walk that hashes every quantized linear.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="engine">
+    <div class="wrap">
+      <h2>Engine</h2>
+      <p class="section-lead">SGLang nightly 20260922-582389ce on two GB10 nodes. The published image is that nightly, plus torchcodec, plus one Marlin skip.</p>
+      <div class="stack">
+        <article class="panel magenta">
+          <p class="label">Image</p>
+          <p class="digest">ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-marlin-skip</p>
+          <p class="digest" style="margin-top:8px;color:var(--muted)">sha256:42737e9dfd3731072c8fd3d65d479ba03381e0e0cb5e171cbab632a8bddeb507</p>
+          <p class="method"><strong>Build.</strong> Parent tag 20260922-582389ce is the nightly plus torchcodec, so the MiMo-V2 processor registers at import. The marlin-skip tag copies one file, modelopt_quant.py, sha256 d844dd402430ad97142ccf11ef4070cffef7285993955724663f70911069594e. Engine pin: SGLang 0.0.0.dev1+g582389cec, torch 2.13.0+cu130, flashinfer 0.6.18. Upstream SGLang commit recorded as 8ab21c8a942b014b2c8b56223f83de1ba75b1f8f.</p>
+        </article>
+        <div class="split">
+          <article class="panel cyan">
+            <h3>SM121 patch</h3>
+            <p class="method" style="margin-top:0"><strong>What it changes.</strong> On the NVFP4 MoE path, SGLang allocates <span class="mono">w13_blockscale_swizzled</span> and <span class="mono">w2_blockscale_swizzled</span> even when the runner is Marlin. Marlin never reads them. It repacks <span class="mono">w13_weight_scale</span> and <span class="mono">w2_weight_scale</span> in <span class="mono">prepare_moe_nvfp4_layer_for_marlin</span>. The patch adds <span class="mono">is_marlin()</span> to the same skip already used for TRT-LLM and MegaMoE, and sets those two tensors to null.</p>
+            <p class="method"><strong>Why it is the SM121 path.</strong> Packed MiMo experts are served with <span class="mono">--moe-runner-backend marlin</span>. Skipping the unused swizzle frees about 9 GiB per rank (1/16 byte per expert weight element at EP=2 on this 309B-A15B MoE). That memory is what the KV pool uses. DFlash still loads through the stock stacked q/k/v map. No second loader image.</p>
+          </article>
+          <article class="panel">
+            <h3>Published serve</h3>
+            <ul class="clean">
+              <li><span>Topology</span><span>2 nodes, TP=2, EP=2, RoCE.</span></li>
+              <li><span>Context</span><span>max_model_len 524288. SWA ratio 0.02. Tool parser mimo.</span></li>
+              <li><span>Memory</span><span>mem-fraction-static 0.90. KV dtype FP8 e4m3.</span></li>
+              <li><span>Speculation</span><span>DFlash, block 8, draft window 4096.</span></li>
+              <li><span>Graphs</span><span>CUDA-graph max batch 8 for decode and prefill on the paired control lanes.</span></li>
+              <li><span>Sampling</span><span>Systems and Q200 runs are think-off: enable_thinking false, thinking false.</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="compare">
+    <div class="wrap">
+      <h2>Same harness, two checkpoints</h2>
+      <p class="section-lead">Vendor MXFP4 is the control. This NVFP4 build is the candidate. Flags matched. Lanes booted fresh.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Check</th><th>Vendor MXFP4</th><th>This NVFP4</th><th>How it was scored</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Check">NLL, 32,768 tok</td>
+              <td data-label="Vendor">1.3360</td>
+              <td data-label="NVFP4" class="num">1.3387</td>
+              <td class="prose" data-label="Method">Teacher-forced mean NLL. Echo and logprobs on the completions endpoint. Null BOS dropped. Gate is delta under 0.05. Observed delta 0.0027.</td>
+            </tr>
+            <tr>
+              <td data-label="Check">GSM8K-200, think-off</td>
+              <td data-label="Vendor">0.970</td>
+              <td data-label="NVFP4" class="num">0.965</td>
+              <td class="prose" data-label="Method">Chat endpoint, enable_thinking false, temperature 0, 512 max tokens. Prompt asks for a trailing #### number. Score is exact numeric match of the last number after that marker. Model text is never executed. 200 cached items.</td>
+            </tr>
+            <tr>
+              <td data-label="Check">Decode, bs=8</td>
+              <td data-label="Vendor">56.9 median</td>
+              <td data-label="NVFP4" class="num">69.1 median</td>
+              <td class="prose" data-label="Method">Eight concurrent 600-token probes, steady-state decode, identical prompts. Range 63.7–73.5 versus 52.0–60.8. Median ratio is +21%.</td>
+            </tr>
+            <tr>
+              <td data-label="Check">DFlash accept</td>
+              <td data-label="Vendor">0.95–1.00</td>
+              <td data-label="NVFP4" class="num">0.95–1.00</td>
+              <td class="prose" data-label="Method">Accept rate and accept length 1.95–2.00 on both freshly booted lanes, same flags. Speculative decoding was active on the control and on this checkpoint.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="method"><strong>A later 8-wide probe, not the comparison above.</strong> On the FINAL3 serve, eight concurrent completions, 400 tokens each, ignore_eos, greedy, prompt <span class="mono">def binary_search(arr, x):</span>. Aggregate samples 78.0, 73.8, 95.4 tok/s, median 78.0. That number is aggregate across eight streams. Per-request decode on those reps was 12.1–15.3 tok/s. Do not read 78.0 as single-stream speed, and do not substitute it for the 69.1 comparison.</p>
+    </div>
+  </section>
+
+  <section id="systems">
+    <div class="wrap">
+      <h2>Systems profile</h2>
+      <p class="section-lead">The table below is the DFlash systems row recorded 2026-09-26, entry mimo26-nvfp4-final3-500k-systems-20260925. A later MTP run is a separate measurement: think-off, advertised context 524288, BFCL-MT 117/200, AST micro 215/600, NIAH 3/3, decode median 17.31 tok/s. Ledger <a href="https://github.com/r0b0tlab/r0b0bench/blob/b35bb28ca058e74eca5642a732c0d791481a7f36/results/entries/mimo26-nvfp4-mtp-500k-mm-systems-20260927.json">mimo26-nvfp4-mtp-500k-mm-systems-20260927</a>.</p>
+      <div class="metric-row">
+        <article class="metric speed">
+          <p class="label">C1 decode</p>
+          <p class="v">15.48</p>
+          <p class="method">tok/s median</p>
+        </article>
+        <article class="metric speed">
+          <p class="label">Prefill proxy</p>
+          <p class="v">16,535</p>
+          <p class="method">tok/s median</p>
+        </article>
+        <article class="metric">
+          <p class="label">TTFT</p>
+          <p class="v">253.5</p>
+          <p class="method">ms mean</p>
+        </article>
+        <article class="metric spec">
+          <p class="label">NIAH</p>
+          <p class="v">3/3</p>
+          <p class="method">exact</p>
+        </article>
+      </div>
+      <p class="method"><strong>C1 decode method.</strong> openai portable single-stream throughput. Five reps, first dropped, four stable. Requested 2,048 output tokens. Client-side output tokens per second. Median 15.477, mean 15.489. One recorded completion was 1,767 tokens from a 40-token prompt. This is not the 8-wide aggregate.</p>
+      <p class="method"><strong>Prefill method.</strong> Three reps, first dropped, two stable. Prompt target 14,000 tokens. Measured median prompt length 22,771. Sixteen output tokens. Median server prompt tok/s 16,535. The harness records this as an end-to-end wall proxy that includes the short decode, not a pure prefill-kernel timer.</p>
+      <p class="method"><strong>Latency method.</strong> Streaming chat, one client. Requested 128 output tokens. Five reps, first dropped, four stable. Prompt was 26 tokens. Mean TTFT 253.5 ms. Mean inter-token latency 159.2 ms, p50 159.1 ms, p95 172.9 ms. Mean end-to-end 5,824 ms. Finish reason stop on every stable rep. Reasoning tokens 0.</p>
+
+      <div class="table-wrap" style="margin-top:22px">
+        <table>
+          <thead>
+            <tr><th>Lane</th><th>Result</th><th>Method</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Lane">Canary</td>
+              <td data-label="Result" class="num">5/5</td>
+              <td class="prose" data-label="Method">Identity, arithmetic, structured output, tool call, and a short needle. Tool-call parser mimo. All five checks passed.</td>
+            </tr>
+            <tr>
+              <td data-label="Lane">BFCL multi-turn</td>
+              <td data-label="Result" class="num">114/200</td>
+              <td class="prose" data-label="Method">Official BFCL v4 multi_turn_base accuracy, 0.570. Think-off. Two hundred cases. Score is the official evaluator, not a hand grade.</td>
+            </tr>
+            <tr>
+              <td data-label="Lane">BFCL AST</td>
+              <td data-label="Result" class="num">211/600</td>
+              <td class="prose" data-label="Method">Official non-live score-file headers. multiple 71/200 (0.355), parallel 101/200 (0.505), parallel_multiple 39/200 (0.195). Micro is the sum, 0.352. Think-off.</td>
+            </tr>
+            <tr>
+              <td data-label="Lane">Concurrency</td>
+              <td data-label="Result" class="num">50.2 → 159.6</td>
+              <td class="prose" data-label="Method">OpenAI portable ladder. Levels 1, 2, 4, 6. 512 output tokens. Three reps, warmup dropped. Aggregate output tok/s: 50.18, 66.04, 91.65, 159.65.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="quality">
+    <div class="wrap">
+      <h2>Q200 text set</h2>
+      <p class="section-lead">180 questions, all finished with finish reason stop. Longest completion 5,844 tokens. Ceiling 8,192. Think-off. Measured on the earlier FINAL3 serve, not re-run on the 524288 profile.</p>
+      <div class="metric-row">
+        <article class="metric">
+          <p class="label">GSM8K</p>
+          <p class="v">78/80</p>
+          <p class="method">97.5%</p>
+        </article>
+        <article class="metric">
+          <p class="label">HumanEval</p>
+          <p class="v">38/40</p>
+          <p class="method">95.0%</p>
+        </article>
+        <article class="metric">
+          <p class="label">IFEval</p>
+          <p class="v">35/40</p>
+          <p class="method">87.5%</p>
+        </article>
+        <article class="metric">
+          <p class="label">Total</p>
+          <p class="v">168/180</p>
+          <p class="method">includes hard reasoning</p>
+        </article>
+      </div>
+      <p class="method"><strong>Method.</strong> Kit grader on the Q200 text-180 set for GSM8K, HumanEval, and IFEval. Chat template kwargs enable_thinking false and thinking false. Configured max tokens 8,192. All 180 rows stopped. No row hit the ceiling. Those three families are 80, 40, and 40 items, 151 correct. The 20 hard_reasoning answers were graded by independent review of the recorded responses, 17 correct. The three failures are hard-04, hard-12, and hard-16. Total 168/180. Responses were not regenerated. This is not a core-subset claim, and it is not the MTP systems run.</p>
+      <p class="method"><strong>Throughput on this run.</strong> Workers 1. 51,977 completion tokens in 2,254.2 seconds, 23.06 client tok/s. Elapsed includes prefill. A separate 1024-token harness on the same boot, truncated at the token cap, measured concurrency-1 aggregate 27.25 and 26.02 tok/s, per-request decode 27.51 and 26.25, and concurrency-2 aggregate 32.39 and 34.08 tok/s. That harness is not this quality-run rate.</p>
+      <p class="method"><strong>Memory on this boot.</strong> Weights 84.436 GB. KV cache 6.575 GB. Startup available 9.166 GB. Full-token pool 1,044,581. SWA pool 20,891. Graph reservations: target-verify 1.495 GB, draft-decode 0.134 GB. Prefill, decode, and draft-extend graphs were 0. KV is the calibrated FP8 pool. Host available at admission was 4.84 GiB and 8.71 GiB, above a 4 GiB floor.</p>
+    </div>
+  </section>
+
+  <section id="niah">
+    <div class="wrap">
+      <h2>Retrieval</h2>
+      <p class="section-lead">Two probes, two profiles. Both returned the planted values exactly. They are not the same measurement.</p>
+      <div class="split">
+        <article class="panel spec">
+          <h3>r0b0bench, 524288</h3>
+          <p class="big" style="color:var(--magenta);font-size:2rem">3/3</p>
+          <p class="method"><strong>Method.</strong> Depths are 25, 50, and 90 percent of max_model_len minus a 256-token generation reserve. That is 131,008, 262,016, and 471,628 tokens. Marker R0B0BENCH_NIAH_SLOT. Pass is an exact return of the code R0B0-NIAH-7K3M. The needle sat near the middle of each constructed prompt (effective fraction about 0.50). Usage confirmed the constructed prompt length on every depth. Finish reason stop. Thirteen completion tokens each.</p>
+        </article>
+        <article class="panel amber">
+          <h3>Multi-key, earlier FINAL3 serve</h3>
+          <p class="big" style="color:var(--amber);font-size:2rem">3/3</p>
+          <p class="method"><strong>Method.</strong> Advertised-window needle plus three keys at 33, 66, and 99 percent. Constructed prompt 480,655 tokens. Keys NEEDLE-A ni4h7q2x9, NEEDLE-B k7d2m8v4, NEEDLE-C t3r9w5y1. All three retrieved. Forty completion tokens. Estimated prefill 342.8 tok/s over 1,402 seconds. This probe is not the r0b0bench lane above.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="wrap">
+  <footer>
+    <div>
+      <a href="https://huggingface.co/r0b0tlab/MiMo-V2.6-Flash-RL-NVFP4">Model</a>
+      · <a href="https://github.com/r0b0tlab/mimo26-nvfp4-sm121">Campaign</a>
+      · <a href="https://github.com/r0b0tlab/r0b0bench/blob/2fe1f6da92c626860e77f955bd978eca565547fd/results/entries/mimo26-nvfp4-final3-500k-systems-20260925.json">Systems entry</a>
+    </div>
+    <div>Recorded 2026-09-21 to 2026-09-26</div>
+    <div class="watermark">@mr-r0b0t — r0b0tlab</div>
+  </footer>
+</div>
+</body>
+</html>

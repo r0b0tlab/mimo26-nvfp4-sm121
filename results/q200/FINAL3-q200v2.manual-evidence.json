@@ -1,0 +1,129 @@
+{
+  "schema": "r0b0tlab.qwen38.manual_evidence.v1",
+  "dataset_sha256": "66a75701cbeea69f212e1c8be92aab9efaf3fa4d7af3c6911c8f7864a17d8d14",
+  "run_identity_sha256": "63deff91ab64d287745ceab04ca94f11466bf518a7f483344d821164d3d14da8",
+  "reviewer": "r0b0tlab",
+  "method": "independent_manual_review",
+  "rows": [
+    {
+      "id": "hard-00",
+      "content_sha256": "113d2ab086e0d39237aa19378d7a4a748c9edb867d80d9fd8cf1f6170d0f03f9",
+      "passed": true,
+      "rationale": "Required claims hold: n(n-1)(n+1) is divisible by 2 and 3, hence by 6; for prime p>3 the two consecutive even neighbors supply a factor of 8, so the product is divisible by 24. An aside that this holds for every integer is false (n=2 gives 6) and is not the required claim."
+    },
+    {
+      "id": "hard-01",
+      "content_sha256": "6286d0a0cc289fd658b3b75f19af63e0c9c3d343f2a16e295b1bdf2cff0963b9",
+      "passed": true,
+      "rationale": "Expected draws until the first green ball without replacement is (12+1)/(3+1)=13/4."
+    },
+    {
+      "id": "hard-02",
+      "content_sha256": "66d906daa89a7dfb1b6997032df11165d0d309c1b5206c60cb45caf636c65dfe",
+      "passed": true,
+      "rationale": "All four nonnegative pairs from the odd positive factor pairs of 105 are listed: (53,52), (19,16), (13,8), (11,4)."
+    },
+    {
+      "id": "hard-03",
+      "content_sha256": "9d30b200076affe6a0a37067873fd7f6680758e350eba0466ffb5d5fedc30517",
+      "passed": true,
+      "rationale": "Five sentences, and the contradiction is the standard evenness argument: a squared even implies a even, which forces b even, contradicting lowest terms."
+    },
+    {
+      "id": "hard-04",
+      "content_sha256": "ae968b005364f2f9007c5a250a6552923127055edbcd5df4bcf660983cc9c39f",
+      "passed": false,
+      "rationale": "The response concludes 19208/715. The 4x4 Hilbert determinant H_ij=1/(i+j-1) is 1/6048000. The Catalan formula used is not the Hilbert determinant."
+    },
+    {
+      "id": "hard-05",
+      "content_sha256": "7380c88f3a3ea795ebad46167330ab3441e1f9d001213e793383a71b5f4504ed",
+      "passed": true,
+      "rationale": "Recurrence V_n=V_{n-1}-4 with V_0=100, and the tank reaches 0 at n=25."
+    },
+    {
+      "id": "hard-06",
+      "content_sha256": "071e1b8cee1cf1cb6153e7c14bee9f2ca47898e101422b2024841f3f49040b5d",
+      "passed": true,
+      "rationale": "Worst-case bounds match: binary search Theta(log n), heapify Theta(n), mergesort Theta(n log n), quicksort Theta(n^2), BFS on a tree Theta(n)."
+    },
+    {
+      "id": "hard-07",
+      "content_sha256": "d504ff8c4e7d45fbe7e83e094362273791c530e2294584f43c01924523edd619",
+      "passed": true,
+      "rationale": "Given exactly 3 heads in 10 fair flips, the first flip is a head with probability 3/10."
+    },
+    {
+      "id": "hard-08",
+      "content_sha256": "b93a437da6babc19faeb385e780151609b01cef4af7892100eff9d99cd2041eb",
+      "passed": true,
+      "rationale": "6 and 7 are coprime, so the largest nonrepresentable nonnegative combination is 6*7-6-7=29."
+    },
+    {
+      "id": "hard-09",
+      "content_sha256": "ea0e723445bd8e2dee554cee7778f1cb2a91f0925a0bb77b9903345cfe97a863",
+      "passed": true,
+      "rationale": "Minimum DFA has 3 states, the remainders modulo 3, with transitions (2r+b) mod 3 and accept state remainder 0."
+    },
+    {
+      "id": "hard-10",
+      "content_sha256": "671429d41164ed53590bc49c752089a79a3f068eb13dad11cd78535bfe76ff9d",
+      "passed": true,
+      "rationale": "The integral of x^2 e^{-x} from 0 to infinity is Gamma(3)=2."
+    },
+    {
+      "id": "hard-11",
+      "content_sha256": "c123e5a8ccdef70bfbc3957ec239695333c8705cf3180f9eba9642b8f5c88f48",
+      "passed": true,
+      "rationale": "For right-associated x^(x^x), the derivative at 1 is 1."
+    },
+    {
+      "id": "hard-12",
+      "content_sha256": "04f081043c8560a992bd22c586ad9c55dff6e931a86daefc67110f5ee5458d72",
+      "passed": false,
+      "rationale": "The response asserts the unqualified statement is true. It is false: an infinite 2-regular graph, or the bi-infinite path, has minimum degree 2 and no cycle. The finite-tree argument does not cover the statement as written."
+    },
+    {
+      "id": "hard-13",
+      "content_sha256": "cdf2cbb398814441756c09c31a02dc931ef2e0dad504ecc397cc489dca1bc896",
+      "passed": true,
+      "rationale": "The final stated distance is 2/3. For three unit-speed pursuers on an equilateral triangle of side 1, the closing rate is 3/2 and the distance traveled is 2/3."
+    },
+    {
+      "id": "hard-14",
+      "content_sha256": "093f37d19045e1783b5efb12d9a5d343f6345fca9f458f981bfabf50a7fd795d",
+      "passed": true,
+      "rationale": "Self-dual boolean functions of 4 variables number 2^(2^(4-1))=256."
+    },
+    {
+      "id": "hard-15",
+      "content_sha256": "c99ff50ab3f8891a68fb11e668821bc3c5aac2241781a6ca4e4905c6471e8059",
+      "passed": true,
+      "rationale": "The alternating binomial sum for n=17 is (1-1)^17=0."
+    },
+    {
+      "id": "hard-16",
+      "content_sha256": "0ebcbf0465234ed8b2f5c38664e71440c5449faec0901482b1308e0d1ccc15cd",
+      "passed": false,
+      "rationale": "Uniform lift of a rope lengthened by 1 m is a larger concentric circle, so the height is 1/(2*pi) meters, independent of R. The response gives a different gap geometry and does not state that value."
+    },
+    {
+      "id": "hard-17",
+      "content_sha256": "1440a5fbd4fb1aa74ff129a94b585e2b6ed387d192e5962824d212c4806219c7",
+      "passed": true,
+      "rationale": "The sequence is look-and-say: each term is the run-length encoding of the previous term. There is no elementary closed form, and the response states that recurrence."
+    },
+    {
+      "id": "hard-18",
+      "content_sha256": "2f8e0219e9b0853b2c5deb070a733e57afe24f7a382578907cb6b07b3a7ae0c7",
+      "passed": true,
+      "rationale": "Four 1/2 by 1/2 subsquares and five points force two points in one subsquare, whose diagonal is sqrt(2)/2."
+    },
+    {
+      "id": "hard-19",
+      "content_sha256": "aa3551492201e1851bbdc07ddc7c4e2e9845754110ecc00a428b5f243619ae6a",
+      "passed": true,
+      "rationale": "Of the six ordered dice outcomes summing to 7, two contain a 6, so the conditional probability is 1/3."
+    }
+  ]
+}

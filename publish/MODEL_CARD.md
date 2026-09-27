@@ -87,7 +87,9 @@ Disclosures:
 
 - Seven multi-turn rows were regenerated after 1200s client timeouts. This invocation scored the repaired 200-row file and did not regenerate the other 193.
 - The package lane summary had pointed all three AST categories at the parallel_multiple file and reported micro 0.195. The numbers above are the official score-file headers from the same run.
-- Q200v2 text-180 was kept from the earlier FINAL3 serve, not remeasured here. Auto-graded 151/160 (GSM8K 78/80, HumanEval 38/40, IFEval 35/40). The 20 hard_reasoning rows were answered and left ungraded. Not a core-subset quality claim.
+- Q200v2 text-180 was kept from the earlier FINAL3 serve, not remeasured on the MTP boot. Think-off, workers 1, max tokens 8192, 180/180 stopped, longest completion 5844. GSM8K 78/80, HumanEval 38/40, IFEval 35/40. Independent review of the 20 hard_reasoning answers is 17/20. Failures: hard-04 answered 19208/715, while the 4x4 Hilbert determinant is 1/6048000; hard-12 claimed every graph of minimum degree 2 has a cycle, which is false for an infinite 2-regular graph; hard-16 did not give the uniform-lift height 1/(2π). Total 168/180. Not a core-subset quality claim.
+- On that same FINAL3 boot, the serial quality run produced 51,977 completion tokens in 2,254.2 seconds, 23.06 client tok/s including prefill. A separate 1024-token harness on that boot, truncated at the token cap, measured concurrency-1 aggregate 27.25 and 26.02 tok/s (per-request decode 27.51 and 26.25) and concurrency-2 aggregate 32.39 and 34.08 tok/s. That harness is not the quality-run rate and not the MTP systems throughput.
+- Memory on the Q200 boot: weights 84.436 GB, KV cache 6.575 GB, startup available 9.166 GB, full-token pool 1,044,581, SWA pool 20,891. Graph reservations were target-verify 1.495 GB and draft-decode 0.134 GB; prefill, decode, and draft-extend graphs were 0. KV is the calibrated FP8 pool. Host available at admission was 4.84 GiB and 8.71 GiB, above a 4 GiB floor.
 
 ## Systems, MTP-500k-mm, 2026-09-27
 
