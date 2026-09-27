@@ -24,7 +24,7 @@
   --measure: 72rem;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   background: var(--canvas);
@@ -34,6 +34,8 @@ body {
   font-size: 16.5px;
   line-height: 1.55;
   text-wrap: pretty;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 a { color: var(--cyan); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 a:hover { color: var(--ink); }
@@ -151,6 +153,7 @@ h1 {
   font-size: 12.5px;
   line-height: 1.45;
   max-width: 68ch;
+  overflow-wrap: anywhere;
 }
 .method strong { color: var(--muted); font-weight: 520; }
 section { padding: 42px 0 8px; }
@@ -188,7 +191,8 @@ ul.clean li span:first-child {
   color: var(--cyan);
 }
 code, .mono { font-family: "JetBrains Mono", monospace; font-size: 0.92em; }
-.table-wrap { overflow-x: auto; border: 1px solid var(--border); background: var(--surface); }
+.table-wrap { overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; border: 1px solid var(--border); background: var(--surface); }
+a, .section-lead, .lede, code, .mono { overflow-wrap: anywhere; }
 table { width: 100%; border-collapse: collapse; min-width: 640px; }
 th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid rgba(26, 26, 53, 0.8); vertical-align: top; }
 th {
@@ -254,11 +258,23 @@ footer {
 }
 @media (max-width: 900px) {
   .hero-grid, .split, .metric-row { grid-template-columns: 1fr 1fr; }
+  .nav-inner { gap: 10px; }
+  .nav-links {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-left: 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
 }
 @media (max-width: 680px) {
-  .hero { padding-top: 36px; }
+  .hero { padding-top: 28px; }
   .hero-grid, .split, .metric-row { grid-template-columns: 1fr; }
   ul.clean li { grid-template-columns: 1fr; gap: 2px; }
+  .nav-links a { padding: 12px 10px; }
   table { min-width: 0; }
   thead { display: none; }
   table, tbody, tr, td { display: block; width: 100%; }
