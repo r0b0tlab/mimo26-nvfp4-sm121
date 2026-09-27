@@ -468,7 +468,45 @@ footer {
       <p class="method"><strong>C1 decode method.</strong> OpenAI portable single-stream throughput. Five reps, first dropped, four stable. Requested 2,048 output tokens. Client-side output tokens per second. Median 17.31, mean 17.26. This is not the 8-wide vendor comparison and not the 1024-token harness below.</p>
       <p class="method"><strong>Prefill method.</strong> Same throughput lane. Two stable reps. Median prompt length 22,771 tokens. Median server prompt tok/s 17,941. The harness records this as an end-to-end wall proxy that includes the short decode, not a pure prefill-kernel timer.</p>
       <p class="method"><strong>Latency method.</strong> Streaming chat, one client. Requested 128 output tokens. Five reps, first dropped, four stable. Mean TTFT 276.5 ms. Mean inter-token latency 139.6 ms, p50 139.6 ms, p95 147.4 ms. Mean end-to-end 4.12 s.</p>
-      <p class="method"><strong>1024-token harness, same boot, not C1.</strong> Think-off, greedy, one stream. Decode median 24.1 tok/s short code, 23.6 medium code, 15.6 prose.</p>
+      <p class="method"><strong>1024-token harness, same boot, not C1.</strong> Think-off, greedy, one stream, 1,024 new tokens, two repeats. Decode is content tokens divided by time after the first token. End-to-end is completion tokens divided by full request wall time, so prefill is included. Figures are medians of the two repeats.</p>
+      <div class="table-wrap" style="margin-top:14px">
+        <table>
+          <thead>
+            <tr><th>Workload</th><th>Decode</th><th>End-to-end</th><th>TTFT</th><th>Prompt tokens</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Workload">Short code</td>
+              <td data-label="Decode" class="num">24.1</td>
+              <td data-label="End-to-end" class="num">23.8</td>
+              <td data-label="TTFT">0.59 s</td>
+              <td data-label="Prompt tokens">71</td>
+            </tr>
+            <tr>
+              <td data-label="Workload">Medium code</td>
+              <td data-label="Decode" class="num">23.6</td>
+              <td data-label="End-to-end" class="num">20.5</td>
+              <td data-label="TTFT">6.59 s</td>
+              <td data-label="Prompt tokens">4,405</td>
+            </tr>
+            <tr>
+              <td data-label="Workload">Prose</td>
+              <td data-label="Decode" class="num">15.6</td>
+              <td data-label="End-to-end" class="num">14.6</td>
+              <td data-label="TTFT">4.52 s</td>
+              <td data-label="Prompt tokens">3,248</td>
+            </tr>
+            <tr>
+              <td data-label="Workload">8k prefill</td>
+              <td data-label="Decode">—</td>
+              <td data-label="End-to-end">—</td>
+              <td data-label="TTFT">14.2 s</td>
+              <td data-label="Prompt tokens">9,713</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="method">Decode and end-to-end are tok/s. The 8k row requested one completion token, so it is a prefill measurement: median server prefill 684 tok/s, not a decode rate. Systems c1 above remains 17.31 tok/s at 2,048 requested output tokens.</p>
 
       <div class="table-wrap" style="margin-top:22px">
         <table>
