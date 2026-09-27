@@ -5,7 +5,7 @@
 # Profile knobs (env):
 #   TAG           log tag (required)
 #   MODEL         checkpoint (default: r0b0tlab NVFP4 export)
-#   SPEC          dflash|eagle|none                (default dflash)
+#   SPEC          dflash|eagle|none                (default eagle, the preferred profile)
 #   DFLASH_BLOCK  DFlash verify block (draft trained with 8)  (default 8)
 #   DRAFT_WINDOW  --speculative-draft-window-size   (unset = full)
 #   SWA_RATIO     --swa-full-tokens-ratio           (unset = sglang 0.8)
@@ -28,7 +28,7 @@ set -euo pipefail
 C="$HOME/projects/mimo26-nvfp4-sm121"
 TAG="${TAG:?TAG}"
 MODEL="${MODEL:-$HOME/models/r0b0tlab/MiMo-V2.6-Flash-RL-NVFP4}"
-SPEC="${SPEC:-dflash}"; DFLASH_BLOCK="${DFLASH_BLOCK:-8}"
+SPEC="${SPEC:-eagle}"; DFLASH_BLOCK="${DFLASH_BLOCK:-8}"
 MEMFRAC="${MEMFRAC:-0.90}"; GRAPH_BS="${GRAPH_BS:-8}"
 MOE_RUNNER="${MOE_RUNNER:-marlin}"; KVDT="${KVDT:-fp8_e4m3}"
 IMG="${IMG:-r0b0tlab/sglang-mimo26-env:20260922-582389ce}"

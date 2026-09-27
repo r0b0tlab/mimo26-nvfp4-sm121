@@ -1,3 +1,7 @@
+# Modified copy of SGLang python/sglang/srt/layers/attention/triton_backend.py
+# (Apache-2.0). The upstream nightly file has no file-level copyright header.
+# r0b0tlab change: fill the sliding-window KV index during draft-extend
+# CUDA-graph capture. See NOTICE.md. This file is not relicensed as MIT.
 from __future__ import annotations
 
 from dataclasses import dataclass

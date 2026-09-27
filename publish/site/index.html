@@ -305,6 +305,7 @@ footer {
       <a href="#compare">Parity</a>
       <a href="#systems">Systems</a>
       <a href="#media">Media</a>
+      <a href="#credits">Credits</a>
       <a href="#quality">Quality</a>
       <a href="#niah">Retrieval</a>
     </nav>
@@ -314,15 +315,15 @@ footer {
 <main id="top">
   <header class="hero">
     <div class="wrap">
-      <p class="kicker">SM121 · 2× GB10 · TP=2 · MTP</p>
+      <p class="kicker">Preferred profile · EAGLE MTP · SM121 · 2× GB10</p>
       <h1>MiMo-V2.6 Flash RL, NVFP4.</h1>
-      <p class="lede">Independent NVFP4 conversion of XiaomiMiMo/MiMo-V2.6-Flash-RL. The main serve profile is EAGLE MTP, 3 steps and 4 draft tokens, advertised context 524288. The 69.1 figure below is an earlier 8-wide vendor comparison, not that profile.</p>
+      <p class="lede">Independent NVFP4 conversion of XiaomiMiMo/MiMo-V2.6-Flash-RL. The preferred serve profile is EAGLE MTP, 3 steps and 4 draft tokens, advertised context 524288. DFlash is an earlier recorded lane, not this profile.</p>
       <div class="hero-grid">
         <article class="panel">
-          <p class="label">Decode, 8-wide, median</p>
-          <p class="big">69.1<span class="unit">tok/s</span></p>
-          <p class="vs">vendor MXFP4 median 56.9 tok/s · +21%</p>
-          <p class="method"><strong>Method.</strong> Eight concurrent 600-token probes, steady-state decode, identical prompt sets, both lanes freshly booted. Same flags: TP=2, EP=2, Marlin, mem-fraction 0.90, CUDA-graph max batch 8, DFlash. Ours 63.7–73.5, median 69.1. Vendor 52.0–60.8, median 56.9. Aggregate throughput, not single-stream decode.</p>
+          <p class="label">Preferred profile, systems decode</p>
+          <p class="big">17.31<span class="unit">tok/s</span></p>
+          <p class="vs">EAGLE MTP · think-off · context 524288 · c1 median</p>
+          <p class="method"><strong>Method.</strong> Systems throughput lane, 2,048 requested output tokens. Not the 1024-token harness, which measured decode 24.1, 23.6, and 15.6 tok/s. The 69.1 figure is an earlier 8-wide DFlash comparison against the vendor MXFP4 median 56.9. It is not this profile.</p>
         </article>
         <article class="panel cyan">
           <p class="label">NLL, 32,768 tokens</p>
@@ -369,13 +370,13 @@ footer {
   <section id="engine">
     <div class="wrap">
       <h2>Engine</h2>
-      <p class="section-lead">SGLang nightly 20260922-582389ce on two GB10 nodes. The published image is that nightly, plus torchcodec, plus one Marlin skip.</p>
+      <p class="section-lead">SGLang nightly 20260922-582389ce on two GB10 nodes. The preferred image is the public MTP tag. The parent is that nightly, plus torchcodec, plus one Marlin skip.</p>
       <div class="stack">
         <article class="panel magenta">
-          <p class="label">Image</p>
-          <p class="digest">ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-marlin-skip</p>
-          <p class="digest" style="margin-top:8px;color:var(--muted)">sha256:42737e9dfd3731072c8fd3d65d479ba03381e0e0cb5e171cbab632a8bddeb507</p>
-          <p class="method"><strong>Build.</strong> Parent tag 20260922-582389ce is the nightly plus torchcodec, so the MiMo-V2 processor registers at import. The marlin-skip tag copies one file, modelopt_quant.py, sha256 d844dd402430ad97142ccf11ef4070cffef7285993955724663f70911069594e. Engine pin: SGLang 0.0.0.dev1+g582389cec, torch 2.13.0+cu130, flashinfer 0.6.18. Upstream SGLang commit recorded as 8ab21c8a942b014b2c8b56223f83de1ba75b1f8f.</p>
+          <p class="label">Preferred image, public</p>
+          <p class="digest">ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-mtp-mm</p>
+          <p class="digest" style="margin-top:8px;color:var(--muted)">sha256:84857252a1a9b4196702154ae38eb3cfafdf4cd832795eba18ac2772f8a83f1e</p>
+          <p class="method"><strong>Build.</strong> Parent tag 20260922-582389ce-marlin-skip is the nightly plus torchcodec plus the Marlin skip, digest sha256:42737e9dfd3731072c8fd3d65d479ba03381e0e0cb5e171cbab632a8bddeb507. The preferred tag copies mimo_v2.py, mimo_v2_nextn.py, and triton_backend.py onto that parent. The published MTP systems suite ran on the parent plus those three files bind-mounted, not inside the baked tag. Engine pin: SGLang 0.0.0.dev1+g582389cec, torch 2.13.0+cu130, flashinfer 0.6.18.</p>
         </article>
         <div class="split">
           <article class="panel cyan">
@@ -389,7 +390,7 @@ footer {
               <li><span>Topology</span><span>2 nodes, TP=2, EP=2, RoCE.</span></li>
               <li><span>Context</span><span>max_model_len 524288. SWA ratio 0.02. Tool parser mimo.</span></li>
               <li><span>Memory</span><span>mem-fraction-static 0.90. KV dtype FP8 e4m3.</span></li>
-              <li><span>Speculation</span><span>DFlash, block 8, draft window 4096.</span></li>
+              <li><span>Speculation</span><span>Preferred: EAGLE MTP, 3 steps, 4 draft tokens, top-k 1, draft window 4096.</span></li>
               <li><span>Graphs</span><span>CUDA-graph max batch 8 for decode and prefill on the paired control lanes.</span></li>
               <li><span>Sampling</span><span>Systems and Q200 runs are think-off: enable_thinking false, thinking false.</span></li>
             </ul>
@@ -543,10 +544,10 @@ footer {
           </tbody>
         </table>
       </div>
-      <p class="method">The measured process used the parent image with the loader and draft-extend window-index files bind-mounted. Tag ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-mtp-mm copies those same three files and was not the process that served this suite. The tag is still private.</p>
+      <p class="method">The measured process used the parent image with the loader and draft-extend window-index files bind-mounted. Tag ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-mtp-mm is public and copies those same three files. It was not the process that served this suite.</p>
 
       <h3 style="margin-top:28px">Earlier DFlash systems row</h3>
-      <p class="section-lead">Not the main serve profile. Recorded 2026-09-26. Entry mimo26-nvfp4-final3-500k-systems-20260925. Think-off. Tool parser mimo. Advertised context 524288.</p>
+      <p class="section-lead">Not the preferred profile. Recorded 2026-09-26. Entry mimo26-nvfp4-final3-500k-systems-20260925. Think-off. Tool parser mimo. Advertised context 524288.</p>
       <div class="metric-row">
         <article class="metric speed">
           <p class="label">C1 decode</p>
@@ -693,13 +694,25 @@ footer {
 </main>
 
 <div class="wrap">
+  <section id="credits">
+    <h2>Credits</h2>
+    <p class="section-lead">Preferred profile is EAGLE MTP. Licenses below are the ones those projects publish. This page does not relicense their code.</p>
+    <ul class="clean">
+      <li><span>Base model</span><span>XiaomiMiMo/MiMo-V2.6-Flash-RL, MIT. XiaomiMiMo is the base-model author.</span></li>
+      <li><span>Quantization</span><span>r0b0tlab, using NVIDIA Model Optimizer public APIs. No third-party quantization code was copied.</span></li>
+      <li><span>Serving</span><span>SGLang, Apache-2.0, nightly 20260922-582389ce. FlashInfer 0.6.18, PyTorch 2.13.0, Marlin MoE kernels as shipped in that nightly.</span></li>
+      <li><span>Speculation</span><span>Preferred path is SGLang's EAGLE implementation. DFlash weights ship with the base checkpoint and are not the preferred profile.</span></li>
+      <li><span>Patches</span><span>SGLang files stay Apache-2.0. modelopt_quant.py is adapted from the vLLM project, Apache-2.0.</span></li>
+      <li><span>Harness</span><span>r0b0bench, MIT. BFCL scores use the Berkeley Function-Calling Leaderboard tasks.</span></li>
+    </ul>
+  </section>
   <footer>
     <div>
       <a href="https://huggingface.co/r0b0tlab/MiMo-V2.6-Flash-RL-NVFP4">Model</a>
       · <a href="https://github.com/r0b0tlab/mimo26-nvfp4-sm121">Campaign</a>
       · <a href="https://github.com/r0b0tlab/r0b0bench/blob/b35bb28ca058e74eca5642a732c0d791481a7f36/results/entries/mimo26-nvfp4-mtp-500k-mm-systems-20260927.json">MTP systems</a>
     </div>
-    <div>Recorded 2026-09-21 to 2026-09-26</div>
+    <div>MIT for the quantization. Upstream licenses retained. Recorded 2026-09-21 to 2026-09-27</div>
     <div class="watermark">@mr-r0b0t — r0b0tlab</div>
   </footer>
 </div>

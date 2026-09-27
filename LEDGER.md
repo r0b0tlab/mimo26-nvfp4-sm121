@@ -5,7 +5,7 @@
 ## Objective
 
 Quantize XiaomiMiMo/MiMo-V2.6-Flash-RL (MIT) to NVFP4 weights with calibrated FP8 KV cache,
-serve on SGLang across two DGX Spark GB10 nodes (TP=2, DFlash speculative decoding),
+serve on SGLang across two DGX Spark GB10 nodes (TP=2). The preferred profile is EAGLE MTP, not DFlash.
 and beat the vendor MXFP4 checkpoint on both quality parity and throughput.
 
 ## Environment (all versions pinned)
@@ -13,16 +13,16 @@ and beat the vendor MXFP4 checkpoint on both quality parity and throughput.
 | Item | Version / SHA |
 |---|---|
 | Base model | XiaomiMiMo/MiMo-V2.6-Flash-RL @ `5711b268` (MIT), 90 files / 177.8 GB |
-| Quantization | NVIDIA ModelOpt main @ `7159c01d` (venv `modelopt-main`, node gn100-2eea) |
+| Quantization | NVIDIA ModelOpt main @ `7159c01d` |
 | Serving engine | SGLang nightly-dev-cu13 `20260922-582389ce` (0.0.0.dev1+g582389cec, torch 2.13.0+cu130, flashinfer 0.6.18) |
-| Runtime image | MTP tag `ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-mtp-mm` @ `sha256:84857252a1a9b4196702154ae38eb3cfafdf4cd832795eba18ac2772f8a83f1e`, still private. Parent of that tag is `20260922-582389ce-marlin-skip` @ `sha256:42737e9dfd3731072c8fd3d65d479ba03381e0e0cb5e171cbab632a8bddeb507`. The MTP systems suite ran on the parent plus bind-mounted loader and window-index files, not inside the baked tag. |
+| Runtime image | Preferred tag `ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-mtp-mm` @ `sha256:84857252a1a9b4196702154ae38eb3cfafdf4cd832795eba18ac2772f8a83f1e`, public. Parent is `20260922-582389ce-marlin-skip` @ `sha256:42737e9dfd3731072c8fd3d65d479ba03381e0e0cb5e171cbab632a8bddeb507`. The MTP systems suite ran on the parent plus bind-mounted loader and window-index files, not inside the baked tag. |
 | Hardware | 2× NVIDIA DGX Spark GB10, TP=2, RoCE |
 | Upstream refs | mo-main `7159c01d9d909ca2431db6332363f07b2137ac09`, sglang-main `8ab21c8a942b014b2c8b56223f83de1ba75b1f8f` |
 
 ## Artifacts
 
 1. **Model**: `r0b0tlab/MiMo-V2.6-Flash-RL-NVFP4` (HF) — 66-file checkpoint + hf_quant_config + kv_scales.json + model card. 175 GB.
-2. **Runtime container**: `ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-marlin-skip` — arm64. Digest `sha256:42737e9dfd3731072c8fd3d65d479ba03381e0e0cb5e171cbab632a8bddeb507`. Still private. The MTP tag is `20260922-582389ce-mtp-mm` @ `sha256:84857252a1a9b4196702154ae38eb3cfafdf4cd832795eba18ac2772f8a83f1e`, also private. The MTP systems suite was measured on the parent plus bind mounts, not inside that tag.
+2. **Runtime container**: preferred public tag `ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-mtp-mm` @ `sha256:84857252a1a9b4196702154ae38eb3cfafdf4cd832795eba18ac2772f8a83f1e`. Parent `20260922-582389ce-marlin-skip` @ `sha256:42737e9dfd3731072c8fd3d65d479ba03381e0e0cb5e171cbab632a8bddeb507`. The MTP systems suite was measured on the parent plus bind mounts, not inside the preferred tag. The tag copies the same three files.
 3. **Code + evidence**: `github.com/r0b0tlab/mimo26-nvfp4-sm121` — all scripts, eval JSON, logs.
 
 ## Result summary
@@ -94,9 +94,12 @@ NVFP4 lane (suspects: marlin repack buffers, DFlash verify graphs). **Open item*
 
 ## Licensing / attribution
 
-- Base model MIT (XiaomiMiMo) — redistribution permitted with attribution. Credited in model card.
-- Quantization implemented from NVIDIA ModelOpt + SGLang public APIs (cited by SHA + file/line).
-- No third-party quantization code, configs, or patches used (MiaAI-Lab explicitly not referenced).
+- Base model MIT (XiaomiMiMo) — redistribution permitted with attribution. Credited in the model card and NOTICE.md.
+- This repo's original work is MIT (Copyright (c) 2026 r0b0tlab). See LICENSE.
+- SGLang and vLLM files under `patches/sglang-582389ce/` stay Apache-2.0. Notices are in those files and in NOTICE.md.
+- Quantization implemented from NVIDIA ModelOpt + SGLang public APIs (cited by SHA + file/line). No third-party quantization code or configs were copied.
+- Systems harness is r0b0bench (MIT). BFCL scores use the Berkeley Function-Calling Leaderboard tasks.
+- Preferred serve profile is EAGLE MTP (`profiles/MTP-500k-mm.env`). DFlash is an earlier recorded lane, not the preferred profile.
 
 ## Q200v2 on the pre-cut FINAL3 serve
 
@@ -119,4 +122,4 @@ Memory on that boot: weights 84.436 GB, KV cache 6.575 GB, startup available 9.1
 ## Open items
 
 1. NVFP4-lane pre-KV memory overhead (13.7 GB) — root-cause and reclaim before long-context cert.
-2. Container visibility: the MTP tag and the marlin-skip parent are pushed private. The owner flips visibility. Do not treat a 401 anonymous pull as a failed push.
+2. Container visibility: the preferred MTP tag is public. Anonymous manifest pull of `20260922-582389ce-mtp-mm` returned 200.

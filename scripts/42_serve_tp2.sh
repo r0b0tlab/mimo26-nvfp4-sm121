@@ -3,8 +3,9 @@
 # RoCE rails.  Env selects the lane:
 #   TAG=<name> MODEL=<ckpt-path> SPEC=none|dflash  KV=default|dtype-only|fp8scales|fp8plain
 #   DRYRUN=1 prints the two rank command lines and exits.
-# DFlash is the ONLY speculative lane in this campaign (user directive);
-# SPEC=eagle is rejected.  r0b0tlab mimo26.
+# Older DFlash helper. Not the preferred launcher.
+# Preferred serve is scripts/43_serve_profile.sh with profiles/MTP-500k-mm.env
+# (EAGLE MTP, 3 steps, 4 draft tokens). This script does not launch that profile.
 set -euo pipefail
 C="$HOME/projects/mimo26-nvfp4-sm121"
 TAG="${TAG:?TAG}"; MODEL="${MODEL:?MODEL}"; SPEC="${SPEC:-none}"; KV="${KV:-default}"
@@ -21,7 +22,7 @@ case "$SPEC" in
                       --speculative-num-steps 1 --speculative-eagle-topk 1
                       --speculative-num-draft-tokens 2) ;;
   none)   ;;
-  eagle)  echo "SPEC=eagle is out of scope (user directive: DFlash only); see plan P8" >&2; exit 2 ;;
+  eagle)  echo "SPEC=eagle is not this script. Use scripts/43_serve_profile.sh with profiles/MTP-500k-mm.env" >&2; exit 2 ;;
   *)      echo "bad SPEC=$SPEC" >&2; exit 2 ;;
 esac
 

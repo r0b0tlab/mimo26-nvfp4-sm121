@@ -15,6 +15,8 @@ tags:
 - mimo_v2
 - sglang
 - dflash
+- eagle
+- mtp
 - base_model:XiaomiMiMo/MiMo-V2.6-Flash-RL
 - base_model:quantized:XiaomiMiMo/MiMo-V2.6-Flash-RL
 library_name: transformers
@@ -27,6 +29,8 @@ pipeline_tag: text-generation
 
 NVFP4 weight-quantized build of [XiaomiMiMo/MiMo-V2.6-Flash-RL](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL) (commit `5711b268`) for NVIDIA DGX Spark / GB10 (SM121) serving with [SGLang](https://github.com/sgl-project/sglang) (nightly `582389ce`), TP=2 across two GB10 nodes.
 
+**Preferred serve profile: EAGLE MTP**, 3 steps and 4 draft tokens, advertised context 524288, multimodal on. The DFlash block-8 row is an earlier serve. It is not the preferred profile.
+
 Quantized by **r0b0tlab**. Independent implementation from upstream APIs only (NVIDIA ModelOpt `7159c01d`, SGLang `8ab21c8a`); no third-party quantization code or configs were used.
 
 ## What's inside
@@ -37,7 +41,8 @@ Quantized by **r0b0tlab**. Independent implementation from upstream APIs only (N
 | Attention / dense linears | NVFP4 with per-tensor FP8 scales where beneficial, BF16 elsewhere |
 | KV cache | FP8 (`e4m3`) with **calibrated per-layer scales** (`kv_scales.json`, SGLang QuantParamSchema; identical across TP ranks) |
 | Activations | per-tensor scales, `peer_headroom` policy (calibration-gated, see below) |
-| Draft model | DFlash (fused 5-layer KV) — unchanged from base |
+| Draft weights in the checkpoint | DFlash fused 5-layer KV, unchanged from base. Not the preferred serve. |
+| Preferred serve | EAGLE MTP, 3 steps, 4 draft tokens, top-k 1, draft window 4096 |
 
 Non-quantized aux weights (audio tokenizer, vision tower, nextn) remain BF16: 555 tensors.
 
@@ -59,9 +64,9 @@ GSM8K harness: chat endpoint, `enable_thinking: false`, temperature 0, 512 max t
 1. **Calibration**: 512×512 rows from internal corpus (NLL 1.5317 post-cal). Per-layer activation-scale policy `peer_headroom` selected by runtime-style QDQ scoring (`nvfp4_act_relmse`); gate: chosen ≤1.10× best candidate per layer (worst observed 1.056).
 2. **Conversion**: MXFP4 routed experts → NVFP4 (E2M1/block-16, FP8 block scales), adapted from ModelOpt DeepSeek example APIs. Output verified bit-exact where expected: 0 non-exact blocks among 9.46B/9.46B compared.
 3. **KV scales**: per-layer min/max calibration → `kv_cache.scaling_factor[tp_rank][layer_idx]`; both ranks identical by construction.
-4. **Serving**: SGLang nightly `582389ce` + `torchcodec`, `--tp-size 2 --ep-size 2 --moe-runner-backend marlin --mem-fraction-static 0.90`, DFlash block 8. The measured FINAL3-500k profile also sets `--context-length 524288`, `--tool-call-parser mimo`, and SWA ratio 0.02. It skips allocating unused NVFP4 `*_blockscale_swizzled` tensors on the Marlin path.
+4. **Serving**: the preferred profile is EAGLE MTP, 3 steps and 4 draft tokens, on SGLang nightly `582389ce`. The earlier FINAL3-500k serve was DFlash block 8, with `--tp-size 2 --ep-size 2 --moe-runner-backend marlin --mem-fraction-static 0.90`, `--context-length 524288`, `--tool-call-parser mimo`, and SWA ratio 0.02. It skips allocating unused NVFP4 `*_blockscale_swizzled` tensors on the Marlin path.
 
-Runtime container that matches that serve: `ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-marlin-skip` (digest `sha256:42737e9dfd3731072c8fd3d65d479ba03381e0e0cb5e171cbab632a8bddeb507`). It is the 2026-09-24 env image plus that one-file skip. The parent tag `20260922-582389ce` is torchcodec only and does not contain the skip. The package is still private. It is not on Docker Hub.
+The package `ghcr.io/r0b0tlab/sglang-mimo26-env` is public. Preferred tag `20260922-582389ce-mtp-mm` (digest `sha256:84857252a1a9b4196702154ae38eb3cfafdf4cd832795eba18ac2772f8a83f1e`). The FINAL3-500k serve used parent `20260922-582389ce-marlin-skip` (digest `sha256:42737e9dfd3731072c8fd3d65d479ba03381e0e0cb5e171cbab632a8bddeb507`). Tag `20260922-582389ce` is torchcodec only and does not contain the Marlin skip. Not on Docker Hub.
 
 Campaign scripts, evidence, and logs: https://github.com/r0b0tlab/mimo26-nvfp4-sm121
 
@@ -110,7 +115,7 @@ Think-off. Advertised context 524288. EAGLE, 3 steps, 4 draft tokens, top-k 1, d
 
 A separate 1024-token harness on the same boot, not the systems c1 number above, measured decode 24.1 / 23.6 / 15.6 tok/s on short code, medium code, and prose.
 
-The measured process used the parent image with the loader and draft-extend window-index files bind-mounted. Tag `ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-mtp-mm` (`sha256:84857252a1a9b4196702154ae38eb3cfafdf4cd832795eba18ac2772f8a83f1e`) copies those same three files and was not the process that served this suite. The tag is still private. Q200 was not remeasured on this serve.
+The measured process used the parent image with the loader and draft-extend window-index files bind-mounted. Preferred tag `ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-mtp-mm` (`sha256:84857252a1a9b4196702154ae38eb3cfafdf4cd832795eba18ac2772f8a83f1e`) is public and copies those same three files. It was not the process that served this suite. Q200 was not remeasured on this serve.
 
 Ledger: https://github.com/r0b0tlab/r0b0bench/blob/b35bb28ca058e74eca5642a732c0d791481a7f36/results/entries/mimo26-nvfp4-mtp-500k-mm-systems-20260927.json
 
@@ -120,6 +125,15 @@ Ledger: https://github.com/r0b0tlab/r0b0bench/blob/b35bb28ca058e74eca5642a732c0d
 - `moe_runner=auto` selects triton on this build, which cannot consume MiMo's packed MXFP4 experts; `marlin` is required (and is the native SM121 path).
 - The published FINAL3-500k and MTP-500k-mm serves both advertise `max_model_len` 524288, not the base model's 1,048,576. NIAH above is at 25/50/90 of that advertised length.
 
+## Credits
+
+- Base model: XiaomiMiMo/MiMo-V2.6-Flash-RL, MIT. XiaomiMiMo is the base-model author.
+- Quantization: r0b0tlab, using NVIDIA Model Optimizer public APIs at `7159c01d`. No third-party quantization code or configs were copied.
+- Serving: SGLang, Apache-2.0, nightly `582389ce`, with FlashInfer 0.6.18, PyTorch 2.13.0+cu130, and Marlin MoE kernels as shipped in that nightly.
+- Preferred speculation: SGLang's EAGLE implementation. DFlash weights remain in the checkpoint for the earlier lane.
+- `modelopt_quant.py` in the runtime image is adapted from the vLLM project, Apache-2.0.
+- Systems harness: r0b0bench, MIT. BFCL scores use the Berkeley Function-Calling Leaderboard tasks.
+
 ## License
 
-Base model is MIT (XiaomiMiMo). This quantization is provided under the same MIT license. XiaomiMiMo is credited as the base-model author; r0b0tlab claims only the quantization deltas described above.
+Base model is MIT (XiaomiMiMo). This quantization is provided under the same MIT license. XiaomiMiMo is credited as the base-model author; r0b0tlab claims only the quantization deltas described above. Campaign repo: MIT for original work, Apache-2.0 retained on upstream patch files. See https://github.com/r0b0tlab/mimo26-nvfp4-sm121
