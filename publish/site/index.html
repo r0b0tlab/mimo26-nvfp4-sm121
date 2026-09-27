@@ -313,9 +313,9 @@ footer {
 <main id="top">
   <header class="hero">
     <div class="wrap">
-      <p class="kicker">SM121 · 2× GB10 · TP=2 · DFlash</p>
+      <p class="kicker">SM121 · 2× GB10 · TP=2 · MTP</p>
       <h1>MiMo-V2.6 Flash RL, NVFP4.</h1>
-      <p class="lede">Independent NVFP4 conversion of XiaomiMiMo/MiMo-V2.6-Flash-RL, served on SGLang with a one-file Marlin skip, then measured with the same harness on both the vendor MXFP4 control and this checkpoint.</p>
+      <p class="lede">Independent NVFP4 conversion of XiaomiMiMo/MiMo-V2.6-Flash-RL. The main serve profile is EAGLE MTP, 3 steps and 4 draft tokens, advertised context 524288. The 69.1 figure below is an earlier 8-wide vendor comparison, not that profile.</p>
       <div class="hero-grid">
         <article class="panel">
           <p class="label">Decode, 8-wide, median</p>
@@ -441,8 +441,73 @@ footer {
 
   <section id="systems">
     <div class="wrap">
-      <h2>Systems profile</h2>
-      <p class="section-lead">The table below is the DFlash systems row recorded 2026-09-26, entry mimo26-nvfp4-final3-500k-systems-20260925. A later MTP run is a separate measurement: think-off, advertised context 524288, BFCL-MT 117/200, AST micro 215/600, NIAH 3/3, decode median 17.31 tok/s. Ledger <a href="https://github.com/r0b0tlab/r0b0bench/blob/b35bb28ca058e74eca5642a732c0d791481a7f36/results/entries/mimo26-nvfp4-mtp-500k-mm-systems-20260927.json">mimo26-nvfp4-mtp-500k-mm-systems-20260927</a>.</p>
+      <h2>MTP systems profile</h2>
+      <p class="section-lead">Main serve profile. One r0b0bench 1.0.0rc2 systems run, think-off, advertised context 524288. EAGLE, 3 steps, 4 draft tokens, top-k 1, draft window 4096, mem-fraction 0.90. Draft-extend CUDA graphs on. Recorded 2026-09-27. Entry <a href="https://github.com/r0b0tlab/r0b0bench/blob/b35bb28ca058e74eca5642a732c0d791481a7f36/results/entries/mimo26-nvfp4-mtp-500k-mm-systems-20260927.json">mimo26-nvfp4-mtp-500k-mm-systems-20260927</a>.</p>
+      <div class="metric-row">
+        <article class="metric speed">
+          <p class="label">C1 decode</p>
+          <p class="v">17.31</p>
+          <p class="method">tok/s median</p>
+        </article>
+        <article class="metric speed">
+          <p class="label">Prefill proxy</p>
+          <p class="v">17,941</p>
+          <p class="method">tok/s median</p>
+        </article>
+        <article class="metric">
+          <p class="label">TTFT</p>
+          <p class="v">276.5</p>
+          <p class="method">ms mean</p>
+        </article>
+        <article class="metric spec">
+          <p class="label">NIAH</p>
+          <p class="v">3/3</p>
+          <p class="method">exact</p>
+        </article>
+      </div>
+      <p class="method"><strong>C1 decode method.</strong> OpenAI portable single-stream throughput. Five reps, first dropped, four stable. Requested 2,048 output tokens. Client-side output tokens per second. Median 17.31, mean 17.26. This is not the 8-wide vendor comparison and not the 1024-token harness below.</p>
+      <p class="method"><strong>Prefill method.</strong> Same throughput lane. Two stable reps. Median prompt length 22,771 tokens. Median server prompt tok/s 17,941. The harness records this as an end-to-end wall proxy that includes the short decode, not a pure prefill-kernel timer.</p>
+      <p class="method"><strong>Latency method.</strong> Streaming chat, one client. Requested 128 output tokens. Five reps, first dropped, four stable. Mean TTFT 276.5 ms. Mean inter-token latency 139.6 ms, p50 139.6 ms, p95 147.4 ms. Mean end-to-end 4.12 s.</p>
+      <p class="method"><strong>1024-token harness, same boot, not C1.</strong> Think-off, greedy, one stream. Decode median 24.1 tok/s short code, 23.6 medium code, 15.6 prose.</p>
+
+      <div class="table-wrap" style="margin-top:22px">
+        <table>
+          <thead>
+            <tr><th>Lane</th><th>Result</th><th>Method</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Lane">Canary</td>
+              <td data-label="Result" class="num">5/5</td>
+              <td class="prose" data-label="Method">Identity, arithmetic, structured output, tool call, and a short needle. Tool-call parser mimo. All five checks passed.</td>
+            </tr>
+            <tr>
+              <td data-label="Lane">BFCL multi-turn</td>
+              <td data-label="Result" class="num">117/200</td>
+              <td class="prose" data-label="Method">Official BFCL v4 multi_turn_base accuracy, 0.585. Think-off. Two hundred cases. Score is the official evaluator, not a hand grade.</td>
+            </tr>
+            <tr>
+              <td data-label="Lane">BFCL AST</td>
+              <td data-label="Result" class="num">215/600</td>
+              <td class="prose" data-label="Method">Official score-file headers after an exact filename match. multiple 70/200, parallel 103/200, parallel_multiple 42/200. Micro is the sum, 0.358. Think-off.</td>
+            </tr>
+            <tr>
+              <td data-label="Lane">Concurrency</td>
+              <td data-label="Result" class="num">26.7 → 93.2</td>
+              <td class="prose" data-label="Method">OpenAI portable ladder. Levels 1, 2, 4, 6. 512 output tokens. Three reps, warmup dropped. Aggregate output tok/s: 26.7, 43.5, 66.6, 93.2.</td>
+            </tr>
+            <tr>
+              <td data-label="Lane">NIAH</td>
+              <td data-label="Result" class="num">3/3</td>
+              <td class="prose" data-label="Method">25, 50, and 90 percent of advertised 524288 minus a 256-token reserve. Depths 131008, 262016, and 471628. Exact return of the planted code. Finish reason stop.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="method">The measured process used the parent image with the loader and draft-extend window-index files bind-mounted. Tag ghcr.io/r0b0tlab/sglang-mimo26-env:20260922-582389ce-mtp-mm copies those same three files and was not the process that served this suite. The tag is still private.</p>
+
+      <h3 style="margin-top:28px">Earlier DFlash systems row</h3>
+      <p class="section-lead">Not the main serve profile. Recorded 2026-09-26. Entry mimo26-nvfp4-final3-500k-systems-20260925. Think-off. Tool parser mimo. Advertised context 524288.</p>
       <div class="metric-row">
         <article class="metric speed">
           <p class="label">C1 decode</p>
@@ -558,7 +623,7 @@ footer {
     <div>
       <a href="https://huggingface.co/r0b0tlab/MiMo-V2.6-Flash-RL-NVFP4">Model</a>
       · <a href="https://github.com/r0b0tlab/mimo26-nvfp4-sm121">Campaign</a>
-      · <a href="https://github.com/r0b0tlab/r0b0bench/blob/2fe1f6da92c626860e77f955bd978eca565547fd/results/entries/mimo26-nvfp4-final3-500k-systems-20260925.json">Systems entry</a>
+      · <a href="https://github.com/r0b0tlab/r0b0bench/blob/b35bb28ca058e74eca5642a732c0d791481a7f36/results/entries/mimo26-nvfp4-mtp-500k-mm-systems-20260927.json">MTP systems</a>
     </div>
     <div>Recorded 2026-09-21 to 2026-09-26</div>
     <div class="watermark">@mr-r0b0t — r0b0tlab</div>
