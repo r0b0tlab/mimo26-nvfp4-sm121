@@ -673,6 +673,36 @@ footer {
     </div>
   </section>
 
+  <section id="maxperf">
+    <div class="wrap">
+      <h2>Max-performance review — 2026-09-30</h2>
+      <p class="section-lead">A 12-cell one-variable-per-boot ladder tested every remaining serve-flag lever against the preferred profile. No cell won on all c1 lanes: the configuration above is confirmed optimal for this build. torch.compile fails at capture on this driver/kernel pair and is a hard no.</p>
+      <div class="metric-row">
+        <article class="metric">
+          <p class="label">Cells tested</p>
+          <p class="v">12</p>
+          <p class="method">spec geometry, kernel fusions, NCCL, KV splits, chunk size, conservativeness, stream interval, torch.compile</p>
+        </article>
+        <article class="metric">
+          <p class="label">Promoted</p>
+          <p class="v">0</p>
+          <p class="method">MTP-500k-mm-graph defended; boot-to-boot noise ~5%</p>
+        </article>
+        <article class="metric">
+          <p class="label">GSM8K-200 re-run</p>
+          <p class="v">192/200</p>
+          <p class="method">0.960 think-off on the live serve, 0 truncations</p>
+        </article>
+        <article class="metric">
+          <p class="label">Concurrency</p>
+          <p class="v">69.2</p>
+          <p class="method">aggregate tok/s at c8; 21.6 / 38.0 / 47.7 at c1/c2/c4; accept length 3.38–3.47</p>
+        </article>
+      </div>
+      <p class="method"><strong>Method.</strong> Chained ladders, one boot per cell, identical 60-profile bench on every boot, promote gate required ≥3% on all c1 lanes plus prefill/c4 ≥95% of floor. Per-cell evidence in the campaign repo (results/maxperf/, results/e2e/, results/q200/). Acceptance histogram: per-position draft accept 0.75 / 0.65 / 0.49 / 0.00 — the 3-step geometry is load-bearing.</p>
+    </div>
+  </section>
+
   <section id="niah">
     <div class="wrap">
       <h2>Retrieval</h2>
@@ -712,7 +742,7 @@ footer {
       · <a href="https://github.com/r0b0tlab/mimo26-nvfp4-sm121">Campaign</a>
       · <a href="https://github.com/r0b0tlab/r0b0bench/blob/b35bb28ca058e74eca5642a732c0d791481a7f36/results/entries/mimo26-nvfp4-mtp-500k-mm-systems-20260927.json">MTP systems</a>
     </div>
-    <div>MIT for the quantization. Upstream licenses retained. Recorded 2026-09-21 to 2026-09-27</div>
+    <div>MIT for the quantization. Upstream licenses retained. Recorded 2026-09-21 to 2026-09-30</div>
     <div class="watermark">@mr-r0b0t — r0b0tlab</div>
   </footer>
 </div>
