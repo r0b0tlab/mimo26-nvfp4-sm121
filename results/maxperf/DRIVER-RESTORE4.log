@@ -1,0 +1,9 @@
+=== [2026-09-30T06:10:23Z] CELL RESTORE START ===
+=== [2026-09-30T06:16:30Z] CELL RESTORE HEALTHY after ~330s
+=== [2026-09-30T06:24:07Z] CELL RESTORE BENCH DONE rc=0
+  }
+ },
+ "accept_len_end": 3.104704097116844
+}
+=== restoring live profile MTP-500k-mm-graph
+=== [2026-09-30T06:24:42Z] DRIVER DONE

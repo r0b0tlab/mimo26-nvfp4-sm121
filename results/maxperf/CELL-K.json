@@ -1,0 +1,217 @@
+{
+ "tag": "CELL-K",
+ "url": "http://192.168.68.78:30000",
+ "started_utc": "2026-09-30T03:28:07Z",
+ "max_tokens": 1024,
+ "repeats": 2,
+ "server_info_start": {
+  "avg_spec_accept_length": null,
+  "memory_usage": {
+   "weight": 85.017,
+   "kvcache": 9.159,
+   "startup_available": 13.129,
+   "token_capacity": 1455143,
+   "token_capacity_swa": 29102,
+   "graph": {
+    "prefill": 0.0,
+    "decode": 0.0,
+    "target_verify": 0.834,
+    "draft_prefill": 0.0,
+    "draft_decode": 0.0,
+    "draft_extend": 0.485
+   }
+  }
+ },
+ "workloads": {
+  "short_code": {
+   "requests": [
+    {
+     "prompt_tokens": 71,
+     "completion_tokens": 1024,
+     "chunks": 302,
+     "ttft_s": 0.5990042600315064,
+     "e2e_s": 45.70348064810969,
+     "text_head": "```python\n\"\"\"\nThread-safe LRU Cache with TTL Expiry and Statistics.\n\nThis module provides a generic, thread-safe cache implementation that supports:\n- Least Rec",
+     "decode_tps": 22.680810365161502,
+     "prefill_tps": 118.53004183353478,
+     "i": 0
+    },
+    {
+     "prompt_tokens": 71,
+     "completion_tokens": 1024,
+     "chunks": 295,
+     "ttft_s": 0.5837189729791135,
+     "e2e_s": 43.806334416847676,
+     "text_head": "```python\n\"\"\"\nThread-safe LRU Cache with TTL Expiry and Statistics.\n\nThis module provides a generic, thread-safe Least Recently Used (LRU) cache\nimplementation ",
+     "decode_tps": 23.668304321845305,
+     "prefill_tps": 121.63387398158207,
+     "i": 1
+    }
+   ],
+   "decode_tps_median": 23.174557343503402,
+   "prefill_tps_median": 120.08195790755843,
+   "ttft_median_s": 0.5913616165053099,
+   "accept_len_before": null,
+   "accept_len_after": 3.4283333333333332
+  },
+  "medium_code": {
+   "requests": [
+    {
+     "prompt_tokens": 4405,
+     "completion_tokens": 1024,
+     "chunks": 295,
+     "ttft_s": 6.378501347033307,
+     "e2e_s": 48.8632517750375,
+     "text_head": "```python\n\"\"\"Tests for 10_calibrate_mimo.py\"\"\"\n\nimport json\nimport math\nimport struct\nimport sys\nimport types\nfrom pathlib import Path\nfrom unittest import mock",
+     "decode_tps": 24.07932795716069,
+     "prefill_tps": 690.6010926922202,
+     "i": 0
+    },
+    {
+     "prompt_tokens": 4405,
+     "completion_tokens": 1024,
+     "chunks": 299,
+     "ttft_s": 6.085303459083661,
+     "e2e_s": 48.73114700615406,
+     "text_head": "```python\n\"\"\"Tests for 10_calibrate_mimo.py\"\"\"\n\nimport math\nimport sys\nimport types\nfrom pathlib import Path\nfrom unittest.mock import MagicMock, patch\n\nimport ",
+     "decode_tps": 23.98839169511719,
+     "prefill_tps": 723.875157519805,
+     "i": 1
+    }
+   ],
+   "decode_tps_median": 24.03385982613894,
+   "prefill_tps_median": 707.2381251060126,
+   "ttft_median_s": 6.231902403058484,
+   "accept_len_before": 3.4283333333333332,
+   "accept_len_after": 3.4408333333333334
+  },
+  "prose": {
+   "requests": [
+    {
+     "prompt_tokens": 2185,
+     "completion_tokens": 1024,
+     "chunks": 436,
+     "ttft_s": 3.248636475065723,
+     "e2e_s": 64.71340494719334,
+     "text_head": "The intersection of political strategy, public health, and the defense of free expression reveals a recurring tension in modern society: the struggle between es",
+     "decode_tps": 16.643741677709198,
+     "prefill_tps": 672.5898747891746,
+     "i": 0
+    },
+    {
+     "prompt_tokens": 2185,
+     "completion_tokens": 1024,
+     "chunks": 430,
+     "ttft_s": 3.1052203390281647,
+     "e2e_s": 63.475540860090405,
+     "text_head": "The intersection of political strategy, public health, and the defense of free expression reveals a recurring tension in modern society: the delicate balance be",
+     "decode_tps": 16.945491466909377,
+     "prefill_tps": 703.653770567481,
+     "i": 1
+    }
+   ],
+   "decode_tps_median": 16.794616572309288,
+   "prefill_tps_median": 688.1218226783278,
+   "ttft_median_s": 3.176928407046944,
+   "accept_len_before": 3.4408333333333334,
+   "accept_len_after": 2.9980392156862745
+  },
+  "prefill_8k": {
+   "requests": [
+    {
+     "prompt_tokens": 7910,
+     "completion_tokens": 1,
+     "chunks": 1,
+     "ttft_s": 11.889011047082022,
+     "e2e_s": 11.889204262988642,
+     "text_head": "The",
+     "prefill_tps": 665.3202666458444,
+     "i": 0
+    },
+    {
+     "prompt_tokens": 7910,
+     "completion_tokens": 1,
+     "chunks": 1,
+     "ttft_s": 11.98659121291712,
+     "e2e_s": 11.986772989854217,
+     "text_head": "The",
+     "prefill_tps": 659.904042733679,
+     "i": 1
+    }
+   ],
+   "decode_tps_median": null,
+   "prefill_tps_median": 662.6121546897617,
+   "ttft_median_s": 11.93780112999957,
+   "accept_len_before": 2.9980392156862745,
+   "accept_len_after": 2.9980392156862745
+  },
+  "c4_short": {
+   "requests": [
+    {
+     "prompt_tokens": 71,
+     "completion_tokens": 1024,
+     "chunks": 317,
+     "ttft_s": 1.074412568937987,
+     "e2e_s": 94.67568160709925,
+     "text_head": "```python\n\"\"\"\nRate Limiter Module\n====================\n\nProvides an asynchronous rate limiting interface supporting two strategies:\n1. Token Bucket\n2. Sliding W",
+     "decode_tps": 10.929371961717202,
+     "prefill_tps": 66.08262231163268
+    },
+    {
+     "prompt_tokens": 68,
+     "completion_tokens": 1024,
+     "chunks": 301,
+     "ttft_s": 1.3606763121206313,
+     "e2e_s": 91.55453344713897,
+     "text_head": "```python\n\"\"\"\nTrie-based Autocomplete Engine.\n\nThis module implements a high-performance trie data structure supporting:\n1.  **Frequency Ranking**: Suggestions ",
+     "decode_tps": 11.342266290273102,
+     "prefill_tps": 49.97514794243837
+    },
+    {
+     "prompt_tokens": 70,
+     "completion_tokens": 1024,
+     "chunks": 310,
+     "ttft_s": 1.3606687600258738,
+     "e2e_s": 93.60206200508401,
+     "text_head": "```python\n\"\"\"\nAsynchronous Job Queue with Bounded Concurrency, Retries, and Cancellation.\n\nThis module provides a robust `JobQueue` implementation using `asynci",
+     "decode_tps": 11.090484549608972,
+     "prefill_tps": 51.44529076912806
+    },
+    {
+     "prompt_tokens": 74,
+     "completion_tokens": 1024,
+     "chunks": 309,
+     "ttft_s": 1.3594620709773153,
+     "e2e_s": 93.40621645702049,
+     "text_head": "```python\n\"\"\"\nA* Pathfinding Module\n=====================\n\nThis module implements the A* search algorithm on a weighted 2-D grid.\nIt supports 8-directional move",
+     "decode_tps": 11.113946848481415,
+     "prefill_tps": 54.4332950361767
+    }
+   ],
+   "wall_s": 94.67674717702903,
+   "aggregate_tps": 43.26299880519969,
+   "per_req_decode_median": 11.102215699045193,
+   "accept_len_before": 2.9980392156862745,
+   "accept_len_after": 3.100525827404887
+  }
+ },
+ "server_info_end": {
+  "avg_spec_accept_length": 3.100525827404887,
+  "memory_usage": {
+   "weight": 85.017,
+   "kvcache": 9.159,
+   "startup_available": 13.129,
+   "token_capacity": 1455143,
+   "token_capacity_swa": 29102,
+   "graph": {
+    "prefill": 0.0,
+    "decode": 0.0,
+    "target_verify": 0.834,
+    "draft_prefill": 0.0,
+    "draft_decode": 0.0,
+    "draft_extend": 0.485
+   }
+  }
+ },
+ "finished_utc": "2026-09-30T03:35:22Z"
+}

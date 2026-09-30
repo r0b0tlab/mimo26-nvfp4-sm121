@@ -119,6 +119,30 @@ The measured process used the parent image with the loader and draft-extend wind
 
 Ledger: https://github.com/r0b0tlab/r0b0bench/blob/b35bb28ca058e74eca5642a732c0d791481a7f36/results/entries/mimo26-nvfp4-mtp-500k-mm-systems-20260927.json
 
+## Max-performance review + Q200v2 protocol, 2026-09-30
+
+A 12-cell one-variable-per-boot ladder tested every remaining serve-flag lever
+(speculative geometry, kernel fusions, NCCL tuning, KV splits, chunk size,
+scheduler conservativeness, stream interval, torch.compile) against the preferred
+`MTP-500k-mm-graph` serve. **No cell won on all c1 lanes; the preferred profile is
+confirmed optimal for this build.** torch.compile fails at capture on this
+driver/kernel pair (triton illegal memory access) — do not retry.
+
+Q200v2 protocol on that serve, think-off (2026-09-30):
+
+| Measure | Result |
+|---|---|
+| GSM8K-200 | **192/200 (0.960)**, 0 truncations, 0 transport errors |
+| Concurrency aggregate | c1 21.6 · c2 38.0 · c4 47.7 · c8 69.2 tok/s |
+| Per-stream decode | 21.9 / 19.4 / 12.4 / 9.0 tok/s (TTFT 0.57–1.48 s) |
+| Spec accept length | 3.38–3.47 at every level |
+| Per-request e2e | p50 23.5 tok/s over 200 answers (mean 209 tokens) |
+| Load telemetry | 26 W mean, 47–56 °C, GPU util ~79%, host MemAvailable ≥ 10.9 GiB |
+
+Evidence and the full cell table live in the campaign repo:
+`results/maxperf/` (FINAL-VERDICT.json, MORNING-REPORT.md, 12 CELL-*.json),
+`results/e2e/FINAL3-concurrency.json`, `results/q200/FINAL3-nothink.jsonl`.
+
 ## Known limits
 
 - NVFP4 **KV cache** is not supported by SGLang `582389ce` for this model's hybrid-SWA pool (`torch.zeros(Float4_e2m1fn_x2)` → NotImplemented); FP8 KV + calibrated scales ships instead. Evidence in the campaign repo (`results/nvfp4_kv_verdict.md`).

@@ -1,0 +1,533 @@
+{
+ "tag": "FINAL3-e2e",
+ "url": "http://192.168.68.78:30000",
+ "think": "off",
+ "max_tokens": 1024,
+ "repeats": 2,
+ "started_utc": "2026-09-30T13:46:36Z",
+ "server_info_start": {
+  "avg_spec_accept_length": null,
+  "memory_usage": {
+   "weight": 83.999,
+   "kvcache": 9.297,
+   "startup_available": 13.046,
+   "token_capacity": 1477005,
+   "token_capacity_swa": 29540,
+   "graph": {
+    "prefill": 0.0,
+    "decode": 0.0,
+    "target_verify": 1.413,
+    "draft_prefill": 0.0,
+    "draft_decode": 0.0,
+    "draft_extend": 0.478
+   }
+  },
+  "max_total_num_tokens": 1477005,
+  "max_running_requests": 8
+ },
+ "levels": {
+  "1": [
+   {
+    "concurrency": 1,
+    "repeat": 0,
+    "wall_s": 47.139,
+    "aggregate_tps": 21.722800062907226,
+    "per_req_decode_median": 21.975452872806795,
+    "ttft_median_s": 0.5863524209707975,
+    "e2e_median_s": 47.13851142115891,
+    "errors": 0,
+    "truncated": 1,
+    "accept_before": null,
+    "accept_after": 3.278125,
+    "server_decode_tail": [
+     "CalledProcessError(255, 'ssh -i $HOME/.ssh/id_ed25519_shared -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=10 r0b0tdgx@192.168.68.78 \"grep -a \\'Decode batch\\' /home/r0b0tdgx/projects/mimo26-nvfp4-sm121/logs/serve/r0.FINAL3.log | tail -3\"')"
+    ],
+    "requests": [
+     {
+      "prompt_tokens": 61,
+      "completion_tokens": 1024,
+      "chunks": 306,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 0.5863524209707975,
+      "e2e_s": 47.13851142115891,
+      "decode_tps": 21.975452872806795,
+      "prefill_tps": 104.03299759384471
+     }
+    ]
+   },
+   {
+    "concurrency": 1,
+    "repeat": 1,
+    "wall_s": 47.526,
+    "aggregate_tps": 21.546222007099804,
+    "per_req_decode_median": 21.778824154635224,
+    "ttft_median_s": 0.5526006279978901,
+    "e2e_median_s": 47.525063794106245,
+    "errors": 0,
+    "truncated": 1,
+    "accept_before": 3.278125,
+    "accept_after": 3.4166666666666665,
+    "server_decode_tail": [
+     "CalledProcessError(255, 'ssh -i $HOME/.ssh/id_ed25519_shared -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=10 r0b0tdgx@192.168.68.78 \"grep -a \\'Decode batch\\' /home/r0b0tdgx/projects/mimo26-nvfp4-sm121/logs/serve/r0.FINAL3.log | tail -3\"')"
+    ],
+    "requests": [
+     {
+      "prompt_tokens": 61,
+      "completion_tokens": 1024,
+      "chunks": 287,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 0.5526006279978901,
+      "e2e_s": 47.525063794106245,
+      "decode_tps": 21.778824154635224,
+      "prefill_tps": 110.38713477580939
+     }
+    ]
+   }
+  ],
+  "2": [
+   {
+    "concurrency": 2,
+    "repeat": 0,
+    "wall_s": 54.049,
+    "aggregate_tps": 37.89147781226134,
+    "per_req_decode_median": 19.401324012650974,
+    "ttft_median_s": 0.9527336786268279,
+    "e2e_median_s": 53.686776606482454,
+    "errors": 0,
+    "truncated": 2,
+    "accept_before": 3.4166666666666665,
+    "accept_after": 3.464813205907906,
+    "server_decode_tail": [
+     "CalledProcessError(255, 'ssh -i $HOME/.ssh/id_ed25519_shared -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=10 r0b0tdgx@192.168.68.78 \"grep -a \\'Decode batch\\' /home/r0b0tdgx/projects/mimo26-nvfp4-sm121/logs/serve/r0.FINAL3.log | tail -3\"')"
+    ],
+    "requests": [
+     {
+      "prompt_tokens": 61,
+      "completion_tokens": 1024,
+      "chunks": 291,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.1245929161086679,
+      "e2e_s": 53.32572402898222,
+      "decode_tps": 19.59736575326085,
+      "prefill_tps": 54.241849762910704
+     },
+     {
+      "prompt_tokens": 56,
+      "completion_tokens": 1024,
+      "chunks": 296,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 0.7808744411449879,
+      "e2e_s": 54.047829183982685,
+      "decode_tps": 19.2052822720411,
+      "prefill_tps": 71.7144742474703
+     }
+    ]
+   },
+   {
+    "concurrency": 2,
+    "repeat": 1,
+    "wall_s": 53.68,
+    "aggregate_tps": 38.15216252187356,
+    "per_req_decode_median": 19.380789848467174,
+    "ttft_median_s": 0.8373344525462016,
+    "e2e_median_s": 53.62178617250174,
+    "errors": 0,
+    "truncated": 2,
+    "accept_before": 3.464813205907906,
+    "accept_after": 3.4641657334826426,
+    "server_decode_tail": [
+     "CalledProcessError(255, 'ssh -i $HOME/.ssh/id_ed25519_shared -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=10 r0b0tdgx@192.168.68.78 \"grep -a \\'Decode batch\\' /home/r0b0tdgx/projects/mimo26-nvfp4-sm121/logs/serve/r0.FINAL3.log | tail -3\"')"
+    ],
+    "requests": [
+     {
+      "prompt_tokens": 61,
+      "completion_tokens": 1024,
+      "chunks": 295,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 0.7597780909854919,
+      "e2e_s": 53.56479899096303,
+      "decode_tps": 19.373242270137858,
+      "prefill_tps": 80.28660042154968
+     },
+     {
+      "prompt_tokens": 56,
+      "completion_tokens": 1024,
+      "chunks": 296,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 0.9148908141069114,
+      "e2e_s": 53.67877335404046,
+      "decode_tps": 19.388337426796486,
+      "prefill_tps": 61.209489850070796
+     }
+    ]
+   }
+  ],
+  "4": [
+   {
+    "concurrency": 4,
+    "repeat": 0,
+    "wall_s": 81.002,
+    "aggregate_tps": 50.566811044076935,
+    "per_req_decode_median": 13.120034030581454,
+    "ttft_median_s": 1.1767707141116261,
+    "e2e_median_s": 79.05754183244426,
+    "errors": 0,
+    "truncated": 4,
+    "accept_before": 3.4641657334826426,
+    "accept_after": 3.4457457802273512,
+    "server_decode_tail": [
+     "CalledProcessError(255, 'ssh -i $HOME/.ssh/id_ed25519_shared -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=10 r0b0tdgx@192.168.68.78 \"grep -a \\'Decode batch\\' /home/r0b0tdgx/projects/mimo26-nvfp4-sm121/logs/serve/r0.FINAL3.log | tail -3\"')"
+    ],
+    "requests": [
+     {
+      "prompt_tokens": 61,
+      "completion_tokens": 1024,
+      "chunks": 289,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.1772778420709074,
+      "e2e_s": 76.56288417987525,
+      "decode_tps": 13.570260363192327,
+      "prefill_tps": 51.81444670078652
+     },
+     {
+      "prompt_tokens": 56,
+      "completion_tokens": 1024,
+      "chunks": 294,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 0.9563617589883506,
+      "e2e_s": 77.76314240694046,
+      "decode_tps": 13.319239270582809,
+      "prefill_tps": 58.5552480258489
+     },
+     {
+      "prompt_tokens": 55,
+      "completion_tokens": 1024,
+      "chunks": 307,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.1772824658546597,
+      "e2e_s": 80.35194125794806,
+      "decode_tps": 12.920828790580098,
+      "prefill_tps": 46.7177602616142
+     },
+     {
+      "prompt_tokens": 56,
+      "completion_tokens": 1024,
+      "chunks": 311,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.176263586152345,
+      "e2e_s": 80.99957149615511,
+      "decode_tps": 12.815842524436825,
+      "prefill_tps": 47.608376778185075
+     }
+    ]
+   },
+   {
+    "concurrency": 4,
+    "repeat": 1,
+    "wall_s": 91.326,
+    "aggregate_tps": 44.850218569574125,
+    "per_req_decode_median": 11.742890869352639,
+    "ttft_median_s": 1.1132121343398467,
+    "e2e_median_s": 88.23384244600311,
+    "errors": 0,
+    "truncated": 4,
+    "accept_before": 3.4457457802273512,
+    "accept_after": 3.4509424842919283,
+    "server_decode_tail": [
+     "CalledProcessError(255, 'ssh -i $HOME/.ssh/id_ed25519_shared -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=10 r0b0tdgx@192.168.68.78 \"grep -a \\'Decode batch\\' /home/r0b0tdgx/projects/mimo26-nvfp4-sm121/logs/serve/r0.FINAL3.log | tail -3\"')"
+    ],
+    "requests": [
+     {
+      "prompt_tokens": 61,
+      "completion_tokens": 1024,
+      "chunks": 296,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.0118965178262442,
+      "e2e_s": 88.69461777782999,
+      "decode_tps": 11.667087853244219,
+      "prefill_tps": 60.28284407089391
+     },
+     {
+      "prompt_tokens": 56,
+      "completion_tokens": 1024,
+      "chunks": 291,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.2150914950761944,
+      "e2e_s": 87.77306711417623,
+      "decode_tps": 11.81869388546106,
+      "prefill_tps": 46.08706441195889
+     },
+     {
+      "prompt_tokens": 55,
+      "completion_tokens": 1024,
+      "chunks": 314,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.0105169177986681,
+      "e2e_s": 91.32480316096917,
+      "decode_tps": 11.327139921818855,
+      "prefill_tps": 54.42758951509015
+     },
+     {
+      "prompt_tokens": 56,
+      "completion_tokens": 1024,
+      "chunks": 286,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.214527750853449,
+      "e2e_s": 86.63558431598358,
+      "decode_tps": 11.975994429887045,
+      "prefill_tps": 46.108456526126126
+     }
+    ]
+   }
+  ],
+  "8": [
+   {
+    "concurrency": 8,
+    "repeat": 0,
+    "wall_s": 119.19,
+    "aggregate_tps": 68.7307406217445,
+    "per_req_decode_median": 8.953088156324233,
+    "ttft_median_s": 1.4869229990290478,
+    "e2e_median_s": 115.6084914956009,
+    "errors": 0,
+    "truncated": 8,
+    "accept_before": 3.4509424842919283,
+    "accept_after": 3.381645472652061,
+    "server_decode_tail": [
+     "CalledProcessError(255, 'ssh -i $HOME/.ssh/id_ed25519_shared -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=10 r0b0tdgx@192.168.68.78 \"grep -a \\'Decode batch\\' /home/r0b0tdgx/projects/mimo26-nvfp4-sm121/logs/serve/r0.FINAL3.log | tail -3\"')"
+    ],
+    "requests": [
+     {
+      "prompt_tokens": 61,
+      "completion_tokens": 1024,
+      "chunks": 310,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.184750682907179,
+      "e2e_s": 114.2724553688895,
+      "decode_tps": 9.046158817863306,
+      "prefill_tps": 51.487625945330755
+     },
+     {
+      "prompt_tokens": 56,
+      "completion_tokens": 1024,
+      "chunks": 301,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.4888248869683594,
+      "e2e_s": 111.21031392691657,
+      "decode_tps": 9.323642158091214,
+      "prefill_tps": 37.61355716858736
+     },
+     {
+      "prompt_tokens": 55,
+      "completion_tokens": 1024,
+      "chunks": 317,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.1835336261428893,
+      "e2e_s": 116.56333409808576,
+      "decode_tps": 8.866393413036556,
+      "prefill_tps": 46.471007485646034
+     },
+     {
+      "prompt_tokens": 56,
+      "completion_tokens": 1024,
+      "chunks": 301,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.486897303024307,
+      "e2e_s": 111.20940515887924,
+      "decode_tps": 9.323533783204565,
+      "prefill_tps": 37.66231863229397
+     },
+     {
+      "prompt_tokens": 59,
+      "completion_tokens": 1024,
+      "chunks": 311,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.4869486950337887,
+      "e2e_s": 114.65364889311604,
+      "decode_tps": 9.03978289961191,
+      "prefill_tps": 39.67857142418711
+     },
+     {
+      "prompt_tokens": 55,
+      "completion_tokens": 1024,
+      "chunks": 320,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.4878492078278214,
+      "e2e_s": 117.21280786790885,
+      "decode_tps": 8.839943173942546,
+      "prefill_tps": 36.96611169373609
+     },
+     {
+      "prompt_tokens": 54,
+      "completion_tokens": 1024,
+      "chunks": 332,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.4869722160510719,
+      "e2e_s": 119.18597685010172,
+      "decode_tps": 8.691679077335543,
+      "prefill_tps": 36.3154061771288
+     },
+     {
+      "prompt_tokens": 57,
+      "completion_tokens": 1024,
+      "chunks": 325,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.4856221191585064,
+      "e2e_s": 118.16012269211933,
+      "decode_tps": 8.767997358049705,
+      "prefill_tps": 38.3677647666462
+     }
+    ]
+   },
+   {
+    "concurrency": 8,
+    "repeat": 1,
+    "wall_s": 117.495,
+    "aggregate_tps": 69.72217861701498,
+    "per_req_decode_median": 9.005421212399543,
+    "ttft_median_s": 1.4642093919683248,
+    "e2e_median_s": 115.06180902256165,
+    "errors": 0,
+    "truncated": 8,
+    "accept_before": 3.381645472652061,
+    "accept_after": 3.3607146748011765,
+    "server_decode_tail": [
+     "CalledProcessError(255, 'ssh -i $HOME/.ssh/id_ed25519_shared -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=10 r0b0tdgx@192.168.68.78 \"grep -a \\'Decode batch\\' /home/r0b0tdgx/projects/mimo26-nvfp4-sm121/logs/serve/r0.FINAL3.log | tail -3\"')"
+    ],
+    "requests": [
+     {
+      "prompt_tokens": 61,
+      "completion_tokens": 1024,
+      "chunks": 305,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.1974685699678957,
+      "e2e_s": 113.22664845502004,
+      "decode_tps": 9.13156424402109,
+      "prefill_tps": 50.94079421360964
+     },
+     {
+      "prompt_tokens": 56,
+      "completion_tokens": 1024,
+      "chunks": 300,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.4660444168839604,
+      "e2e_s": 111.41539055900648,
+      "decode_tps": 9.304334634647839,
+      "prefill_tps": 38.19802412196116
+     },
+     {
+      "prompt_tokens": 55,
+      "completion_tokens": 1024,
+      "chunks": 311,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.4653040000703186,
+      "e2e_s": 114.93822058103979,
+      "decode_tps": 9.015381122201116,
+      "prefill_tps": 37.534873307764535
+     },
+     {
+      "prompt_tokens": 56,
+      "completion_tokens": 1024,
+      "chunks": 314,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.4658947840798646,
+      "e2e_s": 115.6341049131006,
+      "decode_tps": 8.960476445526286,
+      "prefill_tps": 38.20192322680985
+     },
+     {
+      "prompt_tokens": 59,
+      "completion_tokens": 1024,
+      "chunks": 318,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.4637191039510071,
+      "e2e_s": 116.34757662611082,
+      "decode_tps": 8.904658094077611,
+      "prefill_tps": 40.308280352932265
+     },
+     {
+      "prompt_tokens": 55,
+      "completion_tokens": 1024,
+      "chunks": 326,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.4636597279459238,
+      "e2e_s": 117.49237527092919,
+      "decode_tps": 8.816806104563874,
+      "prefill_tps": 37.57703990201746
+     },
+     {
+      "prompt_tokens": 54,
+      "completion_tokens": 1024,
+      "chunks": 305,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.4646996799856424,
+      "e2e_s": 113.22338179801591,
+      "decode_tps": 9.153685540576706,
+      "prefill_tps": 36.867625997248346
+     },
+     {
+      "prompt_tokens": 57,
+      "completion_tokens": 1024,
+      "chunks": 312,
+      "finish_reason": "length",
+      "truncated": true,
+      "ttft_s": 1.4612024321686476,
+      "e2e_s": 115.18539746408351,
+      "decode_tps": 8.99546130259797,
+      "prefill_tps": 39.0089687404936
+     }
+    ]
+   }
+  ]
+ },
+ "server_info_end": {
+  "avg_spec_accept_length": 3.3607146748011765,
+  "memory_usage": {
+   "weight": 83.999,
+   "kvcache": 9.297,
+   "startup_available": 13.046,
+   "token_capacity": 1477005,
+   "token_capacity_swa": 29540,
+   "graph": {
+    "prefill": 0.0,
+    "decode": 0.0,
+    "target_verify": 1.413,
+    "draft_prefill": 0.0,
+    "draft_decode": 0.0,
+    "draft_extend": 0.478
+   }
+  },
+  "max_total_num_tokens": 1477005,
+  "max_running_requests": 8
+ },
+ "finished_utc": "2026-09-30T13:56:50Z"
+}

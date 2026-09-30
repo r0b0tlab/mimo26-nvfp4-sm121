@@ -1,0 +1,535 @@
+[e2e] warmup
+[e2e] c1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ED25519 key sent by the remote host is
+SHA256:fLRkasOBeG7fbJdv9Mm3cIk3hmxt6E5Fi0gYCBRDm6k.
+Please contact your system administrator.
+Add correct host key in /home/r0b0tdgx/.ssh/known_hosts to get rid of this message.
+Offending ED25519 key in /home/r0b0tdgx/.ssh/known_hosts:16
+  remove with:
+  ssh-keygen -f '/home/r0b0tdgx/.ssh/known_hosts' -R '192.168.68.78'
+Host key for 192.168.68.78 has changed and you have requested strict checking.
+Host key verification failed.
+  c1[0] agg=21.7 decode_med=21.975452872806795 ttft=0.59 e2e=47.1 err=0 trunc=1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ED25519 key sent by the remote host is
+SHA256:fLRkasOBeG7fbJdv9Mm3cIk3hmxt6E5Fi0gYCBRDm6k.
+Please contact your system administrator.
+Add correct host key in /home/r0b0tdgx/.ssh/known_hosts to get rid of this message.
+Offending ED25519 key in /home/r0b0tdgx/.ssh/known_hosts:16
+  remove with:
+  ssh-keygen -f '/home/r0b0tdgx/.ssh/known_hosts' -R '192.168.68.78'
+Host key for 192.168.68.78 has changed and you have requested strict checking.
+Host key verification failed.
+  c1[1] agg=21.5 decode_med=21.778824154635224 ttft=0.55 e2e=47.5 err=0 trunc=1
+[e2e] c2
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ED25519 key sent by the remote host is
+SHA256:fLRkasOBeG7fbJdv9Mm3cIk3hmxt6E5Fi0gYCBRDm6k.
+Please contact your system administrator.
+Add correct host key in /home/r0b0tdgx/.ssh/known_hosts to get rid of this message.
+Offending ED25519 key in /home/r0b0tdgx/.ssh/known_hosts:16
+  remove with:
+  ssh-keygen -f '/home/r0b0tdgx/.ssh/known_hosts' -R '192.168.68.78'
+Host key for 192.168.68.78 has changed and you have requested strict checking.
+Host key verification failed.
+  c2[0] agg=37.9 decode_med=19.401324012650974 ttft=0.95 e2e=53.7 err=0 trunc=2
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ED25519 key sent by the remote host is
+SHA256:fLRkasOBeG7fbJdv9Mm3cIk3hmxt6E5Fi0gYCBRDm6k.
+Please contact your system administrator.
+Add correct host key in /home/r0b0tdgx/.ssh/known_hosts to get rid of this message.
+Offending ED25519 key in /home/r0b0tdgx/.ssh/known_hosts:16
+  remove with:
+  ssh-keygen -f '/home/r0b0tdgx/.ssh/known_hosts' -R '192.168.68.78'
+Host key for 192.168.68.78 has changed and you have requested strict checking.
+Host key verification failed.
+  c2[1] agg=38.2 decode_med=19.380789848467174 ttft=0.84 e2e=53.6 err=0 trunc=2
+[e2e] c4
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ED25519 key sent by the remote host is
+SHA256:fLRkasOBeG7fbJdv9Mm3cIk3hmxt6E5Fi0gYCBRDm6k.
+Please contact your system administrator.
+Add correct host key in /home/r0b0tdgx/.ssh/known_hosts to get rid of this message.
+Offending ED25519 key in /home/r0b0tdgx/.ssh/known_hosts:16
+  remove with:
+  ssh-keygen -f '/home/r0b0tdgx/.ssh/known_hosts' -R '192.168.68.78'
+Host key for 192.168.68.78 has changed and you have requested strict checking.
+Host key verification failed.
+  c4[0] agg=50.6 decode_med=13.120034030581454 ttft=1.18 e2e=79.1 err=0 trunc=4
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ED25519 key sent by the remote host is
+SHA256:fLRkasOBeG7fbJdv9Mm3cIk3hmxt6E5Fi0gYCBRDm6k.
+Please contact your system administrator.
+Add correct host key in /home/r0b0tdgx/.ssh/known_hosts to get rid of this message.
+Offending ED25519 key in /home/r0b0tdgx/.ssh/known_hosts:16
+  remove with:
+  ssh-keygen -f '/home/r0b0tdgx/.ssh/known_hosts' -R '192.168.68.78'
+Host key for 192.168.68.78 has changed and you have requested strict checking.
+Host key verification failed.
+  c4[1] agg=44.9 decode_med=11.742890869352639 ttft=1.11 e2e=88.2 err=0 trunc=4
+[e2e] c8
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ED25519 key sent by the remote host is
+SHA256:fLRkasOBeG7fbJdv9Mm3cIk3hmxt6E5Fi0gYCBRDm6k.
+Please contact your system administrator.
+Add correct host key in /home/r0b0tdgx/.ssh/known_hosts to get rid of this message.
+Offending ED25519 key in /home/r0b0tdgx/.ssh/known_hosts:16
+  remove with:
+  ssh-keygen -f '/home/r0b0tdgx/.ssh/known_hosts' -R '192.168.68.78'
+Host key for 192.168.68.78 has changed and you have requested strict checking.
+Host key verification failed.
+  c8[0] agg=68.7 decode_med=8.953088156324233 ttft=1.49 e2e=115.6 err=0 trunc=8
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ED25519 key sent by the remote host is
+SHA256:fLRkasOBeG7fbJdv9Mm3cIk3hmxt6E5Fi0gYCBRDm6k.
+Please contact your system administrator.
+Add correct host key in /home/r0b0tdgx/.ssh/known_hosts to get rid of this message.
+Offending ED25519 key in /home/r0b0tdgx/.ssh/known_hosts:16
+  remove with:
+  ssh-keygen -f '/home/r0b0tdgx/.ssh/known_hosts' -R '192.168.68.78'
+Host key for 192.168.68.78 has changed and you have requested strict checking.
+Host key verification failed.
+  c8[1] agg=69.7 decode_med=9.005421212399543 ttft=1.46 e2e=115.1 err=0 trunc=8
+[e2e] wrote /home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/e2e/FINAL3-concurrency.json
+[q200] 0
+  ok=True finish=stop ct=205 e2e=8.917
+[q200] 1
+  ok=True finish=stop ct=35 e2e=1.755
+[q200] 2
+  ok=True finish=stop ct=283 e2e=10.9
+[q200] 3
+  ok=True finish=stop ct=152 e2e=6.591
+[q200] 4
+  ok=True finish=stop ct=217 e2e=9.94
+[q200] 5
+  ok=True finish=stop ct=272 e2e=11.138
+[q200] 6
+  ok=True finish=stop ct=144 e2e=6.249
+[q200] 7
+  ok=True finish=stop ct=307 e2e=12.723
+[q200] 8
+  ok=True finish=stop ct=497 e2e=19.051
+[q200] 9
+  ok=True finish=stop ct=281 e2e=11.549
+[q200] 10
+  ok=True finish=stop ct=156 e2e=6.249
+[q200] 11
+  ok=True finish=stop ct=206 e2e=7.671
+[q200] 12
+  ok=False finish=stop ct=261 e2e=10.978
+[q200] 13
+  ok=True finish=stop ct=428 e2e=15.931
+[q200] 14
+  ok=True finish=stop ct=241 e2e=9.235
+[q200] 15
+  ok=True finish=stop ct=197 e2e=8.614
+[q200] 16
+  ok=True finish=stop ct=116 e2e=5.176
+[q200] 17
+  ok=True finish=stop ct=217 e2e=9.194
+[q200] 18
+  ok=True finish=stop ct=182 e2e=7.283
+[q200] 19
+  ok=True finish=stop ct=408 e2e=16.273
+[q200] 20
+  ok=True finish=stop ct=346 e2e=15.283
+[q200] 21
+  ok=True finish=stop ct=141 e2e=6.134
+[q200] 22
+  ok=True finish=stop ct=166 e2e=6.88
+[q200] 23
+  ok=True finish=stop ct=117 e2e=4.746
+[q200] 24
+  ok=True finish=stop ct=299 e2e=12.611
+[q200] 25
+  ok=True finish=stop ct=227 e2e=9.524
+[q200] 26
+  ok=True finish=stop ct=252 e2e=10.634
+[q200] 27
+  ok=True finish=stop ct=198 e2e=8.549
+[q200] 28
+  ok=True finish=stop ct=199 e2e=8.554
+[q200] 29
+  ok=True finish=stop ct=186 e2e=7.436
+[q200] 30
+  ok=True finish=stop ct=218 e2e=8.286
+[q200] 31
+  ok=True finish=stop ct=180 e2e=7.276
+[q200] 32
+  ok=True finish=stop ct=140 e2e=6.071
+[q200] 33
+  ok=True finish=stop ct=181 e2e=7.035
+[q200] 34
+  ok=True finish=stop ct=146 e2e=5.997
+[q200] 35
+  ok=True finish=stop ct=45 e2e=2.268
+[q200] 36
+  ok=True finish=stop ct=226 e2e=8.717
+[q200] 37
+  ok=True finish=stop ct=198 e2e=9.066
+[q200] 38
+  ok=True finish=stop ct=212 e2e=9.13
+[q200] 39
+  ok=True finish=stop ct=418 e2e=16.293
+[q200] 40
+  ok=True finish=stop ct=115 e2e=4.929
+[q200] 41
+  ok=True finish=stop ct=215 e2e=9.122
+[q200] 42
+  ok=True finish=stop ct=161 e2e=6.906
+[q200] 43
+  ok=True finish=stop ct=229 e2e=9.867
+[q200] 44
+  ok=True finish=stop ct=241 e2e=9.87
+[q200] 45
+  ok=True finish=stop ct=268 e2e=11.474
+[q200] 46
+  ok=True finish=stop ct=220 e2e=9.684
+[q200] 47
+  ok=True finish=stop ct=225 e2e=9.84
+[q200] 48
+  ok=True finish=stop ct=175 e2e=7.307
+[q200] 49
+  ok=True finish=stop ct=244 e2e=9.831
+[q200] 50
+  ok=True finish=stop ct=201 e2e=8.017
+[q200] 51
+  ok=True finish=stop ct=157 e2e=6.375
+[q200] 52
+  ok=True finish=stop ct=241 e2e=10.398
+[q200] 53
+  ok=True finish=stop ct=249 e2e=10.605
+[q200] 54
+  ok=True finish=stop ct=152 e2e=7.135
+[q200] 55
+  ok=True finish=stop ct=92 e2e=4.203
+[q200] 56
+  ok=True finish=stop ct=126 e2e=5.155
+[q200] 57
+  ok=True finish=stop ct=162 e2e=7.698
+[q200] 58
+  ok=True finish=stop ct=174 e2e=7.693
+[q200] 59
+  ok=True finish=stop ct=131 e2e=5.314
+[q200] 60
+  ok=True finish=stop ct=174 e2e=7.705
+[q200] 61
+  ok=False finish=stop ct=157 e2e=7.114
+[q200] 62
+  ok=True finish=stop ct=319 e2e=14.327
+[q200] 63
+  ok=True finish=stop ct=228 e2e=9.919
+[q200] 64
+  ok=True finish=stop ct=182 e2e=8.352
+[q200] 65
+  ok=True finish=stop ct=153 e2e=6.499
+[q200] 66
+  ok=True finish=stop ct=140 e2e=6.514
+[q200] 67
+  ok=True finish=stop ct=184 e2e=7.75
+[q200] 68
+  ok=True finish=stop ct=139 e2e=5.697
+[q200] 69
+  ok=True finish=stop ct=131 e2e=5.793
+[q200] 70
+  ok=True finish=stop ct=183 e2e=8.285
+[q200] 71
+  ok=True finish=stop ct=126 e2e=5.2
+[q200] 72
+  ok=True finish=stop ct=208 e2e=8.793
+[q200] 73
+  ok=True finish=stop ct=210 e2e=8.649
+[q200] 74
+  ok=True finish=stop ct=249 e2e=10.257
+[q200] 75
+  ok=True finish=stop ct=266 e2e=11.213
+[q200] 76
+  ok=True finish=stop ct=352 e2e=15.187
+[q200] 77
+  ok=True finish=stop ct=206 e2e=8.927
+[q200] 78
+  ok=True finish=stop ct=201 e2e=8.792
+[q200] 79
+  ok=True finish=stop ct=117 e2e=5.251
+[q200] 80
+  ok=True finish=stop ct=203 e2e=8.871
+[q200] 81
+  ok=True finish=stop ct=152 e2e=6.044
+[q200] 82
+  ok=True finish=stop ct=137 e2e=5.835
+[q200] 83
+  ok=True finish=stop ct=162 e2e=6.293
+[q200] 84
+  ok=True finish=stop ct=163 e2e=6.982
+[q200] 85
+  ok=True finish=stop ct=158 e2e=7.197
+[q200] 86
+  ok=True finish=stop ct=125 e2e=5.347
+[q200] 87
+  ok=False finish=stop ct=338 e2e=14.527
+[q200] 88
+  ok=True finish=stop ct=155 e2e=6.36
+[q200] 89
+  ok=True finish=stop ct=140 e2e=6.008
+[q200] 90
+  ok=True finish=stop ct=267 e2e=10.855
+[q200] 91
+  ok=True finish=stop ct=79 e2e=3.698
+[q200] 92
+  ok=True finish=stop ct=133 e2e=5.837
+[q200] 93
+  ok=True finish=stop ct=400 e2e=17.777
+[q200] 94
+  ok=True finish=stop ct=223 e2e=8.59
+[q200] 95
+  ok=True finish=stop ct=254 e2e=9.806
+[q200] 96
+  ok=True finish=stop ct=111 e2e=4.805
+[q200] 97
+  ok=True finish=stop ct=193 e2e=8.076
+[q200] 98
+  ok=True finish=stop ct=184 e2e=8.586
+[q200] 99
+  ok=True finish=stop ct=206 e2e=8.43
+[q200] 100
+  ok=True finish=stop ct=213 e2e=8.683
+[q200] 101
+  ok=True finish=stop ct=212 e2e=8.884
+[q200] 102
+  ok=True finish=stop ct=146 e2e=7.295
+[q200] 103
+  ok=True finish=stop ct=246 e2e=10.616
+[q200] 104
+  ok=True finish=stop ct=227 e2e=9.609
+[q200] 105
+  ok=True finish=stop ct=85 e2e=4.154
+[q200] 106
+  ok=True finish=stop ct=314 e2e=13.802
+[q200] 107
+  ok=True finish=stop ct=377 e2e=16.026
+[q200] 108
+  ok=True finish=stop ct=239 e2e=11.191
+[q200] 109
+  ok=True finish=stop ct=131 e2e=5.613
+[q200] 110
+  ok=True finish=stop ct=182 e2e=7.76
+[q200] 111
+  ok=True finish=stop ct=276 e2e=12.356
+[q200] 112
+  ok=True finish=stop ct=166 e2e=6.852
+[q200] 113
+  ok=True finish=stop ct=138 e2e=6.171
+[q200] 114
+  ok=True finish=stop ct=156 e2e=6.45
+[q200] 115
+  ok=True finish=stop ct=364 e2e=14.654
+[q200] 116
+  ok=True finish=stop ct=195 e2e=8.647
+[q200] 117
+  ok=True finish=stop ct=111 e2e=5.48
+[q200] 118
+  ok=True finish=stop ct=217 e2e=9.703
+[q200] 119
+  ok=False finish=stop ct=464 e2e=18.823
+[q200] 120
+  ok=True finish=stop ct=184 e2e=7.162
+[q200] 121
+  ok=True finish=stop ct=137 e2e=6.02
+[q200] 122
+  ok=True finish=stop ct=216 e2e=9.105
+[q200] 123
+  ok=True finish=stop ct=197 e2e=9.095
+[q200] 124
+  ok=True finish=stop ct=180 e2e=7.726
+[q200] 125
+  ok=True finish=stop ct=171 e2e=7.716
+[q200] 126
+  ok=True finish=stop ct=175 e2e=6.118
+[q200] 127
+  ok=True finish=stop ct=119 e2e=4.369
+[q200] 128
+  ok=True finish=stop ct=256 e2e=8.809
+[q200] 129
+  ok=True finish=stop ct=221 e2e=8.528
+[q200] 130
+  ok=True finish=stop ct=193 e2e=6.833
+[q200] 131
+  ok=True finish=stop ct=116 e2e=4.397
+[q200] 132
+  ok=True finish=stop ct=216 e2e=7.573
+[q200] 133
+  ok=True finish=stop ct=146 e2e=6.976
+[q200] 134
+  ok=True finish=stop ct=144 e2e=6.522
+[q200] 135
+  ok=True finish=stop ct=124 e2e=5.425
+[q200] 136
+  ok=True finish=stop ct=143 e2e=6.674
+[q200] 137
+  ok=True finish=stop ct=246 e2e=10.438
+[q200] 138
+  ok=True finish=stop ct=292 e2e=12.619
+[q200] 139
+  ok=False finish=stop ct=325 e2e=16.624
+[q200] 140
+  ok=True finish=stop ct=163 e2e=7.641
+[q200] 141
+  ok=True finish=stop ct=404 e2e=17.368
+[q200] 142
+  ok=True finish=stop ct=158 e2e=7.993
+[q200] 143
+  ok=True finish=stop ct=210 e2e=10.896
+[q200] 144
+  ok=True finish=stop ct=226 e2e=10.902
+[q200] 145
+  ok=True finish=stop ct=246 e2e=10.994
+[q200] 146
+  ok=True finish=stop ct=195 e2e=9.029
+[q200] 147
+  ok=True finish=stop ct=218 e2e=10.967
+[q200] 148
+  ok=True finish=stop ct=153 e2e=7.954
+[q200] 149
+  ok=True finish=stop ct=52 e2e=3.127
+[q200] 150
+  ok=True finish=stop ct=346 e2e=14.961
+[q200] 151
+  ok=True finish=stop ct=196 e2e=8.741
+[q200] 152
+  ok=True finish=stop ct=119 e2e=5.068
+[q200] 153
+  ok=True finish=stop ct=501 e2e=22.128
+[q200] 154
+  ok=True finish=stop ct=390 e2e=14.686
+[q200] 155
+  ok=True finish=stop ct=349 e2e=12.589
+[q200] 156
+  ok=True finish=stop ct=178 e2e=7.004
+[q200] 157
+  ok=True finish=stop ct=355 e2e=11.891
+[q200] 158
+  ok=True finish=stop ct=155 e2e=5.622
+[q200] 159
+  ok=True finish=stop ct=147 e2e=6.829
+[q200] 160
+  ok=True finish=stop ct=124 e2e=5.155
+[q200] 161
+  ok=True finish=stop ct=194 e2e=7.449
+[q200] 162
+  ok=True finish=stop ct=260 e2e=10.67
+[q200] 163
+  ok=False finish=stop ct=251 e2e=9.574
+[q200] 164
+  ok=True finish=stop ct=178 e2e=8.994
+[q200] 165
+  ok=True finish=stop ct=196 e2e=7.245
+[q200] 166
+  ok=True finish=stop ct=189 e2e=7.554
+[q200] 167
+  ok=True finish=stop ct=294 e2e=11.117
+[q200] 168
+  ok=True finish=stop ct=91 e2e=3.969
+[q200] 169
+  ok=True finish=stop ct=136 e2e=5.884
+[q200] 170
+  ok=True finish=stop ct=171 e2e=7.054
+[q200] 171
+  ok=True finish=stop ct=132 e2e=5.52
+[q200] 172
+  ok=True finish=stop ct=194 e2e=7.279
+[q200] 173
+  ok=True finish=stop ct=233 e2e=8.475
+[q200] 174
+  ok=True finish=stop ct=262 e2e=10.014
+[q200] 175
+  ok=True finish=stop ct=283 e2e=10.723
+[q200] 176
+  ok=True finish=stop ct=165 e2e=6.583
+[q200] 177
+  ok=True finish=stop ct=311 e2e=13.464
+[q200] 178
+  ok=True finish=stop ct=182 e2e=8.001
+[q200] 179
+  ok=True finish=stop ct=205 e2e=8.535
+[q200] 180
+  ok=True finish=stop ct=225 e2e=9.12
+[q200] 181
+  ok=True finish=stop ct=179 e2e=7.988
+[q200] 182
+  ok=False finish=stop ct=206 e2e=8.679
+[q200] 183
+  ok=True finish=stop ct=290 e2e=12.7
+[q200] 184
+  ok=True finish=stop ct=417 e2e=17.027
+[q200] 185
+  ok=True finish=stop ct=83 e2e=3.993
+[q200] 186
+  ok=True finish=stop ct=353 e2e=15.023
+[q200] 187
+  ok=False finish=stop ct=289 e2e=11.553
+[q200] 188
+  ok=True finish=stop ct=198 e2e=8.487
+[q200] 189
+  ok=True finish=stop ct=238 e2e=9.553
+[q200] 190
+  ok=True finish=stop ct=154 e2e=6.736
+[q200] 191
+  ok=True finish=stop ct=167 e2e=7.331
+[q200] 192
+  ok=True finish=stop ct=208 e2e=8.596
+[q200] 193
+  ok=True finish=stop ct=223 e2e=9.801
+[q200] 194
+  ok=True finish=stop ct=134 e2e=5.32
+[q200] 195
+  ok=True finish=stop ct=179 e2e=7.23
+[q200] 196
+  ok=True finish=stop ct=158 e2e=6.74
+[q200] 197
+  ok=True finish=stop ct=152 e2e=6.307
+[q200] 198
+  ok=True finish=stop ct=264 e2e=11.468
+[q200] 199
+  ok=True finish=stop ct=260 e2e=10.333
+[q200] 192/200 = 0.960 truncated=0

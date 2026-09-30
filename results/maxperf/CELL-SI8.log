@@ -1,0 +1,44 @@
+[CELL-SI8] warmup
+[CELL-SI8] short_code
+  short_code[0] pt=71 ct=1024 ttft=0.60s decode=23.9 tok/s prefill=117 tok/s
+  short_code[1] pt=71 ct=1024 ttft=0.58s decode=22.0 tok/s prefill=122 tok/s
+[CELL-SI8] medium_code
+  medium_code[0] pt=4405 ct=1024 ttft=6.33s decode=24.2 tok/s prefill=696 tok/s
+  medium_code[1] pt=4405 ct=1024 ttft=6.11s decode=24.5 tok/s prefill=721 tok/s
+[CELL-SI8] prose
+  prose[0] pt=2185 ct=1024 ttft=3.16s decode=15.5 tok/s prefill=692 tok/s
+  prose[1] pt=2185 ct=1024 ttft=3.12s decode=16.3 tok/s prefill=701 tok/s
+[CELL-SI8] prefill_8k
+  prefill_8k[0] pt=7910 ct=1 ttft=11.84s decode=0.0 tok/s prefill=668 tok/s
+  prefill_8k[1] pt=7910 ct=1 ttft=12.85s decode=0.0 tok/s prefill=615 tok/s
+[CELL-SI8] c4_short
+  c4_short: c=4 total_ct=4096 wall=95.5s aggregate=42.9 tok/s per-req median=11.0
+{
+ "tag": "CELL-SI8",
+ "summary": {
+  "short_code": {
+   "decode_tps_median": 22.950515116205416,
+   "prefill_tps_median": 119.94781070987098,
+   "ttft_median_s": 0.5921825839905068
+  },
+  "medium_code": {
+   "decode_tps_median": 24.359360062549484,
+   "prefill_tps_median": 708.8658008091746,
+   "ttft_median_s": 6.216072131996043
+  },
+  "prose": {
+   "decode_tps_median": 15.906002903173933,
+   "prefill_tps_median": 696.8183032172471,
+   "ttft_median_s": 3.1358115165494382
+  },
+  "prefill_8k": {
+   "prefill_tps_median": 641.62679082822,
+   "ttft_median_s": 12.34877095615957
+  },
+  "c4_short": {
+   "aggregate_tps": 42.91053731901093,
+   "per_req_decode_median": 10.968035981830507
+  }
+ },
+ "accept_len_end": 3.0743119266055046
+}

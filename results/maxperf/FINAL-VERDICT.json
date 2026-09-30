@@ -1,0 +1,288 @@
+{
+ "floor": {
+  "short_code": {
+   "dec": 23.75041249914919,
+   "agg": null,
+   "pre": 123.01759868468935
+  },
+  "medium_code": {
+   "dec": 25.090266637528785,
+   "agg": null,
+   "pre": 662.9951930535008
+  },
+  "prose": {
+   "dec": 16.406831305362545,
+   "agg": null,
+   "pre": 691.1844529421496
+  },
+  "prefill_8k": {
+   "dec": null,
+   "agg": null,
+   "pre": 651.0968466841254
+  },
+  "c4_short": {
+   "dec": null,
+   "agg": 42.06997156522616,
+   "pre": null
+  },
+  "accept": 3.104704097116844
+ },
+ "cells": {
+  "CELL-CHUNK16": {
+   "short_code": {
+    "dec": 22.804518930002153,
+    "agg": null,
+    "pre": 127.3753819181716
+   },
+   "medium_code": {
+    "dec": 21.302281021793142,
+    "agg": null,
+    "pre": 699.1300763670176
+   },
+   "prose": {
+    "dec": 15.402781840902374,
+    "agg": null,
+    "pre": 695.5556283351748
+   },
+   "prefill_8k": {
+    "dec": null,
+    "agg": null,
+    "pre": 673.4389117582441
+   },
+   "c4_short": {
+    "dec": null,
+    "agg": 48.906639242357166,
+    "pre": null
+   },
+   "accept": 3.032064728798322
+  },
+  "CELL-CONS": {
+   "short_code": {
+    "dec": 23.490437798925228,
+    "agg": null,
+    "pre": 124.16407663866283
+   },
+   "medium_code": {
+    "dec": 24.492891871554896,
+    "agg": null,
+    "pre": 698.4843829951972
+   },
+   "prose": {
+    "dec": 17.424253537282734,
+    "agg": null,
+    "pre": 702.059203895514
+   },
+   "prefill_8k": {
+    "dec": null,
+    "agg": null,
+    "pre": 662.4579602575791
+   },
+   "c4_short": {
+    "dec": null,
+    "agg": 43.087607079058294,
+    "pre": null
+   },
+   "accept": 3.121913580246914
+  },
+  "CELL-K": {
+   "short_code": {
+    "dec": 23.174557343503402,
+    "agg": null,
+    "pre": 120.08195790755843
+   },
+   "medium_code": {
+    "dec": 24.03385982613894,
+    "agg": null,
+    "pre": 707.2381251060126
+   },
+   "prose": {
+    "dec": 16.794616572309288,
+    "agg": null,
+    "pre": 688.1218226783278
+   },
+   "prefill_8k": {
+    "dec": null,
+    "agg": null,
+    "pre": 662.6121546897617
+   },
+   "c4_short": {
+    "dec": null,
+    "agg": 43.26299880519969,
+    "pre": null
+   },
+   "accept": 3.100525827404887
+  },
+  "CELL-KV16": {
+   "short_code": {
+    "dec": 23.28943866767266,
+    "agg": null,
+    "pre": 121.58033383426006
+   },
+   "medium_code": {
+    "dec": 23.860915772466328,
+    "agg": null,
+    "pre": 705.824277852535
+   },
+   "prose": {
+    "dec": 15.458594916893828,
+    "agg": null,
+    "pre": 694.7224346488995
+   },
+   "prefill_8k": {
+    "dec": null,
+    "agg": null,
+    "pre": 674.0941518851632
+   },
+   "c4_short": {
+    "dec": null,
+    "agg": 46.8715381480286,
+    "pre": null
+   },
+   "accept": 3.085911685190748
+  },
+  "CELL-MOE": {
+   "short_code": {
+    "dec": 23.22079932746636,
+    "agg": null,
+    "pre": 120.00669255216641
+   },
+   "medium_code": {
+    "dec": 22.129037142600467,
+    "agg": null,
+    "pre": 685.5040710122053
+   },
+   "prose": {
+    "dec": 17.535950304960473,
+    "agg": null,
+    "pre": 694.678385788872
+   },
+   "prefill_8k": {
+    "dec": null,
+    "agg": null,
+    "pre": 636.4689566147988
+   },
+   "c4_short": {
+    "dec": null,
+    "agg": 41.514316225896025,
+    "pre": null
+   },
+   "accept": 3.1298861188057865
+  },
+  "CELL-NCCL": {
+   "short_code": {
+    "dec": 19.874462004456745,
+    "agg": null,
+    "pre": 112.64698593505196
+   },
+   "medium_code": {
+    "dec": 21.733033405574098,
+    "agg": null,
+    "pre": 684.498941413128
+   },
+   "prose": {
+    "dec": 15.006235196262498,
+    "agg": null,
+    "pre": 695.3036960155775
+   },
+   "prefill_8k": {
+    "dec": null,
+    "agg": null,
+    "pre": 684.4009630262846
+   },
+   "c4_short": {
+    "dec": null,
+    "agg": 51.301535989761675,
+    "pre": null
+   },
+   "accept": 3.1154670750382847
+  },
+  "CELL-NCCLCH": {
+   "short_code": {
+    "dec": 21.675244590603377,
+    "agg": null,
+    "pre": 120.35695884878257
+   },
+   "medium_code": {
+    "dec": 23.415408998277194,
+    "agg": null,
+    "pre": 706.0811202038417
+   },
+   "prose": {
+    "dec": 16.496770041228725,
+    "agg": null,
+    "pre": 696.9074912985768
+   },
+   "prefill_8k": {
+    "dec": null,
+    "agg": null,
+    "pre": 683.741864793745
+   },
+   "c4_short": {
+    "dec": null,
+    "agg": 42.93126768786196,
+    "pre": null
+   },
+   "accept": 3.0404191616766467
+  },
+  "CELL-S2": {
+   "short_code": {
+    "dec": 22.267657310959677,
+    "agg": null,
+    "pre": 123.80997787344751
+   },
+   "medium_code": {
+    "dec": 22.99542861759131,
+    "agg": null,
+    "pre": 685.4824457262174
+   },
+   "prose": {
+    "dec": 18.364309010067892,
+    "agg": null,
+    "pre": 722.9674736017266
+   },
+   "prefill_8k": {
+    "dec": null,
+    "agg": null,
+    "pre": 640.7423135239898
+   },
+   "c4_short": {
+    "dec": null,
+    "agg": 45.899510892438414,
+    "pre": null
+   },
+   "accept": 2.57712833545108
+  },
+  "CELL-SI8": {
+   "short_code": {
+    "dec": 22.950515116205416,
+    "agg": null,
+    "pre": 119.94781070987098
+   },
+   "medium_code": {
+    "dec": 24.359360062549484,
+    "agg": null,
+    "pre": 708.8658008091746
+   },
+   "prose": {
+    "dec": 15.906002903173933,
+    "agg": null,
+    "pre": 696.8183032172471
+   },
+   "prefill_8k": {
+    "dec": null,
+    "agg": null,
+    "pre": 641.62679082822
+   },
+   "c4_short": {
+    "dec": null,
+    "agg": 42.91053731901093,
+    "pre": null
+   },
+   "accept": 3.0743119266055046
+  }
+ },
+ "winners": [],
+ "decided_utc": "2026-09-30T06:24:51Z",
+ "promoted": null,
+ "final_state": "live profile MTP-500k-mm-graph confirmed optimal"
+}

@@ -1,0 +1,20 @@
+  File "/sgl-workspace/sglang/python/sglang/srt/speculative/eagle_worker_common.py", line 630, in run_eagle_verify
+    fill_bonus_tokens_func(
+  File "/sgl-workspace/sglang/python/sglang/kernels/ops/speculative/eagle.py", line 47, in fill_bonus_tokens_func
+    fill_bonus_tokens[(batch_size,)](
+  File "/opt/sglang/lib/python3.12/site-packages/triton/runtime/jit.py", line 370, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/runtime/jit.py", line 760, in run
+    launch_metadata = kernel.launch_metadata(grid, stream, *bound_args.values())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/compiler/compiler.py", line 485, in launch_metadata
+    self._init_handles()
+  File "/opt/sglang/lib/python3.12/site-packages/triton/compiler/compiler.py", line 468, in _init_handles
+    self.module, self.function, self.n_regs, self.n_spills, self.n_max_threads = driver.active.utils.load_binary(
+                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Triton Error [CUDA]: an illegal memory access was encountered
+
+[2026-09-30 05:32:14] Received sigquit from a child process. It usually means the child failed.
+[2026-09-30 05:32:14] kill_process_tree called: parent_pid=1, include_parent=True, pid=1
+[2026-09-30 05:32:14] kill_process_tree called: parent_pid=1, include_parent=False, pid=1

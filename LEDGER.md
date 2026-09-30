@@ -1,6 +1,6 @@
 # Campaign Ledger — MiMo-V2.6-Flash-RL NVFP4 on 2× GB10 (SM121)
 
-**Organization:** r0b0tlab · **Dates:** 2026-09-21 → 2026-09-24 · **Status:** COMPLETE
+**Organization:** r0b0tlab · **Dates:** 2026-09-21 → 2026-09-30 · **Status:** COMPLETE (max-perf review closed 2026-09-30)
 
 ## Objective
 
@@ -123,3 +123,43 @@ Memory on that boot: weights 84.436 GB, KV cache 6.575 GB, startup available 9.1
 
 1. NVFP4-lane pre-KV memory overhead (13.7 GB) — root-cause and reclaim before long-context cert.
 2. Container visibility: the preferred MTP tag is public. Anonymous manifest pull of `20260922-582389ce-mtp-mm` returned 200.
+
+## Max-performance review (2026-09-30) — CLOSED, nothing promoted
+
+A 12-cell one-variable-per-boot ladder tested every remaining serve-flag lever on
+build `582389ce` against the live preferred profile (`MTP-500k-mm-graph`):
+
+| Cell | One variable | short | medium | prose | Verdict |
+|---|---|---|---|---|---|
+| floor (live) | — | 23.75–25.06 | 25.09–26.02 | 16.4–17.1 | defended |
+| S2 | spec steps 2 / draft 3 | 22.27 | 23.00 | 18.36 | rejected (short −11%) |
+| K | `--enable-fused-qk-norm-rope` | 23.17 | 24.03 | 16.79 | rejected |
+| MOE | `--enable-fused-moe-sum-all-reduce` | 23.22 | 22.13 | 17.54 | rejected |
+| NCCL | `NCCL_ALGO=Ring NCCL_PROTO=Simple` + 8 ch | 19.87 | 21.73 | 15.01 | rejected (c1 −20%) |
+| NCCLCH | `NCCL_MIN_NCHANNELS=16` only | 21.68 | 23.42 | 16.50 | rejected |
+| KV16 | `--triton-attention-num-kv-splits 16` | 23.29 | 23.86 | 15.46 | rejected |
+| CHUNK16 | chunked prefill 16384 | 22.80 | 21.30 | 15.40 | rejected |
+| CONS | `--schedule-conservativeness 0.3` | 23.49 | 24.49 | 17.42 | rejected (c4 −12%) |
+| SI8 | `--stream-interval 8` | 22.95 | 24.36 | 15.91 | rejected |
+| TC | `--enable-torch-compile` | — | — | — | **boot fail**: triton illegal memory access during capture |
+
+Verdict: the preferred profile is the optimum for this build. Boot-to-boot noise is
+~5%, larger than every "win" any cell showed on a single lane. torch.compile is a
+hard no on driver 580.173.02 / kernel 6.17 (SM121 fragile pair fault class).
+
+Acceptance (prose histogram): per-position draft accept 0.75 / 0.65 / 0.49 / 0.00.
+The 4th draft token is never accepted (the checkpoint drafts 3), but steps=2 still
+loses ~10% short decode — target-verify width dominates the step cost, so the
+3-step geometry is load-bearing, not conservative.
+
+Q200v2 protocol on the max-perf serve (think-off): GSM8K-200 **192/200 (0.960)**,
+0 truncations; concurrency c1/c2/c4/c8 aggregate **21.6 / 38.0 / 47.7 / 69.2 tok/s**
+(per-stream 21.9 / 19.4 / 12.4 / 9.0; TTFT 0.57–1.48 s); accept length 3.38–3.47 at
+all levels; per-request e2e p50 23.5 tok/s. Load telemetry: 26 W mean, 47–56 °C,
+GPU util ~79%, host MemAvailable ≥ 10.9 GiB.
+
+Evidence: `results/maxperf/` (12 CELL-*.json, FINAL-VERDICT.json, MORNING-REPORT.md,
+driver/ladder/promoter logs), `results/e2e/FINAL3-concurrency.json`,
+`results/q200/FINAL3-nothink.jsonl`, `results/e2e/telemetry-load-1500.jsonl`.
+Tooling: `scripts/70_maxperf_driver.sh`, `71–73_ladder_part*.sh`,
+`74_promote_or_confirm.py`, `75_q200proto_run.sh`; cell profiles `profiles/CELL-*.env`.
