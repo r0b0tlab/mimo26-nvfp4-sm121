@@ -1,0 +1,123 @@
+{
+  "backend": "openai_portable",
+  "decode": {
+    "mean_client_output_tok_s": 16.594271959316465,
+    "median_client_output_tok_s": 16.59876510706442,
+    "n_stable": 4,
+    "output_tokens_requested": 2048,
+    "reps": 5,
+    "rows": [
+      {
+        "client_output_tokens_per_second": 17.025946914168063,
+        "completion_tokens": 2048,
+        "elapsed_s": 120.28699550894089,
+        "finish_reason": "length",
+        "http_status": 200,
+        "kind": "decode",
+        "ok": true,
+        "prompt_tokens": 40,
+        "rep": 1,
+        "server_prompt_tokens_per_second": 0.332538025667345
+      },
+      {
+        "client_output_tokens_per_second": 16.3874347974158,
+        "completion_tokens": 2048,
+        "elapsed_s": 124.97380006802268,
+        "finish_reason": "length",
+        "http_status": 200,
+        "kind": "decode",
+        "ok": true,
+        "prompt_tokens": 40,
+        "rep": 2,
+        "server_prompt_tokens_per_second": 0.32006708588702737
+      },
+      {
+        "client_output_tokens_per_second": 16.886651348428597,
+        "completion_tokens": 2048,
+        "elapsed_s": 121.27922568796203,
+        "finish_reason": "length",
+        "http_status": 200,
+        "kind": "decode",
+        "ok": true,
+        "prompt_tokens": 40,
+        "rep": 3,
+        "server_prompt_tokens_per_second": 0.32981740914899604
+      },
+      {
+        "client_output_tokens_per_second": 16.81009541671304,
+        "completion_tokens": 2048,
+        "elapsed_s": 121.83155117393471,
+        "finish_reason": "length",
+        "http_status": 200,
+        "kind": "decode",
+        "ok": true,
+        "prompt_tokens": 40,
+        "rep": 4,
+        "server_prompt_tokens_per_second": 0.32832217610767656
+      },
+      {
+        "client_output_tokens_per_second": 16.292906274708425,
+        "completion_tokens": 2048,
+        "elapsed_s": 125.69887566217221,
+        "finish_reason": "length",
+        "http_status": 200,
+        "kind": "decode",
+        "ok": true,
+        "prompt_tokens": 40,
+        "rep": 5,
+        "server_prompt_tokens_per_second": 0.31822082567789894
+      }
+    ]
+  },
+  "drop_first_rep": true,
+  "failed": 0,
+  "method": "openai_portable_c1_throughput",
+  "prefill": {
+    "mean_server_prompt_tok_s": 17961.489731175727,
+    "median_prompt_tokens": 22771.0,
+    "median_server_prompt_tok_s": 17961.489731175727,
+    "n_stable": 2,
+    "note": "prompt tok/s is e2e wall proxy (includes short decode); not pure prefill kernel metric",
+    "output_tokens": 16,
+    "prompt_tokens_target": 14000,
+    "reps": 3,
+    "rows": [
+      {
+        "client_output_tokens_per_second": 0.47450214793753637,
+        "completion_tokens": 16,
+        "elapsed_s": 33.71955231297761,
+        "finish_reason": "length",
+        "http_status": 200,
+        "kind": "prefill",
+        "ok": true,
+        "prompt_tokens": 22771,
+        "rep": 1,
+        "server_prompt_tokens_per_second": 675.3055256678525
+      },
+      {
+        "client_output_tokens_per_second": 12.372479377056044,
+        "completion_tokens": 16,
+        "elapsed_s": 1.293192699085921,
+        "finish_reason": "length",
+        "http_status": 200,
+        "kind": "prefill",
+        "ok": true,
+        "prompt_tokens": 22771,
+        "rep": 2,
+        "server_prompt_tokens_per_second": 17608.357993433947
+      },
+      {
+        "client_output_tokens_per_second": 12.86873406976769,
+        "completion_tokens": 16,
+        "elapsed_s": 1.2433235400822014,
+        "finish_reason": "length",
+        "http_status": 200,
+        "kind": "prefill",
+        "ok": true,
+        "prompt_tokens": 22771,
+        "rep": 3,
+        "server_prompt_tokens_per_second": 18314.621468917507
+      }
+    ]
+  }
+}

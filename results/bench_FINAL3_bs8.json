@@ -1,0 +1,9 @@
+{
+  "ts": "2026-09-25T02:50:00Z",
+  "probe": "8 concurrent /v1/completions, 400 tok each, ignore_eos, greedy, prompt 'def binary_search(arr, x):', TP2/EP2, FINAL3 live (DFlash block 8, full pool 1044581)",
+  "profile": "FINAL3",
+  "samples_aggregate_tok_s": [78.0, 73.8, 95.4],
+  "median_aggregate_tok_s": 78.0,
+  "prior_nv4_df_median": 69.1,
+  "note": "Same probe shape as results/bench_head_to_head_bs8.json. Aggregate, not per-request. Per-request decode median on these reps was 12.1-15.3 tok/s because 8 streams share the GPU."
+}

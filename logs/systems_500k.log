@@ -1,0 +1,4 @@
+telemetry_pid=372967
+=== lane canary ===
+{"lane": "canary", "status": "PASS", "infra_errors": 0}
+=== lane bfcl_mt ===

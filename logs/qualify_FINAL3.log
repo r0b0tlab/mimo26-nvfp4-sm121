@@ -1,0 +1,9 @@
+[e2e] warmup
+[e2e] c1
+  c1[0] agg=27.2 decode_med=27.51221019627921 ttft=0.40 e2e=37.6 err=0 trunc=1
+  c1[1] agg=26.0 decode_med=26.248233775783415 ttft=0.38 e2e=39.4 err=0 trunc=1
+[e2e] c2
+  c2[0] agg=32.4 decode_med=16.42681973017215 ttft=0.70 e2e=63.0 err=0 trunc=2
+  c2[1] agg=34.1 decode_med=17.470250275538575 ttft=0.86 e2e=59.4 err=0 trunc=2
+[e2e] c4
+  c4[0] agg=46.0 decode_med=11.785412111925233 ttft=0.86 e2e=87.7 err=0 trunc=4

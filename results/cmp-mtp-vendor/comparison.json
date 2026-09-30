@@ -1,0 +1,94 @@
+{
+  "protocol": "r0b0bench systems profile, only latency+concurrency+throughput, think-off. Acceptance is a second pass on the same C1 essay via chat completions with return_spec_tokens_details. Not a systems publication.",
+  "serve_flags_shared": {
+    "spec": "eagle",
+    "steps": 3,
+    "draft_tokens": 4,
+    "topk": 1,
+    "draft_window": 4096,
+    "mem_frac": 0.9,
+    "ctx": 524288,
+    "max_running_requests": 8,
+    "image": "r0b0tlab/sglang-mimo26-env:20260922-582389ce",
+    "patches": "bind-mounted eagle loader, nextn, triton window-index fill, marlin skip",
+    "think": false
+  },
+  "difference": {
+    "ours": "r0b0tlab/MiMo-V2.6-Flash-RL-NVFP4, kv fp8_e4m3 with kv_scales.json",
+    "vendor": "XiaomiMiMo/MiMo-V2.6-Flash-RL MXFP4, kv bf16 because that checkpoint has no kv_scales.json"
+  },
+  "ours": {
+    "run_id": "cmp-ours-mtp",
+    "started_utc": "2026-09-29T12:22:12.718293+00:00",
+    "elapsed_s": 1302.0504234759137,
+    "infra_errors_total": 0,
+    "invalid_for_publish": true,
+    "lane_status": {
+      "latency": "PASS",
+      "concurrency": "PASS",
+      "throughput": "PASS"
+    },
+    "decode_median_tok_s": 16.896785104930984,
+    "prefill_median_tok_s": 16238.114625548129,
+    "prefill_prompt_tokens": 22771.0,
+    "ttft_ms_mean": 286.06826544273645,
+    "itl_ms_mean": 138.21388540288484,
+    "e2el_ms_mean": 4468.771663785446,
+    "concurrency_aggregate_tok_s": {
+      "1": 24.819588775378946,
+      "2": 45.782662691202425,
+      "4": 70.20427627186481,
+      "6": 89.50335409028958
+    },
+    "accept_length_median": 2.4441412808827057,
+    "accept_rate_median": 0.4813804269609019
+  },
+  "vendor": {
+    "run_id": "cmp-vendor-mtp",
+    "started_utc": "2026-09-29T13:07:43.330733+00:00",
+    "elapsed_s": 1277.8134598650504,
+    "infra_errors_total": 0,
+    "invalid_for_publish": true,
+    "lane_status": {
+      "latency": "PASS",
+      "concurrency": "PASS",
+      "throughput": "PASS"
+    },
+    "decode_median_tok_s": 16.59876510706442,
+    "prefill_median_tok_s": 17961.489731175727,
+    "prefill_prompt_tokens": 22771.0,
+    "ttft_ms_mean": 269.57590848905966,
+    "itl_ms_mean": 124.73665953342181,
+    "e2el_ms_mean": 4011.855735036079,
+    "concurrency_aggregate_tok_s": {
+      "1": 26.185739068982585,
+      "2": 47.98780460499821,
+      "4": 77.15673164679302,
+      "6": 100.5688983692613
+    },
+    "accept_length_median": 2.5067319461444306,
+    "accept_rate_median": 0.5022439820481436
+  },
+  "delta_ours_vs_vendor": {
+    "decode_median_ours_minus_vendor_pct": 1.795434756406844,
+    "prefill_ours_minus_vendor_pct": -9.59483389975353,
+    "ttft_ours_minus_vendor_pct": 6.11788977958545,
+    "itl_ours_minus_vendor_pct": 10.804542882481115,
+    "e2e_ours_minus_vendor_pct": 11.389141557585415,
+    "accept_length_ours_minus_vendor": -0.06259066526172496,
+    "accept_rate_ours_minus_vendor": -0.020863555087241692,
+    "concurrency_aggregate_ours_minus_vendor_pct": {
+      "1": -5.21715384853072,
+      "2": -4.595213162900369,
+      "4": -9.010821514258872,
+      "6": -11.00294868334154
+    }
+  },
+  "notes": [
+    "invalid_for_publish is true because the other systems lanes were not run. Do not ledger this as a systems row.",
+    "Do not stitch these C1 numbers onto the earlier 17.31 systems row. Different boot.",
+    "The protocol repeats one prompt. Vendor acceptance stats were identical across five reps while wall time still varied 106-123s, so that is greedy determinism, not a cached replay.",
+    "cached_tokens was not returned by the server. Prefix-cache hits on the 40-token essay prefix are not measured.",
+    "Positive decode percent means our NVFP4 was faster. Negative latency percent means our side was slower."
+  ]
+}

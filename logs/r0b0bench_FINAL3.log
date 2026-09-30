@@ -1,0 +1,16 @@
+kwargs-ok
+telemetry_pid=3824133
+=== lane canary ===
+{"lane": "canary", "status": "FAIL", "infra_errors": 0}
+=== lane latency ===
+{"lane": "latency", "status": "PASS", "infra_errors": 0}
+=== lane concurrency ===
+{"lane": "concurrency", "status": "PASS", "infra_errors": 0}
+=== lane throughput ===
+{"lane": "throughput", "status": "PASS", "infra_errors": 0}
+report: /home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-20260925/systems/FINAL3-systems-20260925/report.json
+systems_rc=0
+q200_telemetry_pid=3855690
+quality runner failed: Q200 requires native thinking with reasoning_effort=low
+q200_rc=2
+publication-client-done

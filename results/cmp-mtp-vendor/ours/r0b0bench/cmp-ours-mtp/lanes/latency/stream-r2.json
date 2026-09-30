@@ -1,0 +1,21 @@
+{
+  "e2el_ms": 4707.706857938319,
+  "elapsed_s": 4.7077068579383194,
+  "finish_reason": "stop",
+  "http_status": 200,
+  "itl_ms_mean": 137.9174928442808,
+  "itl_ms_p50": 139.08580550923944,
+  "itl_ms_p95": 154.1019344702363,
+  "ok": true,
+  "rep": 2,
+  "stream_completion_chunks": 33,
+  "text": "Copper is a highly conductive metal, second only to silver among pure elements. Its excellent electrical conductivity arises from its atomic structure, which features a single electron in its outer shell that is free to move. This property makes copper the standard material for electrical wiring, motors, and electronics. It also has high thermal conductivity, efficiently transferring heat, which is why it is widely used in heat exchangers and cookware.",
+  "ttft_ms": 294.183901976794,
+  "usage": {
+    "completion_tokens": 86,
+    "prompt_tokens": 26,
+    "prompt_tokens_details": null,
+    "reasoning_tokens": 0,
+    "total_tokens": 112
+  }
+}

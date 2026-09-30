@@ -1,0 +1,21 @@
+{
+  "exit_code": 0,
+  "cmd": [
+    "/home/r0b0tdgx/.venvs/r0b0bench/bin/r0b0bench",
+    "run",
+    "--profile",
+    "systems",
+    "--only",
+    "latency,concurrency,throughput",
+    "--base-url",
+    "http://192.168.68.78:30000/v1",
+    "--model",
+    "mimo26",
+    "--output",
+    "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/cmp-mtp-vendor/ours/r0b0bench",
+    "--run-id",
+    "cmp-ours-mtp",
+    "--timeout",
+    "900"
+  ]
+}

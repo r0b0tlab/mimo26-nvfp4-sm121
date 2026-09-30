@@ -1,0 +1,192 @@
+{
+  "prompt": "Write a detailed technical essay on NVFP4 KV cache design for MoE LLMs. Continue with dense factual prose until the token budget is exhausted.",
+  "max_tokens": 2048,
+  "reps": 5,
+  "drop_first": true,
+  "n_with_spec": 5,
+  "median_accept_length": 2.4441412808827057,
+  "median_accept_rate": 0.4813804269609019,
+  "median_client_output_tok_s": 18.099018529299496,
+  "rows": [
+    {
+      "rep": 1,
+      "http_status": 200,
+      "elapsed_s": 122.67620434402488,
+      "finish_reason": "length",
+      "completion_tokens": 2048,
+      "prompt_tokens": 40,
+      "cached_tokens": null,
+      "client_output_tok_s": 16.694354141058415,
+      "spec": {
+        "spec_accept_rate": 0.4545804464973056,
+        "spec_accept_length": 2.3648960739030023,
+        "spec_cap_length": 0.0,
+        "spec_block_accept_length": 0.0,
+        "spec_num_correct_drafts": 1181,
+        "spec_num_proposed_drafts": 2598,
+        "spec_verify_ct": 866,
+        "spec_correct_drafts_histogram": [
+          245,
+          260,
+          162,
+          199
+        ],
+        "spec_cap_lens_histogram": []
+      },
+      "response_keys": [
+        "choices",
+        "created",
+        "id",
+        "metadata",
+        "model",
+        "object",
+        "sglext",
+        "usage"
+      ]
+    },
+    {
+      "rep": 2,
+      "http_status": 200,
+      "elapsed_s": 102.16397376195528,
+      "finish_reason": "stop",
+      "completion_tokens": 1862,
+      "prompt_tokens": 40,
+      "cached_tokens": null,
+      "client_output_tok_s": 18.225602738774715,
+      "spec": {
+        "spec_accept_rate": 0.48548812664907653,
+        "spec_accept_length": 2.4564643799472297,
+        "spec_cap_length": 0.0,
+        "spec_block_accept_length": 0.0,
+        "spec_num_correct_drafts": 1104,
+        "spec_num_proposed_drafts": 2274,
+        "spec_verify_ct": 758,
+        "spec_correct_drafts_histogram": [
+          201,
+          200,
+          167,
+          190
+        ],
+        "spec_cap_lens_histogram": []
+      },
+      "response_keys": [
+        "choices",
+        "created",
+        "id",
+        "metadata",
+        "model",
+        "object",
+        "sglext",
+        "usage"
+      ]
+    },
+    {
+      "rep": 3,
+      "http_status": 200,
+      "elapsed_s": 110.36340865585953,
+      "finish_reason": "length",
+      "completion_tokens": 2048,
+      "prompt_tokens": 40,
+      "cached_tokens": null,
+      "client_output_tok_s": 18.556875190274084,
+      "spec": {
+        "spec_accept_rate": 0.5059450594505945,
+        "spec_accept_length": 2.5190651906519066,
+        "spec_cap_length": 0.0,
+        "spec_block_accept_length": 0.0,
+        "spec_num_correct_drafts": 1234,
+        "spec_num_proposed_drafts": 2439,
+        "spec_verify_ct": 813,
+        "spec_correct_drafts_histogram": [
+          194,
+          229,
+          165,
+          225
+        ],
+        "spec_cap_lens_histogram": []
+      },
+      "response_keys": [
+        "choices",
+        "created",
+        "id",
+        "metadata",
+        "model",
+        "object",
+        "sglext",
+        "usage"
+      ]
+    },
+    {
+      "rep": 4,
+      "http_status": 200,
+      "elapsed_s": 101.2105520949699,
+      "finish_reason": "stop",
+      "completion_tokens": 1819,
+      "prompt_tokens": 40,
+      "cached_tokens": null,
+      "client_output_tok_s": 17.972434319824277,
+      "spec": {
+        "spec_accept_rate": 0.4772727272727273,
+        "spec_accept_length": 2.4318181818181817,
+        "spec_cap_length": 0.0,
+        "spec_block_accept_length": 0.0,
+        "spec_num_correct_drafts": 1071,
+        "spec_num_proposed_drafts": 2244,
+        "spec_verify_ct": 748,
+        "spec_correct_drafts_histogram": [
+          187,
+          225,
+          162,
+          174
+        ],
+        "spec_cap_lens_histogram": []
+      },
+      "response_keys": [
+        "choices",
+        "created",
+        "id",
+        "metadata",
+        "model",
+        "object",
+        "sglext",
+        "usage"
+      ]
+    },
+    {
+      "rep": 5,
+      "http_status": 200,
+      "elapsed_s": 125.5304250519257,
+      "finish_reason": "length",
+      "completion_tokens": 2048,
+      "prompt_tokens": 40,
+      "cached_tokens": null,
+      "client_output_tok_s": 16.314769898634886,
+      "spec": {
+        "spec_accept_rate": 0.46682279469164717,
+        "spec_accept_length": 2.398126463700234,
+        "spec_cap_length": 0.0,
+        "spec_block_accept_length": 0.0,
+        "spec_num_correct_drafts": 1196,
+        "spec_num_proposed_drafts": 2562,
+        "spec_verify_ct": 854,
+        "spec_correct_drafts_histogram": [
+          234,
+          245,
+          174,
+          201
+        ],
+        "spec_cap_lens_histogram": []
+      },
+      "response_keys": [
+        "choices",
+        "created",
+        "id",
+        "metadata",
+        "model",
+        "object",
+        "sglext",
+        "usage"
+      ]
+    }
+  ]
+}

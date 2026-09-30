@@ -1,0 +1,59 @@
+{
+  "schema": "r0b0tlab.mimo26.mm_probe.v1",
+  "serve": "FINAL3-500k live process, model mimo26, advertised context 524288, DFlash block 8, think probes as labeled",
+  "note": "Functional probe of the live serve. Not an academic suite. Encoders emitted modality tokens. Answers did not match the controlled media.",
+  "controls": {
+    "image": "640x360 white canvas, green word SEVEN, red circle left, blue square right",
+    "audio": "3.26s speech, exact line: The access code is blue heron forty two.",
+    "video": "2.25s, 12 frames, circle moves right and changes red to blue, label LEFT then RIGHT"
+  },
+  "think_off": {
+    "image": {
+      "prompt_tokens": 254,
+      "image_tokens": 220,
+      "text_only_prompt_tokens": 32,
+      "finish": "stop",
+      "answer": "The word at the top is black, and the square is blue.",
+      "semantic": "fail"
+    },
+    "audio_mp3": {
+      "prompt_tokens": 44,
+      "audio_tokens": 21,
+      "finish": "stop",
+      "answer": "Hallucinated: The quick brown fox jumps over the lazy dog. Access code 7294.",
+      "semantic": "fail"
+    },
+    "video": {
+      "prompt_tokens": 308,
+      "video_tokens": 240,
+      "finish": "stop",
+      "answer": "Circle is red at the end, word is red.",
+      "semantic": "fail"
+    }
+  },
+  "think_on": {
+    "image": {
+      "prompt_tokens": 252,
+      "image_tokens": 220,
+      "completion_tokens": 256,
+      "finish": "length",
+      "answer": "Invented a grid. Called the top circle light blue and the bottom square dark blue. Did not read SEVEN.",
+      "semantic": "fail"
+    },
+    "audio_wav": {
+      "prompt_tokens": 42,
+      "audio_tokens": 21,
+      "finish": "stop",
+      "answer": "A woman's voice says the access code is 1234.",
+      "semantic": "fail"
+    },
+    "video": {
+      "prompt_tokens": 306,
+      "video_tokens": 240,
+      "completion_tokens": 256,
+      "finish": "length",
+      "answer": "Invented a multi-second color cycle (white, red, green, blue, yellow, purple, orange). Clip ends on a blue circle and the word RIGHT.",
+      "semantic": "fail"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "finished_utc": "2026-09-24T23:25:09.717445+00:00",
+  "infra_error_count": 0,
+  "method": "advertised_window_niah_plus_multikey",
+  "model": "mimo26",
+  "nonce": "R0B0BENCH_NIAH_SLOT",
+  "results": {
+    "mk3": {
+      "api_prompt_tokens": 480655,
+      "completion_tokens": 40,
+      "elapsed_s": 1402.042,
+      "filler_repeats": 43682,
+      "filler_token_width": 12,
+      "finished_utc": "2026-09-24T23:25:09.716644+00:00",
+      "keys": {
+        "NEEDLE-A": {
+          "depth": 0.33,
+          "value": "ni4h7q2x9"
+        },
+        "NEEDLE-B": {
+          "depth": 0.66,
+          "value": "k7d2m8v4"
+        },
+        "NEEDLE-C": {
+          "depth": 0.99,
+          "value": "t3r9w5y1"
+        }
+      },
+      "label": "mk3",
+      "multikey": "all3",
+      "needle_retrieved": true,
+      "per_key_retrieved": {
+        "k7d2m8v4": true,
+        "ni4h7q2x9": true,
+        "t3r9w5y1": true
+      },
+      "prefill_tps_est": 342.8,
+      "requested_depth": null,
+      "response": "NEEDLE-A=ni4h7q2x9\nNEEDLE-B=k7d2m8v4\nNEEDLE-C=t3r9w5y1",
+      "target_prompt_tokens": 524288,
+      "transport_ok": true
+    }
+  },
+  "schema_version": 3,
+  "semantic_pass_count": 1,
+  "started_utc": "2026-09-24T23:01:47.635403+00:00",
+  "target_tokens": 524288,
+  "verdict": "NIAH_PASS"
+}

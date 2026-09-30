@@ -1,0 +1,173 @@
+{
+ "tag": "MTP-500k-mm-short",
+ "url": "http://192.168.68.78:30000",
+ "model": "mimo26",
+ "started_utc": "2026-09-26T14:18:52Z",
+ "max_tokens": 1024,
+ "repeats": 2,
+ "template_kwargs": {
+  "enable_thinking": false,
+  "thinking": false
+ },
+ "server_info_start": {
+  "avg_spec_accept_length": 2.375,
+  "memory_usage": {
+   "weight": 84.693,
+   "kvcache": 9.356,
+   "startup_available": 13.161,
+   "token_capacity": 1486435,
+   "token_capacity_swa": 29728,
+   "graph": {
+    "prefill": 0.0,
+    "decode": 0.0,
+    "target_verify": 0.838,
+    "draft_prefill": 0.0,
+    "draft_decode": 0.0,
+    "draft_extend": 0.0
+   }
+  }
+ },
+ "workloads": {
+  "short_code": {
+   "requests": [
+    {
+     "prompt_tokens": 71,
+     "completion_tokens": 1024,
+     "chunks": 307,
+     "ttft_s": 0.598172171972692,
+     "e2e_s": 49.3515518119093,
+     "text_head": "```python\n\"\"\"\nThread-safe LRU Cache with TTL Expiry and Statistics.\n\nThis module provides a generic, thread-safe cache implementation that supports:\n- Least Rec",
+     "decode_tps": 20.983207534043917,
+     "prefill_tps": 118.69492317880899,
+     "i": 0
+    },
+    {
+     "prompt_tokens": 71,
+     "completion_tokens": 1024,
+     "chunks": 289,
+     "ttft_s": 0.5590798280900344,
+     "e2e_s": 43.93272468203213,
+     "text_head": "```python\n\"\"\"\nThread-safe LRU Cache with TTL Expiry and Statistics.\n\nThis module provides a generic, thread-safe cache implementation that supports:\n- Least Rec",
+     "decode_tps": 23.58583625779718,
+     "prefill_tps": 126.99438690634736,
+     "i": 1
+    }
+   ],
+   "decode_tps_median": 22.284521895920548,
+   "prefill_tps_median": 122.84465504257818,
+   "ttft_median_s": 0.5786260000313632,
+   "accept_len_before": 2.375,
+   "accept_len_after": 3.35625
+  },
+  "medium_code": {
+   "requests": [
+    {
+     "prompt_tokens": 4405,
+     "completion_tokens": 1024,
+     "chunks": 283,
+     "ttft_s": 6.776778960949741,
+     "e2e_s": 51.41595990594942,
+     "text_head": "```python\n\"\"\"Tests for 10_calibrate_mimo.py\"\"\"\n\nimport json\nimport math\nimport sys\nimport types\nfrom pathlib import Path\nfrom unittest import mock\n\nimport pytes",
+     "decode_tps": 22.91713024110726,
+     "prefill_tps": 650.0138229951439,
+     "i": 0
+    },
+    {
+     "prompt_tokens": 4405,
+     "completion_tokens": 1024,
+     "chunks": 295,
+     "ttft_s": 6.1157735279994085,
+     "e2e_s": 52.307871602941304,
+     "text_head": "```python\nimport json\nimport math\nimport struct\nimport sys\nimport types\nfrom pathlib import Path\nfrom unittest import mock\n\nimport pytest\nimport torch\nimport to",
+     "decode_tps": 22.146721735292473,
+     "prefill_tps": 720.2686593662934,
+     "i": 1
+    }
+   ],
+   "decode_tps_median": 22.531925988199866,
+   "prefill_tps_median": 685.1412411807187,
+   "ttft_median_s": 6.446276244474575,
+   "accept_len_before": 3.35625,
+   "accept_len_after": 3.4548387096774196
+  },
+  "prose": {
+   "requests": [
+    {
+     "prompt_tokens": 3248,
+     "completion_tokens": 1024,
+     "chunks": 455,
+     "ttft_s": 4.543613211950287,
+     "e2e_s": 74.12637293303851,
+     "text_head": "The document before us is a technical model card, a species of writing that has become one of the defining literary forms of our computational age. On its surfa",
+     "decode_tps": 14.701943112855446,
+     "prefill_tps": 714.8495808264097,
+     "i": 0
+    },
+    {
+     "prompt_tokens": 3248,
+     "completion_tokens": 1024,
+     "chunks": 451,
+     "ttft_s": 4.507474091951735,
+     "e2e_s": 73.4077672609128,
+     "text_head": "The document before us is a technical model card, a species of writing that has become one of the defining literary forms of our computational age. On its surfa",
+     "decode_tps": 14.847560708780325,
+     "prefill_tps": 720.5809581466982,
+     "i": 1
+    }
+   ],
+   "decode_tps_median": 14.774751910817885,
+   "prefill_tps_median": 717.715269486554,
+   "ttft_median_s": 4.525543651951011,
+   "accept_len_before": 3.4548387096774196,
+   "accept_len_after": 2.957075471698113
+  },
+  "prefill_8k": {
+   "requests": [
+    {
+     "prompt_tokens": 9713,
+     "completion_tokens": 1,
+     "chunks": 1,
+     "ttft_s": 14.46111384499818,
+     "e2e_s": 14.461184550076723,
+     "text_head": "The",
+     "prefill_tps": 671.6633382538191,
+     "i": 0
+    },
+    {
+     "prompt_tokens": 9713,
+     "completion_tokens": 1,
+     "chunks": 1,
+     "ttft_s": 14.028723385068588,
+     "e2e_s": 14.028797273058444,
+     "text_head": "The",
+     "prefill_tps": 692.3652091064815,
+     "i": 1
+    }
+   ],
+   "decode_tps_median": null,
+   "prefill_tps_median": 682.0142736801504,
+   "ttft_median_s": 14.244918615033384,
+   "accept_len_before": 2.957075471698113,
+   "accept_len_after": 2.957075471698113
+  }
+ },
+ "server_info_end": {
+  "avg_spec_accept_length": 2.957075471698113,
+  "memory_usage": {
+   "weight": 84.693,
+   "kvcache": 9.356,
+   "startup_available": 13.161,
+   "token_capacity": 1486435,
+   "token_capacity_swa": 29728,
+   "graph": {
+    "prefill": 0.0,
+    "decode": 0.0,
+    "target_verify": 0.838,
+    "draft_prefill": 0.0,
+    "draft_decode": 0.0,
+    "draft_extend": 0.0
+   }
+  }
+ },
+ "finished_utc": "2026-09-26T14:25:06Z"
+}

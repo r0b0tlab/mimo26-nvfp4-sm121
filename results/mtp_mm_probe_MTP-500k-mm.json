@@ -1,0 +1,62 @@
+{
+  "schema": "r0b0tlab.mimo26.mtp_mm_probe.v1",
+  "serve": "MTP-500k-mm",
+  "model": "mimo26",
+  "advertised_context": 524288,
+  "speculative_algorithm": "EAGLE",
+  "speculative_num_steps": 3,
+  "speculative_num_draft_tokens": 4,
+  "speculative_eagle_topk": 1,
+  "enable_multi_layer_eagle": true,
+  "draft_window": 4096,
+  "enable_multimodal": true,
+  "mm_attention_backend": "triton_attn",
+  "image_processor_backend": "torchvision",
+  "reasoning_parser": "mimo",
+  "tool_call_parser": "mimo",
+  "kv_cache_dtype": "fp8_e4m3",
+  "max_total_num_tokens": 1558293,
+  "prefill_cuda_graph": "disabled by the build: breakable CUDA graph is incompatible with a multimodal model",
+  "draft_extend_cuda_graph": "disabled via SGLANG_DISABLE_DRAFT_EXTEND_CUDA_GRAPH=1; Triton crashes compiling the SWA extend kernel during capture",
+  "prose": {
+    "prompt": "Explain in four sentences why a bicycle chain needs oil, without a list.",
+    "max_new_tokens": 96,
+    "completion_tokens": 96,
+    "e2e_latency_s": 6.793,
+    "spec_accept_length": 2.1333333333333333,
+    "spec_accept_rate": 0.37037037037037035,
+    "spec_verify_ct": 45,
+    "spec_accepted_drafts": 50,
+    "spec_proposed_drafts": 135,
+    "spec_accept_histogram": [14, 16, 11, 4]
+  },
+  "counting_ceiling": {
+    "spec_accept_length": 4.0,
+    "spec_accept_rate": 1.0,
+    "spec_verify_ct": 12,
+    "note": "easy counting prompt; ceiling only, not the prose result"
+  },
+  "multimodal_think_off": {
+    "image": {
+      "ground_truth": "green word SEVEN, red circle, blue square",
+      "answer": "The word is green, the circle is red, and the square is blue.",
+      "match": true,
+      "prompt_tokens": 246,
+      "image_tokens": 220
+    },
+    "audio": {
+      "ground_truth": "The access code is blue heron forty two.",
+      "answer": "The access code is Blue Heron 42.",
+      "match": true,
+      "prompt_tokens": 40,
+      "audio_tokens": 21
+    },
+    "video": {
+      "ground_truth": "ending circle blue, on-screen word RIGHT",
+      "answer": "The circle at the end is blue, and the word on screen is \"RIGHT\".",
+      "match": true,
+      "prompt_tokens": 302,
+      "video_tokens": 240
+    }
+  }
+}
