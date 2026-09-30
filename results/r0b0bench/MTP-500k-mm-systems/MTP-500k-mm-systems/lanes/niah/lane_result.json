@@ -1,0 +1,105 @@
+{
+  "artifacts": {
+    "niah.json": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/niah/niah.json"
+  },
+  "elapsed_s": 1942.8969412919832,
+  "imported": false,
+  "infra_errors": 0,
+  "lane_id": "niah",
+  "status": "PASS",
+  "summary": {
+    "all_passed": true,
+    "code": "R0B0-NIAH-7K3M",
+    "depth_policy": "frac_of_max_context",
+    "depths": [
+      131008,
+      262016,
+      471628
+    ],
+    "fractions": [
+      0.25,
+      0.5,
+      0.9
+    ],
+    "generation_reserve": 256,
+    "kv_cache_size_tokens": null,
+    "marker": "R0B0BENCH_NIAH_SLOT",
+    "max_model_len": 524288,
+    "note": "Depths are always 25/50/90% of (max_model_len - generation_reserve). This is the standard max-context capacity package; physical KV shortfall surfaces as infra ERROR.",
+    "pass_count": 3,
+    "rows": [
+      {
+        "depth": 131008,
+        "elapsed_s": 243.00434009404853,
+        "finish_reason": "stop",
+        "fraction_of_usable": 0.25,
+        "http_status": 200,
+        "infra_errors": 0,
+        "max_model_len": 524288,
+        "needle_fraction_effective": 0.49992366878358574,
+        "passed": true,
+        "prompt_sha256": "f9aad0049acf76ac7333da47de2f85699497a2321de398c4e8364d8d158356dc",
+        "prompt_tokens_constructed": 131008,
+        "response_text": "R0B0-NIAH-7K3M",
+        "status": "PASS",
+        "usage": {
+          "completion_tokens": 13,
+          "prompt_tokens": 131008,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 0,
+          "total_tokens": 131021
+        }
+      },
+      {
+        "depth": 262016,
+        "elapsed_s": 510.2705869319616,
+        "finish_reason": "stop",
+        "fraction_of_usable": 0.5,
+        "http_status": 200,
+        "infra_errors": 0,
+        "max_model_len": 524288,
+        "needle_fraction_effective": 0.49996183439179287,
+        "passed": true,
+        "prompt_sha256": "2345a99f43e489c5c32ddfb537cd2cbb858a50d06ef8ecf5484b32fcc969bba8",
+        "prompt_tokens_constructed": 262016,
+        "response_text": "R0B0-NIAH-7K3M",
+        "status": "PASS",
+        "usage": {
+          "completion_tokens": 13,
+          "prompt_tokens": 262016,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 0,
+          "total_tokens": 262029
+        }
+      },
+      {
+        "depth": 471628,
+        "elapsed_s": 1186.7758869039826,
+        "finish_reason": "stop",
+        "fraction_of_usable": 0.9,
+        "http_status": 200,
+        "infra_errors": 0,
+        "max_model_len": 524288,
+        "needle_fraction_effective": 0.49997879684836355,
+        "passed": true,
+        "prompt_sha256": "d4677dbe4646ba7bee5adc3b7c29c9d2a3d7561c7ae12df135a9e4bab8eed9f0",
+        "prompt_tokens_constructed": 471628,
+        "response_text": "R0B0-NIAH-7K3M",
+        "status": "PASS",
+        "usage": {
+          "completion_tokens": 13,
+          "prompt_tokens": 471628,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 0,
+          "total_tokens": 471641
+        }
+      }
+    ],
+    "template_source": "transformers_chat_template (render_failed=Client error '404 Not Found' for url 'http://192.168.68.78:30000/v1/chat/completions/render'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404)",
+    "tokenizer": {
+      "backend": "tokenizers",
+      "path": "/home/r0b0tdgx/models/r0b0tlab/MiMo-V2.6-Flash-RL-NVFP4/tokenizer.json"
+    },
+    "total": 3
+  }
+}

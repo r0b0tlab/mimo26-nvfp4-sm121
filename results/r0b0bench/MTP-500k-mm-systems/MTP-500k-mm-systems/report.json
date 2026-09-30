@@ -1,0 +1,644 @@
+{
+ "base_url": "http://192.168.68.78:30000/v1",
+ "elapsed_s": 47102.976966900984,
+ "infra_errors_total": 0,
+ "invalid_for_publish": false,
+ "lanes": [
+  {
+   "artifacts": {
+    "canary.json": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/canary/canary.json"
+   },
+   "elapsed_s": 15.499411147087812,
+   "imported": false,
+   "infra_errors": 0,
+   "lane_id": "canary",
+   "status": "PASS",
+   "summary": {
+    "checks": {
+     "identity": true,
+     "needle": true,
+     "structured": true,
+     "tool_call": true,
+     "zh_arithmetic": true
+    },
+    "excluded_known_artifacts": [],
+    "n": 5,
+    "passed": true
+   }
+  },
+  {
+   "artifacts": {
+    "bfcl_mt.json": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/bfcl_mt/bfcl_mt.json",
+    "e2e_timing": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/bfcl_mt/bfcl-project/e2e-requests.jsonl",
+    "log": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/bfcl_mt/bfcl_mt.log"
+   },
+   "elapsed_s": 42112.440364737995,
+   "imported": false,
+   "infra_errors": 0,
+   "lane_id": "bfcl_mt",
+   "status": "PASS",
+   "summary": {
+    "accuracy": 0.585,
+    "base_url": "http://192.168.68.78:30000/v1/",
+    "category": "multi_turn_base",
+    "e2e_throughput": {
+     "aggregate_e2e_output_tok_s": 7.947231149223386,
+     "completion_tokens": 1312354,
+     "elapsed_s_sum": 165133.4880486325,
+     "infra_errors": 0,
+     "malformed_rows": 0,
+     "mean_request_e2e_output_tok_s": 6.910881548839996,
+     "median_request_e2e_output_tok_s": 6.945478851256002,
+     "path": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/bfcl_mt/bfcl-project/e2e-requests.jsonl",
+     "reasoning_tokens": 0,
+     "requests": 2001,
+     "valid_requests": 2001
+    },
+    "expected_rows": 200,
+    "model": "mimo26",
+    "project": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/bfcl_mt/bfcl-project",
+    "score": {
+     "accuracy": 0.585,
+     "correct": 117,
+     "csv": [
+      "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/bfcl_mt/bfcl-project/score/data_multi_turn.csv",
+      "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/bfcl_mt/bfcl-project/score/data_agentic.csv",
+      "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/bfcl_mt/bfcl-project/score/data_non_live.csv",
+      "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/bfcl_mt/bfcl-project/score/data_live.csv",
+      "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/bfcl_mt/bfcl-project/score/data_overall.csv",
+      "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/bfcl_mt/bfcl-project/score/data_format_sensitivity.csv"
+     ],
+     "csv_rows": [
+      "Rank,Model,Multi Turn Overall Acc,Base,Miss Func,Miss Param,Long Context",
+      "Rank,Overall Acc,Model,Model Link,Total Cost ($),Latency Mean (s),Latency Standard Deviation (s),Latency 95th Percentile (s),Non-Live AST Acc,Non-Live Simple AST,Non-Live Multiple AST,Non-Live Parallel AST,Non-Live Parallel Multiple AST,Live Acc,Live Simple AST,Live Multiple AST,Live Parallel AST,Live Parallel Multiple AST,Multi Turn Acc,Multi Turn Base,Multi Turn Miss Func,Multi Turn Miss Param,Multi Turn Long Context,Web Search Acc,Web Search Base,Web Search No Snippet,Memory Acc,Memory KV,Memory Vector,Memory Recursive Summarization,Relevance Detection,Irrelevance Detection,Format Sensitivity Max Delta,Format Sensitivity Standard Deviation,Organization,License"
+     ],
+     "primary": {
+      "accuracy": 0.585,
+      "correct_count": 117,
+      "total_count": 200
+     },
+     "primary_path": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/bfcl_mt/bfcl-project/score/r0b0bench-openai-FC/multi_turn/BFCL_v4_multi_turn_base_score.json",
+     "score_files": [
+      "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/bfcl_mt/bfcl-project/score/r0b0bench-openai-FC/multi_turn/BFCL_v4_multi_turn_base_score.json",
+      "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/bfcl_mt/bfcl-project/score/r0b0bench-openai-FC/multi_turn/BFCL_v4_multi_turn_base_score.json"
+     ],
+     "total": 200
+    },
+    "status": "PASS"
+   }
+  },
+  {
+   "artifacts": {
+    "bfcl_ast.json": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/bfcl_ast/bfcl_ast.json",
+    "e2e_timing": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/bfcl_ast/bfcl-ast-project/e2e-requests.jsonl",
+    "log": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/bfcl_ast/bfcl_ast.log"
+   },
+   "elapsed_s": 1728.9074472540524,
+   "imported": false,
+   "infra_errors": 0,
+   "lane_id": "bfcl_ast",
+   "status": "PASS",
+   "summary": {
+    "base_url": "http://192.168.68.78:30000/v1/",
+    "categories": [
+     "multiple",
+     "parallel",
+     "parallel_multiple"
+    ],
+    "e2e_throughput": {
+     "aggregate_e2e_output_tok_s": 9.373029949773969,
+     "completion_tokens": 64482,
+     "elapsed_s_sum": 6879.525654514204,
+     "infra_errors": 0,
+     "malformed_rows": 0,
+     "mean_request_e2e_output_tok_s": 8.79788205775386,
+     "median_request_e2e_output_tok_s": 9.009702951434514,
+     "path": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/bfcl_ast/bfcl-ast-project/e2e-requests.jsonl",
+     "reasoning_tokens": 0,
+     "requests": 600,
+     "valid_requests": 600
+    },
+    "micro_accuracy": 0.35833333333333334,
+    "micro_correct": 215,
+    "micro_total": 600,
+    "model": "mimo26",
+    "project": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/bfcl_ast/bfcl-ast-project",
+    "score": {
+     "categories": {
+      "multiple": {
+       "accuracy": 0.35,
+       "correct_count": 70,
+       "total_count": 200,
+       "source": "official BFCL score header; parser matched BFCL_v4_<category>_score.json"
+      },
+      "parallel": {
+       "accuracy": 0.515,
+       "correct_count": 103,
+       "total_count": 200,
+       "source": "official BFCL score header; parser matched BFCL_v4_<category>_score.json"
+      },
+      "parallel_multiple": {
+       "accuracy": 0.21,
+       "correct_count": 42,
+       "total_count": 200,
+       "source": "official BFCL score header; parser matched BFCL_v4_<category>_score.json"
+      }
+     },
+     "micro_accuracy": 0.35833333333333334,
+     "micro_correct": 215,
+     "micro_total": 600
+    },
+    "status": "PASS",
+    "ast_parse_correction": "substring glob collapsed every category onto parallel_multiple; reparsed with exact filenames"
+   }
+  },
+  {
+   "artifacts": {
+    "summary.json": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/latency/summary.json"
+   },
+   "elapsed_s": 33.45521980000194,
+   "imported": false,
+   "infra_errors": 0,
+   "lane_id": "latency",
+   "status": "PASS",
+   "summary": {
+    "drop_first_rep": true,
+    "failed": 0,
+    "method": "openai_chat_stream_c1_latency",
+    "nonstream": {
+     "e2el_ms_mean": 4251.311944564804,
+     "n_stable": 2,
+     "rows": [
+      {
+       "completion_tokens": 78,
+       "e2el_ms": 4118.275818997063,
+       "elapsed_s": 4.118275818997063,
+       "http_status": 200,
+       "ok": true,
+       "prompt_tokens": 26,
+       "rep": 1
+      },
+      {
+       "completion_tokens": 78,
+       "e2el_ms": 3927.139664068818,
+       "elapsed_s": 3.927139664068818,
+       "http_status": 200,
+       "ok": true,
+       "prompt_tokens": 26,
+       "rep": 2
+      },
+      {
+       "completion_tokens": 86,
+       "e2el_ms": 4575.484225060791,
+       "elapsed_s": 4.575484225060791,
+       "http_status": 200,
+       "ok": true,
+       "prompt_tokens": 26,
+       "rep": 3
+      }
+     ]
+    },
+    "output_tokens": 128,
+    "reps": 5,
+    "stream": {
+     "e2el_ms_mean": 4116.530102735851,
+     "itl_ms_mean": 139.64724897193875,
+     "itl_ms_p50_mean": 139.59293000516482,
+     "itl_ms_p95_mean": 147.36614943103632,
+     "n_stable": 4,
+     "rows": [
+      {
+       "e2el_ms": 4365.315511007793,
+       "elapsed_s": 4.365315511007793,
+       "finish_reason": "stop",
+       "http_status": 200,
+       "itl_ms_mean": 138.18951682437077,
+       "itl_ms_p50": 138.40791198890656,
+       "itl_ms_p95": 145.3553473809734,
+       "ok": true,
+       "rep": 1,
+       "stream_completion_chunks": 29,
+       "text": "Copper is a highly conductive metal, second only to silver among pure elements. Its excellent electrical conductivity arises from its atomic structure, which allows electrons to move freely. This property makes it the standard material for electrical wiring, motors, and electronics. Copper also has high thermal conductivity, efficiently transferring heat, which is why it is widely used in heat exchangers and cookware.",
+       "ttft_ms": 495.8906229585409,
+       "usage": {
+        "completion_tokens": 78,
+        "prompt_tokens": 26,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0,
+        "total_tokens": 104
+       }
+      },
+      {
+       "e2el_ms": 4036.054356954992,
+       "elapsed_s": 4.036054356954992,
+       "finish_reason": "stop",
+       "http_status": 200,
+       "itl_ms_mean": 134.73713064117223,
+       "itl_ms_p50": 135.05796244135126,
+       "itl_ms_p95": 139.57178643904626,
+       "ok": true,
+       "rep": 2,
+       "stream_completion_chunks": 29,
+       "text": "Copper is a highly conductive metal, second only to silver among common elements. Its excellent electrical conductivity arises from its atomic structure, which allows electrons to move freely. This property makes it the standard material for electrical wiring, motors, and electronics. Copper also has high thermal conductivity, efficiently transferring heat, which is why it is widely used in heat exchangers and cookware.",
+       "ttft_ms": 263.2534980075434,
+       "usage": {
+        "completion_tokens": 78,
+        "prompt_tokens": 26,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0,
+        "total_tokens": 104
+       }
+      },
+      {
+       "e2el_ms": 4261.273236013949,
+       "elapsed_s": 4.261273236013949,
+       "finish_reason": "stop",
+       "http_status": 200,
+       "itl_ms_mean": 142.7353624645288,
+       "itl_ms_p50": 143.35573051357642,
+       "itl_ms_p95": 150.55694705224596,
+       "ok": true,
+       "rep": 3,
+       "stream_completion_chunks": 29,
+       "text": "Copper is a highly conductive metal, second only to silver among pure elements. Its excellent electrical conductivity arises from its atomic structure, which allows electrons to move freely. This property makes it the standard material for electrical wiring, motors, and electronics. Copper also has high thermal conductivity, efficiently transferring heat, which is why it is widely used in heat exchangers and cookware.",
+       "ttft_ms": 264.51646198984236,
+       "usage": {
+        "completion_tokens": 78,
+        "prompt_tokens": 26,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0,
+        "total_tokens": 104
+       }
+      },
+      {
+       "e2el_ms": 4054.6343839960173,
+       "elapsed_s": 4.054634383996017,
+       "finish_reason": "stop",
+       "http_status": 200,
+       "itl_ms_mean": 139.22710029873997,
+       "itl_ms_p50": 137.9149160347879,
+       "itl_ms_p95": 147.80570565490052,
+       "ok": true,
+       "rep": 4,
+       "stream_completion_chunks": 28,
+       "text": "Copper is a highly conductive metal, second only to silver among pure elements. Its excellent electrical conductivity arises from its atomic structure, which allows electrons to move freely. This property makes it the standard material for electrical wiring, motors, and electronics. Copper also has high thermal conductivity, efficiently transferring heat, which is why it is widely used in heat exchangers and cookware.",
+       "ttft_ms": 295.33483495470136,
+       "usage": {
+        "completion_tokens": 78,
+        "prompt_tokens": 26,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0,
+        "total_tokens": 104
+       }
+      },
+      {
+       "e2el_ms": 4114.158433978446,
+       "elapsed_s": 4.114158433978446,
+       "finish_reason": "stop",
+       "http_status": 200,
+       "itl_ms_mean": 141.889402483314,
+       "itl_ms_p50": 142.0431110309437,
+       "itl_ms_p95": 151.53015857795253,
+       "ok": true,
+       "rep": 5,
+       "stream_completion_chunks": 28,
+       "text": "Copper is a highly conductive metal, second only to silver among common elements. Its excellent electrical conductivity arises from its atomic structure, which allows electrons to move freely. This property makes it the standard material for electrical wiring, motors, and electronics. Copper also has high thermal conductivity, efficiently transferring heat, which is why it is widely used in heat exchangers and cookware.",
+       "ttft_ms": 282.9796379664913,
+       "usage": {
+        "completion_tokens": 78,
+        "prompt_tokens": 26,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0,
+        "total_tokens": 104
+       }
+      }
+     ],
+     "ttft_ms_mean": 276.5211082296446
+    }
+   }
+  },
+  {
+   "artifacts": {
+    "summary.json": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/concurrency/summary.json"
+   },
+   "elapsed_s": 642.9327052539447,
+   "imported": false,
+   "infra_errors": 0,
+   "lane_id": "concurrency",
+   "status": "PASS",
+   "summary": {
+    "backend": "openai_portable",
+    "drop_first_rep": true,
+    "levels": [
+     1,
+     2,
+     4,
+     6
+    ],
+    "method": "openai_portable_concurrency_ladder",
+    "output_tokens": 512,
+    "reps": 3,
+    "rows": [
+     {
+      "aggregate_output_tok_s": 26.673013124617768,
+      "completed": 4,
+      "concurrency": 1,
+      "failed": 0,
+      "mean_e2el_ms": 19262.004583521048,
+      "median_client_output_tok_s": 26.68558723267509,
+      "output_tokens": 512,
+      "repetitions_present": 3,
+      "warmup_rep_dropped": 1
+     },
+     {
+      "aggregate_output_tok_s": 43.4784835711401,
+      "completed": 8,
+      "concurrency": 2,
+      "failed": 0,
+      "mean_e2el_ms": 23552.2723874019,
+      "median_client_output_tok_s": 21.742449833448376,
+      "output_tokens": 512,
+      "repetitions_present": 3,
+      "warmup_rep_dropped": 1
+     },
+     {
+      "aggregate_output_tok_s": 66.62872552873816,
+      "completed": 16,
+      "concurrency": 4,
+      "failed": 0,
+      "mean_e2el_ms": 30735.731073953502,
+      "median_client_output_tok_s": 16.713121792024562,
+      "output_tokens": 512,
+      "repetitions_present": 3,
+      "warmup_rep_dropped": 1
+     },
+     {
+      "aggregate_output_tok_s": 93.15317102355169,
+      "completed": 24,
+      "concurrency": 6,
+      "failed": 0,
+      "mean_e2el_ms": 32976.03402281918,
+      "median_client_output_tok_s": 15.526297532274413,
+      "output_tokens": 512,
+      "repetitions_present": 3,
+      "warmup_rep_dropped": 1
+     }
+    ],
+    "total_failed": 0
+   }
+  },
+  {
+   "artifacts": {
+    "summary.json": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/throughput/summary.json"
+   },
+   "elapsed_s": 626.7895800399128,
+   "imported": false,
+   "infra_errors": 0,
+   "lane_id": "throughput",
+   "status": "PASS",
+   "summary": {
+    "backend": "openai_portable",
+    "decode": {
+     "mean_client_output_tok_s": 17.263844158799895,
+     "median_client_output_tok_s": 17.313837688860072,
+     "n_stable": 4,
+     "output_tokens_requested": 2048,
+     "reps": 5,
+     "rows": [
+      {
+       "client_output_tokens_per_second": 16.358259488514605,
+       "completion_tokens": 1862,
+       "elapsed_s": 113.82629070698749,
+       "finish_reason": "stop",
+       "http_status": 200,
+       "kind": "decode",
+       "ok": true,
+       "prompt_tokens": 40,
+       "rep": 1,
+       "server_prompt_tokens_per_second": 0.3514126635556306
+      },
+      {
+       "client_output_tokens_per_second": 16.212638302100213,
+       "completion_tokens": 2048,
+       "elapsed_s": 126.32120459596626,
+       "finish_reason": "length",
+       "http_status": 200,
+       "kind": "decode",
+       "ok": true,
+       "prompt_tokens": 40,
+       "rep": 2,
+       "server_prompt_tokens_per_second": 0.31665309183789475
+      },
+      {
+       "client_output_tokens_per_second": 18.215062955379217,
+       "completion_tokens": 2048,
+       "elapsed_s": 112.43441787804477,
+       "finish_reason": "length",
+       "http_status": 200,
+       "kind": "decode",
+       "ok": true,
+       "prompt_tokens": 40,
+       "rep": 3,
+       "server_prompt_tokens_per_second": 0.3557629483472503
+      },
+      {
+       "client_output_tokens_per_second": 16.72844669928175,
+       "completion_tokens": 2048,
+       "elapsed_s": 122.42619035800453,
+       "finish_reason": "length",
+       "http_status": 200,
+       "kind": "decode",
+       "ok": true,
+       "prompt_tokens": 40,
+       "rep": 4,
+       "server_prompt_tokens_per_second": 0.3267274745953467
+      },
+      {
+       "client_output_tokens_per_second": 17.899228678438394,
+       "completion_tokens": 2048,
+       "elapsed_s": 114.4183381749317,
+       "finish_reason": "length",
+       "http_status": 200,
+       "kind": "decode",
+       "ok": true,
+       "prompt_tokens": 40,
+       "rep": 5,
+       "server_prompt_tokens_per_second": 0.3495943101257499
+      }
+     ]
+    },
+    "drop_first_rep": true,
+    "failed": 0,
+    "method": "openai_portable_c1_throughput",
+    "prefill": {
+     "mean_server_prompt_tok_s": 17940.75034612456,
+     "median_prompt_tokens": 22771.0,
+     "median_server_prompt_tok_s": 17940.75034612456,
+     "n_stable": 2,
+     "note": "prompt tok/s is e2e wall proxy (includes short decode); not pure prefill kernel metric",
+     "output_tokens": 16,
+     "prompt_tokens_target": 14000,
+     "reps": 3,
+     "rows": [
+      {
+       "client_output_tokens_per_second": 0.4596229722349683,
+       "completion_tokens": 16,
+       "elapsed_s": 34.811140796984546,
+       "finish_reason": "length",
+       "http_status": 200,
+       "kind": "prefill",
+       "ok": true,
+       "prompt_tokens": 22771,
+       "rep": 1,
+       "server_prompt_tokens_per_second": 654.129668797654
+      },
+      {
+       "client_output_tokens_per_second": 12.606016192450937,
+       "completion_tokens": 16,
+       "elapsed_s": 1.2692352409940213,
+       "finish_reason": "length",
+       "http_status": 200,
+       "kind": "prefill",
+       "ok": true,
+       "prompt_tokens": 22771,
+       "rep": 2,
+       "server_prompt_tokens_per_second": 17940.724669893767
+      },
+      {
+       "client_output_tokens_per_second": 12.606052275160762,
+       "completion_tokens": 16,
+       "elapsed_s": 1.269231608021073,
+       "finish_reason": "length",
+       "http_status": 200,
+       "kind": "prefill",
+       "ok": true,
+       "prompt_tokens": 22771,
+       "rep": 3,
+       "server_prompt_tokens_per_second": 17940.776022355356
+      }
+     ]
+    }
+   }
+  },
+  {
+   "artifacts": {
+    "niah.json": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/niah/niah.json"
+   },
+   "elapsed_s": 1942.8969412919832,
+   "imported": false,
+   "infra_errors": 0,
+   "lane_id": "niah",
+   "status": "PASS",
+   "summary": {
+    "all_passed": true,
+    "code": "R0B0-NIAH-7K3M",
+    "depth_policy": "frac_of_max_context",
+    "depths": [
+     131008,
+     262016,
+     471628
+    ],
+    "fractions": [
+     0.25,
+     0.5,
+     0.9
+    ],
+    "generation_reserve": 256,
+    "kv_cache_size_tokens": null,
+    "marker": "R0B0BENCH_NIAH_SLOT",
+    "max_model_len": 524288,
+    "note": "Depths are always 25/50/90% of (max_model_len - generation_reserve). This is the standard max-context capacity package; physical KV shortfall surfaces as infra ERROR.",
+    "pass_count": 3,
+    "rows": [
+     {
+      "depth": 131008,
+      "elapsed_s": 243.00434009404853,
+      "finish_reason": "stop",
+      "fraction_of_usable": 0.25,
+      "http_status": 200,
+      "infra_errors": 0,
+      "max_model_len": 524288,
+      "needle_fraction_effective": 0.49992366878358574,
+      "passed": true,
+      "prompt_sha256": "f9aad0049acf76ac7333da47de2f85699497a2321de398c4e8364d8d158356dc",
+      "prompt_tokens_constructed": 131008,
+      "response_text": "R0B0-NIAH-7K3M",
+      "status": "PASS",
+      "usage": {
+       "completion_tokens": 13,
+       "prompt_tokens": 131008,
+       "prompt_tokens_details": null,
+       "reasoning_tokens": 0,
+       "total_tokens": 131021
+      }
+     },
+     {
+      "depth": 262016,
+      "elapsed_s": 510.2705869319616,
+      "finish_reason": "stop",
+      "fraction_of_usable": 0.5,
+      "http_status": 200,
+      "infra_errors": 0,
+      "max_model_len": 524288,
+      "needle_fraction_effective": 0.49996183439179287,
+      "passed": true,
+      "prompt_sha256": "2345a99f43e489c5c32ddfb537cd2cbb858a50d06ef8ecf5484b32fcc969bba8",
+      "prompt_tokens_constructed": 262016,
+      "response_text": "R0B0-NIAH-7K3M",
+      "status": "PASS",
+      "usage": {
+       "completion_tokens": 13,
+       "prompt_tokens": 262016,
+       "prompt_tokens_details": null,
+       "reasoning_tokens": 0,
+       "total_tokens": 262029
+      }
+     },
+     {
+      "depth": 471628,
+      "elapsed_s": 1186.7758869039826,
+      "finish_reason": "stop",
+      "fraction_of_usable": 0.9,
+      "http_status": 200,
+      "infra_errors": 0,
+      "max_model_len": 524288,
+      "needle_fraction_effective": 0.49997879684836355,
+      "passed": true,
+      "prompt_sha256": "d4677dbe4646ba7bee5adc3b7c29c9d2a3d7561c7ae12df135a9e4bab8eed9f0",
+      "prompt_tokens_constructed": 471628,
+      "response_text": "R0B0-NIAH-7K3M",
+      "status": "PASS",
+      "usage": {
+       "completion_tokens": 13,
+       "prompt_tokens": 471628,
+       "prompt_tokens_details": null,
+       "reasoning_tokens": 0,
+       "total_tokens": 471641
+      }
+     }
+    ],
+    "template_source": "transformers_chat_template (render_failed=Client error '404 Not Found' for url 'http://192.168.68.78:30000/v1/chat/completions/render'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404)",
+    "tokenizer": {
+     "backend": "tokenizers",
+     "path": "/home/r0b0tdgx/models/r0b0tlab/MiMo-V2.6-Flash-RL-NVFP4/tokenizer.json"
+    },
+    "total": 3
+   }
+  }
+ ],
+ "model": "mimo26",
+ "profile": "systems",
+ "r0b0bench_version": "1.0.0rc2",
+ "run_id": "MTP-500k-mm-systems",
+ "schema_version": 2,
+ "started_utc": "2026-09-27T06:02:51.646890+00:00",
+ "systems_lanes": [
+  "canary",
+  "bfcl_mt",
+  "bfcl_ast",
+  "latency",
+  "concurrency",
+  "throughput",
+  "niah"
+ ]
+}

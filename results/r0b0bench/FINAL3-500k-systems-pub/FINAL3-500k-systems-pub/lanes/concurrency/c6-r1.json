@@ -1,0 +1,11 @@
+{
+  "aggregate_output_tok_s": 161.89836243718412,
+  "completed": 12,
+  "concurrency": 6,
+  "failed": 0,
+  "mean_e2el_ms": 18973.11956258879,
+  "median_client_output_tok_s": 26.98527150997424,
+  "n_requests": 12,
+  "rep": 1,
+  "wall_s": 37.94973530003335
+}

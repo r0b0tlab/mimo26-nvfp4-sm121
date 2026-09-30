@@ -1,0 +1,22 @@
+{
+  "artifacts": {
+    "canary.json": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/canary/canary.json"
+  },
+  "elapsed_s": 14.421903643058613,
+  "imported": false,
+  "infra_errors": 0,
+  "lane_id": "canary",
+  "status": "PASS",
+  "summary": {
+    "checks": {
+      "identity": true,
+      "needle": true,
+      "structured": true,
+      "tool_call": true,
+      "zh_arithmetic": true
+    },
+    "excluded_known_artifacts": [],
+    "n": 5,
+    "passed": true
+  }
+}

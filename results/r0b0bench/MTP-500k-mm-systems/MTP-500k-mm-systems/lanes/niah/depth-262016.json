@@ -1,0 +1,22 @@
+{
+  "depth": 262016,
+  "elapsed_s": 510.2705869319616,
+  "finish_reason": "stop",
+  "fraction_of_usable": 0.5,
+  "http_status": 200,
+  "infra_errors": 0,
+  "max_model_len": 524288,
+  "needle_fraction_effective": 0.49996183439179287,
+  "passed": true,
+  "prompt_sha256": "2345a99f43e489c5c32ddfb537cd2cbb858a50d06ef8ecf5484b32fcc969bba8",
+  "prompt_tokens_constructed": 262016,
+  "response_text": "R0B0-NIAH-7K3M",
+  "status": "PASS",
+  "usage": {
+    "completion_tokens": 13,
+    "prompt_tokens": 262016,
+    "prompt_tokens_details": null,
+    "reasoning_tokens": 0,
+    "total_tokens": 262029
+  }
+}

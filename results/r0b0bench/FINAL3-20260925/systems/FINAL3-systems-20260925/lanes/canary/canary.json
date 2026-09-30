@@ -1,0 +1,226 @@
+{
+  "results": [
+    {
+      "elapsed_s": 0.6220089879352599,
+      "http_status": 200,
+      "id": "identity",
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "logprobs": null,
+            "matched_stop": 151645,
+            "message": {
+              "content": "R0B0BENCH_OK",
+              "reasoning_content": null,
+              "role": "assistant",
+              "tool_calls": null
+            }
+          }
+        ],
+        "created": 1790305475,
+        "id": "dd8a3c7ae24f4374bcf1b119c696b92f",
+        "metadata": {
+          "weight_version": "default",
+          "weight_versions": [
+            {
+              "end": 8,
+              "start": 0,
+              "version": "default"
+            }
+          ]
+        },
+        "model": "mimo26",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 8,
+          "prompt_tokens": 23,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 0,
+          "total_tokens": 31
+        }
+      }
+    },
+    {
+      "elapsed_s": 0.5211719390936196,
+      "http_status": 200,
+      "id": "zh_arithmetic",
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "logprobs": null,
+            "matched_stop": 151645,
+            "message": {
+              "content": "323",
+              "reasoning_content": null,
+              "role": "assistant",
+              "tool_calls": null
+            }
+          }
+        ],
+        "created": 1790305475,
+        "id": "0d78397f5ba44620847ee274ee9b88b3",
+        "metadata": {
+          "weight_version": "default",
+          "weight_versions": [
+            {
+              "end": 4,
+              "start": 0,
+              "version": "default"
+            }
+          ]
+        },
+        "model": "mimo26",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 4,
+          "prompt_tokens": 22,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 0,
+          "total_tokens": 26
+        }
+      }
+    },
+    {
+      "elapsed_s": 0.7671270200517029,
+      "http_status": 200,
+      "id": "structured",
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "logprobs": null,
+            "matched_stop": 151645,
+            "message": {
+              "content": "{\"alpha\": 2, \"beta\": 3}",
+              "reasoning_content": null,
+              "role": "assistant",
+              "tool_calls": null
+            }
+          }
+        ],
+        "created": 1790305476,
+        "id": "9b88960b046c4925b1ddf77ee7d5c128",
+        "metadata": {
+          "weight_version": "default",
+          "weight_versions": [
+            {
+              "end": 13,
+              "start": 0,
+              "version": "default"
+            }
+          ]
+        },
+        "model": "mimo26",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 13,
+          "prompt_tokens": 46,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 0,
+          "total_tokens": 59
+        }
+      }
+    },
+    {
+      "elapsed_s": 1.3184356710407883,
+      "http_status": 200,
+      "id": "tool_call",
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "logprobs": null,
+            "matched_stop": 151645,
+            "message": {
+              "content": "<tool_call><function=get_weather><parameter=location>Tokyo</parameter></function></tool_call>",
+              "reasoning_content": null,
+              "role": "assistant",
+              "tool_calls": null
+            }
+          }
+        ],
+        "created": 1790305477,
+        "id": "d897cc2c81e14364aa5c1dfc5558d6e2",
+        "metadata": {
+          "weight_version": "default",
+          "weight_versions": [
+            {
+              "end": 19,
+              "start": 0,
+              "version": "default"
+            }
+          ]
+        },
+        "model": "mimo26",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 19,
+          "prompt_tokens": 112,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 0,
+          "total_tokens": 131
+        }
+      }
+    },
+    {
+      "elapsed_s": 11.102069991989993,
+      "http_status": 200,
+      "id": "needle",
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "logprobs": null,
+            "matched_stop": 151645,
+            "message": {
+              "content": "A9Q7",
+              "reasoning_content": null,
+              "role": "assistant",
+              "tool_calls": null
+            }
+          }
+        ],
+        "created": 1790305488,
+        "id": "cb0d6d10153a468084941aabd2bad3a6",
+        "metadata": {
+          "weight_version": "default",
+          "weight_versions": [
+            {
+              "end": 5,
+              "start": 0,
+              "version": "default"
+            }
+          ]
+        },
+        "model": "mimo26",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 5,
+          "prompt_tokens": 8032,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 0,
+          "total_tokens": 8037
+        }
+      }
+    }
+  ],
+  "summary": {
+    "checks": {
+      "identity": true,
+      "needle": true,
+      "structured": true,
+      "tool_call": false,
+      "zh_arithmetic": true
+    },
+    "excluded_known_artifacts": [],
+    "n": 5,
+    "passed": false
+  }
+}

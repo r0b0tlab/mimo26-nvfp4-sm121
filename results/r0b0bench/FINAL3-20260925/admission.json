@@ -1,0 +1,13 @@
+{
+  "floor_bytes": 4294967296,
+  "ranks": [
+    {
+      "host": "r0b0tdgx@192.168.68.78",
+      "identity": "/home/r0b0tdgx/.ssh/id_ed25519_shared"
+    },
+    {
+      "host": "r0b0tdgx@192.168.68.56",
+      "identity": "/home/r0b0tdgx/.ssh/id_ed25519_shared"
+    }
+  ]
+}

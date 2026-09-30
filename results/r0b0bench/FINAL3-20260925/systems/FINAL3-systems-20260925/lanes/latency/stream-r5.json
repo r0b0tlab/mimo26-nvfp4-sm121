@@ -1,0 +1,21 @@
+{
+  "e2el_ms": 7113.001107936725,
+  "elapsed_s": 7.113001107936725,
+  "finish_reason": "stop",
+  "http_status": 200,
+  "itl_ms_mean": 149.66700432579154,
+  "itl_ms_p50": 150.75935603817925,
+  "itl_ms_p95": 159.00529906502925,
+  "ok": true,
+  "rep": 5,
+  "stream_completion_chunks": 47,
+  "text": "Copper is a highly conductive metal, second only to silver among pure elements. Its excellent electrical and thermal conductivity arises from its atomic structure, which allows electrons to move freely. This property makes copper essential for electrical wiring, motors, and heat exchangers. Copper's conductivity is measured by the International Annealed Copper Standard (IACS), with pure copper at 100% IACS. Alloying or impurities reduce conductivity, while cold working can slightly increase it.",
+  "ttft_ms": 228.21802797261626,
+  "usage": {
+    "completion_tokens": 98,
+    "prompt_tokens": 26,
+    "prompt_tokens_details": null,
+    "reasoning_tokens": 0,
+    "total_tokens": 124
+  }
+}

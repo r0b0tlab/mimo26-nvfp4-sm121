@@ -1,0 +1,2 @@
+Rank,Model,Non-Live Overall Acc,AST Summary,Simple AST,Python Simple AST,Java Simple AST,JavaScript Simple AST,Multiple AST,Parallel AST,Parallel Multiple AST,Irrelevance Detection
+1,mimo26,26.88%,N/A,N/A,N/A,N/A,N/A,35.00%,51.50%,21.00%,N/A

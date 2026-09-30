@@ -1,0 +1,9 @@
+{
+  "completion_tokens": 78,
+  "e2el_ms": 3927.139664068818,
+  "elapsed_s": 3.927139664068818,
+  "http_status": 200,
+  "ok": true,
+  "prompt_tokens": 26,
+  "rep": 2
+}

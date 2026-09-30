@@ -1,0 +1,67 @@
+{
+  "base_url": "http://192.168.68.78:30000/v1/",
+  "categories": [
+    "multiple",
+    "parallel",
+    "parallel_multiple"
+  ],
+  "e2e_throughput": {
+    "aggregate_e2e_output_tok_s": 11.321465999348575,
+    "completion_tokens": 64265,
+    "elapsed_s_sum": 5676.385019722511,
+    "infra_errors": 0,
+    "malformed_rows": 0,
+    "mean_request_e2e_output_tok_s": 10.714095715183294,
+    "median_request_e2e_output_tok_s": 11.061140903638286,
+    "path": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_ast/bfcl-ast-project/e2e-requests.jsonl",
+    "reasoning_tokens": 0,
+    "requests": 600,
+    "valid_requests": 600
+  },
+  "micro_accuracy": 0.195,
+  "micro_correct": 117,
+  "micro_total": 600,
+  "model": "mimo26",
+  "project": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_ast/bfcl-ast-project",
+  "score": {
+    "categories": {
+      "multiple": {
+        "accuracy": 0.195,
+        "correct_count": 39,
+        "path": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_ast/bfcl-ast-project/score/r0b0bench-openai-FC/non_live/BFCL_v4_parallel_multiple_score.json",
+        "raw": {
+          "accuracy": 0.195,
+          "correct_count": 39,
+          "total_count": 200
+        },
+        "total_count": 200
+      },
+      "parallel": {
+        "accuracy": 0.195,
+        "correct_count": 39,
+        "path": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_ast/bfcl-ast-project/score/r0b0bench-openai-FC/non_live/BFCL_v4_parallel_multiple_score.json",
+        "raw": {
+          "accuracy": 0.195,
+          "correct_count": 39,
+          "total_count": 200
+        },
+        "total_count": 200
+      },
+      "parallel_multiple": {
+        "accuracy": 0.195,
+        "correct_count": 39,
+        "path": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_ast/bfcl-ast-project/score/r0b0bench-openai-FC/non_live/BFCL_v4_parallel_multiple_score.json",
+        "raw": {
+          "accuracy": 0.195,
+          "correct_count": 39,
+          "total_count": 200
+        },
+        "total_count": 200
+      }
+    },
+    "micro_accuracy": 0.195,
+    "micro_correct": 117,
+    "micro_total": 600
+  },
+  "status": "PASS"
+}

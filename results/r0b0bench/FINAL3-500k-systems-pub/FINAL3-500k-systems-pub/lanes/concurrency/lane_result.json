@@ -1,0 +1,70 @@
+{
+  "artifacts": {
+    "summary.json": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/concurrency/summary.json"
+  },
+  "elapsed_s": 402.76469750201795,
+  "imported": false,
+  "infra_errors": 0,
+  "lane_id": "concurrency",
+  "status": "PASS",
+  "summary": {
+    "backend": "openai_portable",
+    "drop_first_rep": true,
+    "levels": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "method": "openai_portable_concurrency_ladder",
+    "output_tokens": 512,
+    "reps": 3,
+    "rows": [
+      {
+        "aggregate_output_tok_s": 50.18021205614859,
+        "completed": 4,
+        "concurrency": 1,
+        "failed": 0,
+        "mean_e2el_ms": 10202.489832474384,
+        "median_client_output_tok_s": 50.18751665973109,
+        "output_tokens": 512,
+        "repetitions_present": 3,
+        "warmup_rep_dropped": 1
+      },
+      {
+        "aggregate_output_tok_s": 66.04086926248414,
+        "completed": 8,
+        "concurrency": 2,
+        "failed": 0,
+        "mean_e2el_ms": 15559.236570508801,
+        "median_client_output_tok_s": 33.36404427072479,
+        "output_tokens": 512,
+        "repetitions_present": 3,
+        "warmup_rep_dropped": 1
+      },
+      {
+        "aggregate_output_tok_s": 91.64686003362509,
+        "completed": 16,
+        "concurrency": 4,
+        "failed": 0,
+        "mean_e2el_ms": 22293.758458567027,
+        "median_client_output_tok_s": 22.93106707107588,
+        "output_tokens": 512,
+        "repetitions_present": 3,
+        "warmup_rep_dropped": 1
+      },
+      {
+        "aggregate_output_tok_s": 159.64852165614872,
+        "completed": 24,
+        "concurrency": 6,
+        "failed": 0,
+        "mean_e2el_ms": 19132.546709336264,
+        "median_client_output_tok_s": 26.745008491794813,
+        "output_tokens": 512,
+        "repetitions_present": 3,
+        "warmup_rep_dropped": 1
+      }
+    ],
+    "total_failed": 0
+  }
+}

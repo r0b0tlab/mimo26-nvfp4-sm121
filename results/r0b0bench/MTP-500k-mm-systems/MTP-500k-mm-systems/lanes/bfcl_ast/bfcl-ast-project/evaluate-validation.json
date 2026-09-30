@@ -1,0 +1,29 @@
+[
+  {
+    "category": "multiple",
+    "duplicate_ids": [],
+    "expected": 200,
+    "inference_errors": 0,
+    "result_file": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/bfcl_ast/bfcl-ast-project/result/r0b0bench-openai-FC/non_live/BFCL_v4_multiple_result.json",
+    "rows": 200,
+    "unique_ids": 200
+  },
+  {
+    "category": "parallel",
+    "duplicate_ids": [],
+    "expected": 200,
+    "inference_errors": 0,
+    "result_file": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/bfcl_ast/bfcl-ast-project/result/r0b0bench-openai-FC/non_live/BFCL_v4_parallel_result.json",
+    "rows": 200,
+    "unique_ids": 200
+  },
+  {
+    "category": "parallel_multiple",
+    "duplicate_ids": [],
+    "expected": 200,
+    "inference_errors": 0,
+    "result_file": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/MTP-500k-mm-systems/MTP-500k-mm-systems/lanes/bfcl_ast/bfcl-ast-project/result/r0b0bench-openai-FC/non_live/BFCL_v4_parallel_multiple_result.json",
+    "rows": 200,
+    "unique_ids": 200
+  }
+]

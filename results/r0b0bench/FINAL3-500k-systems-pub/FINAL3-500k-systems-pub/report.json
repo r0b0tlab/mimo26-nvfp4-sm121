@@ -1,0 +1,658 @@
+{
+  "base_url": "http://192.168.68.78:30000/v1",
+  "elapsed_s": 4466.28233694192,
+  "infra_errors_total": 0,
+  "invalid_for_publish": false,
+  "lanes": [
+    {
+      "artifacts": {
+        "canary.json": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/canary/canary.json"
+      },
+      "elapsed_s": 14.421903643058613,
+      "imported": false,
+      "infra_errors": 0,
+      "lane_id": "canary",
+      "status": "PASS",
+      "summary": {
+        "checks": {
+          "identity": true,
+          "needle": true,
+          "structured": true,
+          "tool_call": true,
+          "zh_arithmetic": true
+        },
+        "excluded_known_artifacts": [],
+        "n": 5,
+        "passed": true
+      }
+    },
+    {
+      "artifacts": {
+        "bfcl_mt.json": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_mt/bfcl_mt.json",
+        "e2e_timing": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_mt/bfcl-project/e2e-requests.jsonl",
+        "log": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_mt/bfcl_mt.log"
+      },
+      "elapsed_s": 5.866344289039262,
+      "imported": false,
+      "infra_errors": 0,
+      "lane_id": "bfcl_mt",
+      "status": "PASS",
+      "summary": {
+        "accuracy": 0.57,
+        "base_url": "http://192.168.68.78:30000/v1/",
+        "category": "multi_turn_base",
+        "e2e_throughput": {
+          "aggregate_e2e_output_tok_s": 12.40916349403996,
+          "completion_tokens": 1105250,
+          "elapsed_s_sum": 89067.2445834761,
+          "infra_errors": 0,
+          "malformed_rows": 0,
+          "mean_request_e2e_output_tok_s": 8.816809329675232,
+          "median_request_e2e_output_tok_s": 8.440425640330268,
+          "path": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_mt/bfcl-project/e2e-requests.jsonl",
+          "reasoning_tokens": 0,
+          "requests": 1971,
+          "valid_requests": 1971
+        },
+        "expected_rows": 200,
+        "model": "mimo26",
+        "project": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_mt/bfcl-project",
+        "score": {
+          "accuracy": 0.57,
+          "correct": 114,
+          "csv": [
+            "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_mt/bfcl-project/score/data_multi_turn.csv",
+            "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_mt/bfcl-project/score/data_agentic.csv",
+            "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_mt/bfcl-project/score/data_non_live.csv",
+            "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_mt/bfcl-project/score/data_live.csv",
+            "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_mt/bfcl-project/score/data_overall.csv",
+            "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_mt/bfcl-project/score/data_format_sensitivity.csv"
+          ],
+          "csv_rows": [
+            "Rank,Model,Multi Turn Overall Acc,Base,Miss Func,Miss Param,Long Context",
+            "Rank,Overall Acc,Model,Model Link,Total Cost ($),Latency Mean (s),Latency Standard Deviation (s),Latency 95th Percentile (s),Non-Live AST Acc,Non-Live Simple AST,Non-Live Multiple AST,Non-Live Parallel AST,Non-Live Parallel Multiple AST,Live Acc,Live Simple AST,Live Multiple AST,Live Parallel AST,Live Parallel Multiple AST,Multi Turn Acc,Multi Turn Base,Multi Turn Miss Func,Multi Turn Miss Param,Multi Turn Long Context,Web Search Acc,Web Search Base,Web Search No Snippet,Memory Acc,Memory KV,Memory Vector,Memory Recursive Summarization,Relevance Detection,Irrelevance Detection,Format Sensitivity Max Delta,Format Sensitivity Standard Deviation,Organization,License"
+          ],
+          "primary": {
+            "accuracy": 0.57,
+            "correct_count": 114,
+            "total_count": 200
+          },
+          "primary_path": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_mt/bfcl-project/score/r0b0bench-openai-FC/multi_turn/BFCL_v4_multi_turn_base_score.json",
+          "score_files": [
+            "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_mt/bfcl-project/score/r0b0bench-openai-FC/multi_turn/BFCL_v4_multi_turn_base_score.json",
+            "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_mt/bfcl-project/score/r0b0bench-openai-FC/multi_turn/BFCL_v4_multi_turn_base_score.json"
+          ],
+          "total": 200
+        },
+        "status": "PASS"
+      }
+    },
+    {
+      "artifacts": {
+        "bfcl_ast.json": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_ast/bfcl_ast.json",
+        "e2e_timing": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_ast/bfcl-ast-project/e2e-requests.jsonl",
+        "log": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_ast/bfcl_ast.log"
+      },
+      "elapsed_s": 1427.9607486040331,
+      "imported": false,
+      "infra_errors": 0,
+      "lane_id": "bfcl_ast",
+      "status": "PASS",
+      "summary": {
+        "base_url": "http://192.168.68.78:30000/v1/",
+        "categories": [
+          "multiple",
+          "parallel",
+          "parallel_multiple"
+        ],
+        "e2e_throughput": {
+          "aggregate_e2e_output_tok_s": 11.321465999348575,
+          "completion_tokens": 64265,
+          "elapsed_s_sum": 5676.385019722511,
+          "infra_errors": 0,
+          "malformed_rows": 0,
+          "mean_request_e2e_output_tok_s": 10.714095715183294,
+          "median_request_e2e_output_tok_s": 11.061140903638286,
+          "path": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_ast/bfcl-ast-project/e2e-requests.jsonl",
+          "reasoning_tokens": 0,
+          "requests": 600,
+          "valid_requests": 600
+        },
+        "micro_accuracy": 0.195,
+        "micro_correct": 117,
+        "micro_total": 600,
+        "model": "mimo26",
+        "project": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_ast/bfcl-ast-project",
+        "score": {
+          "categories": {
+            "multiple": {
+              "accuracy": 0.195,
+              "correct_count": 39,
+              "path": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_ast/bfcl-ast-project/score/r0b0bench-openai-FC/non_live/BFCL_v4_parallel_multiple_score.json",
+              "raw": {
+                "accuracy": 0.195,
+                "correct_count": 39,
+                "total_count": 200
+              },
+              "total_count": 200
+            },
+            "parallel": {
+              "accuracy": 0.195,
+              "correct_count": 39,
+              "path": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_ast/bfcl-ast-project/score/r0b0bench-openai-FC/non_live/BFCL_v4_parallel_multiple_score.json",
+              "raw": {
+                "accuracy": 0.195,
+                "correct_count": 39,
+                "total_count": 200
+              },
+              "total_count": 200
+            },
+            "parallel_multiple": {
+              "accuracy": 0.195,
+              "correct_count": 39,
+              "path": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/bfcl_ast/bfcl-ast-project/score/r0b0bench-openai-FC/non_live/BFCL_v4_parallel_multiple_score.json",
+              "raw": {
+                "accuracy": 0.195,
+                "correct_count": 39,
+                "total_count": 200
+              },
+              "total_count": 200
+            }
+          },
+          "micro_accuracy": 0.195,
+          "micro_correct": 117,
+          "micro_total": 600
+        },
+        "status": "PASS"
+      }
+    },
+    {
+      "artifacts": {
+        "summary.json": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/latency/summary.json"
+      },
+      "elapsed_s": 45.94616955798119,
+      "imported": false,
+      "infra_errors": 0,
+      "lane_id": "latency",
+      "status": "PASS",
+      "summary": {
+        "drop_first_rep": true,
+        "failed": 0,
+        "method": "openai_chat_stream_c1_latency",
+        "nonstream": {
+          "e2el_ms_mean": 5418.717076012399,
+          "n_stable": 2,
+          "rows": [
+            {
+              "completion_tokens": 81,
+              "e2el_ms": 5838.342425995506,
+              "elapsed_s": 5.838342425995506,
+              "http_status": 200,
+              "ok": true,
+              "prompt_tokens": 26,
+              "rep": 1
+            },
+            {
+              "completion_tokens": 78,
+              "e2el_ms": 5583.683821023442,
+              "elapsed_s": 5.583683821023442,
+              "http_status": 200,
+              "ok": true,
+              "prompt_tokens": 26,
+              "rep": 2
+            },
+            {
+              "completion_tokens": 78,
+              "e2el_ms": 5253.750331001356,
+              "elapsed_s": 5.253750331001356,
+              "http_status": 200,
+              "ok": true,
+              "prompt_tokens": 26,
+              "rep": 3
+            }
+          ]
+        },
+        "output_tokens": 128,
+        "reps": 5,
+        "stream": {
+          "e2el_ms_mean": 5824.119905999396,
+          "itl_ms_mean": 159.20083450445264,
+          "itl_ms_p50_mean": 159.10085049108602,
+          "itl_ms_p95_mean": 172.87887387210503,
+          "n_stable": 4,
+          "rows": [
+            {
+              "e2el_ms": 5970.95313295722,
+              "elapsed_s": 5.97095313295722,
+              "finish_reason": "stop",
+              "http_status": 200,
+              "itl_ms_mean": 157.02864533523098,
+              "itl_ms_p50": 157.2812794474885,
+              "itl_ms_p95": 165.05861195037141,
+              "ok": true,
+              "rep": 1,
+              "stream_completion_chunks": 37,
+              "text": "Copper is a highly conductive metal, second only to silver among pure elements. Its excellent electrical conductivity arises from its atomic structure, which allows electrons to move freely. This property makes it the standard material for electrical wiring, motors, and electronics. Copper also has high thermal conductivity, efficiently transferring heat. Its combination of conductivity, ductility, and corrosion resistance makes it essential for power transmission and countless industrial applications.",
+              "ttft_ms": 317.79761193320155,
+              "usage": {
+                "completion_tokens": 84,
+                "prompt_tokens": 26,
+                "prompt_tokens_details": null,
+                "reasoning_tokens": 0,
+                "total_tokens": 110
+              }
+            },
+            {
+              "e2el_ms": 6440.419442020357,
+              "elapsed_s": 6.440419442020357,
+              "finish_reason": "stop",
+              "http_status": 200,
+              "itl_ms_mean": 158.8775480243688,
+              "itl_ms_p50": 158.84014999028295,
+              "itl_ms_p95": 169.6909910067916,
+              "ok": true,
+              "rep": 2,
+              "stream_completion_chunks": 40,
+              "text": "Copper is a highly conductive metal, second only to silver among pure elements. Its excellent electrical conductivity arises from its atomic structure, which allows electrons to move freely with minimal resistance. This property makes copper the standard material for electrical wiring, power transmission, and electronic components. Copper also has high thermal conductivity, efficiently transferring heat in applications like heat sinks and cookware. Its combination of conductivity, ductility, and corrosion resistance makes it essential for modern electrical and thermal systems.",
+              "ttft_ms": 244.08223701175302,
+              "usage": {
+                "completion_tokens": 96,
+                "prompt_tokens": 26,
+                "prompt_tokens_details": null,
+                "reasoning_tokens": 0,
+                "total_tokens": 122
+              }
+            },
+            {
+              "e2el_ms": 5756.2672240892425,
+              "elapsed_s": 5.7562672240892425,
+              "finish_reason": "stop",
+              "http_status": 200,
+              "itl_ms_mean": 157.00257163095688,
+              "itl_ms_p50": 155.31278890557587,
+              "itl_ms_p95": 171.81249305140227,
+              "ok": true,
+              "rep": 3,
+              "stream_completion_chunks": 36,
+              "text": "Copper is a highly conductive metal, second only to silver among pure elements. Its excellent electrical conductivity arises from its atomic structure, which allows electrons to move freely. This property makes it the standard material for electrical wiring, motors, and electronics. Copper also has high thermal conductivity, efficiently transferring heat. Its combination of conductivity, ductility, and corrosion resistance makes it essential for power transmission and countless industrial applications.",
+              "ttft_ms": 261.02939201518893,
+              "usage": {
+                "completion_tokens": 84,
+                "prompt_tokens": 26,
+                "prompt_tokens_details": null,
+                "reasoning_tokens": 0,
+                "total_tokens": 110
+              }
+            },
+            {
+              "e2el_ms": 5511.497993953526,
+              "elapsed_s": 5.511497993953526,
+              "finish_reason": "stop",
+              "http_status": 200,
+              "itl_ms_mean": 159.69231109148964,
+              "itl_ms_p50": 159.5875599887222,
+              "itl_ms_p95": 175.1132238190621,
+              "ok": true,
+              "rep": 4,
+              "stream_completion_chunks": 34,
+              "text": "Copper is a highly conductive metal, second only to silver among pure elements. Its excellent electrical conductivity arises from its atomic structure, which allows electrons to move freely. This property makes it the standard material for electrical wiring, motors, and electronics. Copper also has high thermal conductivity, efficiently transferring heat, which is why it is widely used in heat exchangers and cookware.",
+              "ttft_ms": 241.48518301080912,
+              "usage": {
+                "completion_tokens": 78,
+                "prompt_tokens": 26,
+                "prompt_tokens_details": null,
+                "reasoning_tokens": 0,
+                "total_tokens": 104
+              }
+            },
+            {
+              "e2el_ms": 5588.294963934459,
+              "elapsed_s": 5.588294963934459,
+              "finish_reason": "stop",
+              "http_status": 200,
+              "itl_ms_mean": 161.2309072709953,
+              "itl_ms_p50": 162.66290307976305,
+              "itl_ms_p95": 174.89878761116415,
+              "ok": true,
+              "rep": 5,
+              "stream_completion_chunks": 34,
+              "text": "Copper is a highly conductive metal, second only to silver among pure elements. Its excellent electrical conductivity arises from its atomic structure, which allows electrons to move freely. This property makes it the standard material for electrical wiring, motors, and electronics. Copper also has high thermal conductivity, efficiently transferring heat, which is why it is widely used in heat exchangers and cookware.",
+              "ttft_ms": 267.49596698209643,
+              "usage": {
+                "completion_tokens": 78,
+                "prompt_tokens": 26,
+                "prompt_tokens_details": null,
+                "reasoning_tokens": 0,
+                "total_tokens": 104
+              }
+            }
+          ],
+          "ttft_ms_mean": 253.52319475496188
+        }
+      }
+    },
+    {
+      "artifacts": {
+        "summary.json": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/concurrency/summary.json"
+      },
+      "elapsed_s": 402.76469750201795,
+      "imported": false,
+      "infra_errors": 0,
+      "lane_id": "concurrency",
+      "status": "PASS",
+      "summary": {
+        "backend": "openai_portable",
+        "drop_first_rep": true,
+        "levels": [
+          1,
+          2,
+          4,
+          6
+        ],
+        "method": "openai_portable_concurrency_ladder",
+        "output_tokens": 512,
+        "reps": 3,
+        "rows": [
+          {
+            "aggregate_output_tok_s": 50.18021205614859,
+            "completed": 4,
+            "concurrency": 1,
+            "failed": 0,
+            "mean_e2el_ms": 10202.489832474384,
+            "median_client_output_tok_s": 50.18751665973109,
+            "output_tokens": 512,
+            "repetitions_present": 3,
+            "warmup_rep_dropped": 1
+          },
+          {
+            "aggregate_output_tok_s": 66.04086926248414,
+            "completed": 8,
+            "concurrency": 2,
+            "failed": 0,
+            "mean_e2el_ms": 15559.236570508801,
+            "median_client_output_tok_s": 33.36404427072479,
+            "output_tokens": 512,
+            "repetitions_present": 3,
+            "warmup_rep_dropped": 1
+          },
+          {
+            "aggregate_output_tok_s": 91.64686003362509,
+            "completed": 16,
+            "concurrency": 4,
+            "failed": 0,
+            "mean_e2el_ms": 22293.758458567027,
+            "median_client_output_tok_s": 22.93106707107588,
+            "output_tokens": 512,
+            "repetitions_present": 3,
+            "warmup_rep_dropped": 1
+          },
+          {
+            "aggregate_output_tok_s": 159.64852165614872,
+            "completed": 24,
+            "concurrency": 6,
+            "failed": 0,
+            "mean_e2el_ms": 19132.546709336264,
+            "median_client_output_tok_s": 26.745008491794813,
+            "output_tokens": 512,
+            "repetitions_present": 3,
+            "warmup_rep_dropped": 1
+          }
+        ],
+        "total_failed": 0
+      }
+    },
+    {
+      "artifacts": {
+        "summary.json": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/throughput/summary.json"
+      },
+      "elapsed_s": 685.1636423779419,
+      "imported": false,
+      "infra_errors": 0,
+      "lane_id": "throughput",
+      "status": "PASS",
+      "summary": {
+        "backend": "openai_portable",
+        "decode": {
+          "mean_client_output_tok_s": 15.488662502210097,
+          "median_client_output_tok_s": 15.477196348038095,
+          "n_stable": 4,
+          "output_tokens_requested": 2048,
+          "reps": 5,
+          "rows": [
+            {
+              "client_output_tokens_per_second": 14.697088815833729,
+              "completion_tokens": 1767,
+              "elapsed_s": 120.22789153293706,
+              "finish_reason": "stop",
+              "http_status": 200,
+              "kind": "decode",
+              "ok": true,
+              "prompt_tokens": 40,
+              "rep": 1,
+              "server_prompt_tokens_per_second": 0.33270150120732833
+            },
+            {
+              "client_output_tokens_per_second": 15.966604759041921,
+              "completion_tokens": 2048,
+              "elapsed_s": 128.26772071502637,
+              "finish_reason": "length",
+              "http_status": 200,
+              "kind": "decode",
+              "ok": true,
+              "prompt_tokens": 40,
+              "rep": 2,
+              "server_prompt_tokens_per_second": 0.3118477492000375
+            },
+            {
+              "client_output_tokens_per_second": 15.576021214360564,
+              "completion_tokens": 2048,
+              "elapsed_s": 131.48415579402354,
+              "finish_reason": "length",
+              "http_status": 200,
+              "kind": "decode",
+              "ok": true,
+              "prompt_tokens": 40,
+              "rep": 3,
+              "server_prompt_tokens_per_second": 0.30421916434297974
+            },
+            {
+              "client_output_tokens_per_second": 15.033652553722272,
+              "completion_tokens": 2048,
+              "elapsed_s": 136.22770598705392,
+              "finish_reason": "length",
+              "http_status": 200,
+              "kind": "decode",
+              "ok": true,
+              "prompt_tokens": 40,
+              "rep": 4,
+              "server_prompt_tokens_per_second": 0.2936260264398881
+            },
+            {
+              "client_output_tokens_per_second": 15.378371481715629,
+              "completion_tokens": 2048,
+              "elapsed_s": 133.1740491790697,
+              "finish_reason": "length",
+              "http_status": 200,
+              "kind": "decode",
+              "ok": true,
+              "prompt_tokens": 40,
+              "rep": 5,
+              "server_prompt_tokens_per_second": 0.3003588180022584
+            }
+          ]
+        },
+        "drop_first_rep": true,
+        "failed": 0,
+        "method": "openai_portable_c1_throughput",
+        "prefill": {
+          "mean_server_prompt_tok_s": 16535.174940362354,
+          "median_prompt_tokens": 22771.0,
+          "median_server_prompt_tok_s": 16535.174940362354,
+          "n_stable": 2,
+          "note": "prompt tok/s is e2e wall proxy (includes short decode); not pure prefill kernel metric",
+          "output_tokens": 16,
+          "prompt_tokens_target": 14000,
+          "reps": 3,
+          "rows": [
+            {
+              "client_output_tokens_per_second": 0.4846463680735526,
+              "completion_tokens": 16,
+              "elapsed_s": 33.01376231003087,
+              "finish_reason": "length",
+              "http_status": 200,
+              "kind": "prefill",
+              "ok": true,
+              "prompt_tokens": 22771,
+              "rep": 1,
+              "server_prompt_tokens_per_second": 689.7426529626791
+            },
+            {
+              "client_output_tokens_per_second": 10.85253499493022,
+              "completion_tokens": 16,
+              "elapsed_s": 1.47430991998408,
+              "finish_reason": "length",
+              "http_status": 200,
+              "kind": "prefill",
+              "ok": true,
+              "prompt_tokens": 22771,
+              "rep": 2,
+              "server_prompt_tokens_per_second": 15445.192148097252
+            },
+            {
+              "client_output_tokens_per_second": 12.384283681965623,
+              "completion_tokens": 16,
+              "elapsed_s": 1.2919600689783692,
+              "finish_reason": "length",
+              "http_status": 200,
+              "kind": "prefill",
+              "ok": true,
+              "prompt_tokens": 22771,
+              "rep": 3,
+              "server_prompt_tokens_per_second": 17625.157732627453
+            }
+          ]
+        }
+      }
+    },
+    {
+      "artifacts": {
+        "niah.json": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-systems-pub/FINAL3-500k-systems-pub/lanes/niah/niah.json"
+      },
+      "elapsed_s": 1884.1068297920283,
+      "imported": false,
+      "infra_errors": 0,
+      "lane_id": "niah",
+      "status": "PASS",
+      "summary": {
+        "all_passed": true,
+        "code": "R0B0-NIAH-7K3M",
+        "depth_policy": "frac_of_max_context",
+        "depths": [
+          131008,
+          262016,
+          471628
+        ],
+        "fractions": [
+          0.25,
+          0.5,
+          0.9
+        ],
+        "generation_reserve": 256,
+        "kv_cache_size_tokens": null,
+        "marker": "R0B0BENCH_NIAH_SLOT",
+        "max_model_len": 524288,
+        "note": "Depths are always 25/50/90% of (max_model_len - generation_reserve). This is the standard max-context capacity package; physical KV shortfall surfaces as infra ERROR.",
+        "pass_count": 3,
+        "rows": [
+          {
+            "depth": 131008,
+            "elapsed_s": 229.4803914029617,
+            "finish_reason": "stop",
+            "fraction_of_usable": 0.25,
+            "http_status": 200,
+            "infra_errors": 0,
+            "max_model_len": 524288,
+            "needle_fraction_effective": 0.49992366878358574,
+            "passed": true,
+            "prompt_sha256": "f9aad0049acf76ac7333da47de2f85699497a2321de398c4e8364d8d158356dc",
+            "prompt_tokens_constructed": 131008,
+            "response_text": "R0B0-NIAH-7K3M",
+            "status": "PASS",
+            "usage": {
+              "completion_tokens": 13,
+              "prompt_tokens": 131008,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "total_tokens": 131021
+            }
+          },
+          {
+            "depth": 262016,
+            "elapsed_s": 492.44713811401743,
+            "finish_reason": "stop",
+            "fraction_of_usable": 0.5,
+            "http_status": 200,
+            "infra_errors": 0,
+            "max_model_len": 524288,
+            "needle_fraction_effective": 0.49996183439179287,
+            "passed": true,
+            "prompt_sha256": "2345a99f43e489c5c32ddfb537cd2cbb858a50d06ef8ecf5484b32fcc969bba8",
+            "prompt_tokens_constructed": 262016,
+            "response_text": "R0B0-NIAH-7K3M",
+            "status": "PASS",
+            "usage": {
+              "completion_tokens": 13,
+              "prompt_tokens": 262016,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "total_tokens": 262029
+            }
+          },
+          {
+            "depth": 471628,
+            "elapsed_s": 1158.9842438659398,
+            "finish_reason": "stop",
+            "fraction_of_usable": 0.9,
+            "http_status": 200,
+            "infra_errors": 0,
+            "max_model_len": 524288,
+            "needle_fraction_effective": 0.49997879684836355,
+            "passed": true,
+            "prompt_sha256": "d4677dbe4646ba7bee5adc3b7c29c9d2a3d7561c7ae12df135a9e4bab8eed9f0",
+            "prompt_tokens_constructed": 471628,
+            "response_text": "R0B0-NIAH-7K3M",
+            "status": "PASS",
+            "usage": {
+              "completion_tokens": 13,
+              "prompt_tokens": 471628,
+              "prompt_tokens_details": null,
+              "reasoning_tokens": 0,
+              "total_tokens": 471641
+            }
+          }
+        ],
+        "template_source": "transformers_chat_template (render_failed=Client error '404 Not Found' for url 'http://192.168.68.78:30000/v1/chat/completions/render'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404)",
+        "tokenizer": {
+          "backend": "tokenizers",
+          "path": "/home/r0b0tdgx/models/r0b0tlab/MiMo-V2.6-Flash-RL-NVFP4/tokenizer.json"
+        },
+        "total": 3
+      }
+    }
+  ],
+  "model": "mimo26",
+  "profile": "systems",
+  "r0b0bench_version": "1.0.0rc2",
+  "run_id": "FINAL3-500k-systems-pub",
+  "schema_version": 2,
+  "started_utc": "2026-09-26T00:22:54.987044+00:00",
+  "systems_lanes": [
+    "canary",
+    "bfcl_mt",
+    "bfcl_ast",
+    "latency",
+    "concurrency",
+    "throughput",
+    "niah"
+  ]
+}

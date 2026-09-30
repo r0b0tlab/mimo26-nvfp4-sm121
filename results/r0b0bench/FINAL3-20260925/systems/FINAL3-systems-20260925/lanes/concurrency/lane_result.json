@@ -1,0 +1,70 @@
+{
+  "artifacts": {
+    "summary.json": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-20260925/systems/FINAL3-systems-20260925/lanes/concurrency/summary.json"
+  },
+  "elapsed_s": 377.98632502998225,
+  "imported": false,
+  "infra_errors": 0,
+  "lane_id": "concurrency",
+  "status": "PASS",
+  "summary": {
+    "backend": "openai_portable",
+    "drop_first_rep": true,
+    "levels": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "method": "openai_portable_concurrency_ladder",
+    "output_tokens": 512,
+    "reps": 3,
+    "rows": [
+      {
+        "aggregate_output_tok_s": 51.9208705285636,
+        "completed": 4,
+        "concurrency": 1,
+        "failed": 0,
+        "mean_e2el_ms": 9860.728661267785,
+        "median_client_output_tok_s": 51.93994462522414,
+        "output_tokens": 512,
+        "repetitions_present": 3,
+        "warmup_rep_dropped": 1
+      },
+      {
+        "aggregate_output_tok_s": 72.3484289373838,
+        "completed": 8,
+        "concurrency": 2,
+        "failed": 0,
+        "mean_e2el_ms": 14108.379458863055,
+        "median_client_output_tok_s": 36.35435651918493,
+        "output_tokens": 512,
+        "repetitions_present": 3,
+        "warmup_rep_dropped": 1
+      },
+      {
+        "aggregate_output_tok_s": 109.48351283831977,
+        "completed": 16,
+        "concurrency": 4,
+        "failed": 0,
+        "mean_e2el_ms": 18603.128446018673,
+        "median_client_output_tok_s": 27.722231078451564,
+        "output_tokens": 512,
+        "repetitions_present": 3,
+        "warmup_rep_dropped": 1
+      },
+      {
+        "aggregate_output_tok_s": 158.57459611847838,
+        "completed": 24,
+        "concurrency": 6,
+        "failed": 0,
+        "mean_e2el_ms": 19238.019453541106,
+        "median_client_output_tok_s": 26.76089961991981,
+        "output_tokens": 512,
+        "repetitions_present": 3,
+        "warmup_rep_dropped": 1
+      }
+    ],
+    "total_failed": 0
+  }
+}

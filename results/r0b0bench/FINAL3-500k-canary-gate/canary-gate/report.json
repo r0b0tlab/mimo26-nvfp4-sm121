@@ -1,0 +1,45 @@
+{
+  "base_url": "http://192.168.68.78:30000/v1",
+  "elapsed_s": 14.514352869940922,
+  "infra_errors_total": 0,
+  "invalid_for_publish": true,
+  "lanes": [
+    {
+      "artifacts": {
+        "canary.json": "/home/r0b0tdgx/projects/mimo26-nvfp4-sm121/results/r0b0bench/FINAL3-500k-canary-gate/canary-gate/lanes/canary/canary.json"
+      },
+      "elapsed_s": 14.51412150892429,
+      "imported": false,
+      "infra_errors": 0,
+      "lane_id": "canary",
+      "status": "PASS",
+      "summary": {
+        "checks": {
+          "identity": true,
+          "needle": true,
+          "structured": true,
+          "tool_call": true,
+          "zh_arithmetic": true
+        },
+        "excluded_known_artifacts": [],
+        "n": 5,
+        "passed": true
+      }
+    }
+  ],
+  "model": "mimo26",
+  "profile": "systems",
+  "r0b0bench_version": "1.0.0rc2",
+  "run_id": "canary-gate",
+  "schema_version": 2,
+  "started_utc": "2026-09-25T13:19:47.797679+00:00",
+  "systems_lanes": [
+    "canary",
+    "bfcl_mt",
+    "bfcl_ast",
+    "latency",
+    "concurrency",
+    "throughput",
+    "niah"
+  ]
+}

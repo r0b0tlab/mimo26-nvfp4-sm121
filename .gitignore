@@ -1,3 +1,9 @@
 results/logs/serve/*.log
 *.pt
 __pycache__/
+
+# BFCL raw multi-turn result/score dumps exceed GitHub's 100 MB limit;
+# lane summaries live in the r0b0bench results ledger instead.
+results/r0b0bench/**/bfcl_mt/**
+results/r0b0bench/**/BFCL_v4_multi_turn_base_result*.json
+results/r0b0bench/**/BFCL_v4_multi_turn_base_score*.json

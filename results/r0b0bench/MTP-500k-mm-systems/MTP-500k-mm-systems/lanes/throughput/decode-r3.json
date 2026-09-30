@@ -1,0 +1,12 @@
+{
+  "client_output_tokens_per_second": 18.215062955379217,
+  "completion_tokens": 2048,
+  "elapsed_s": 112.43441787804477,
+  "finish_reason": "length",
+  "http_status": 200,
+  "kind": "decode",
+  "ok": true,
+  "prompt_tokens": 40,
+  "rep": 3,
+  "server_prompt_tokens_per_second": 0.3557629483472503
+}
